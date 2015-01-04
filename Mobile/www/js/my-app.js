@@ -26,7 +26,7 @@ myApp.onPageInit('ant', function(){
     }
     gone = 0;
     dead = 0;
-    setTimeout(moveAnt, 250);
+    setTimeout(moveAnt, 25);
 });
 
 function moveAnt ()
@@ -36,7 +36,7 @@ function moveAnt ()
     }
     $('#scoreInfo').html("<center><b>Раздавлено:</b>" + dead + "  <b>Сбежало:</b>" + gone+"</center>");
     if((gone + dead) < 10) {
-        setTimeout(moveAnt, 250);
+        setTimeout(moveAnt, 25);
     }
 }
 
@@ -60,6 +60,11 @@ function onHeadingError(compassError)
     }
 }
 
+function calcAppend(num)
+{
+    $('#calcText').append(num);
+}
+
 function Ant(i)
 {
     this.id = i;
@@ -71,7 +76,7 @@ function Ant(i)
     };
     this.move = function() {
         if(!this.dead) {
-            this.distance+=30;
+            this.distance+=5;
             var newX = this.startX+Math.cos(this.orientation)*this.distance;
             var newY = this.startY+Math.sin(this.orientation)*this.distance;
             this.moveTo(newX,newY);

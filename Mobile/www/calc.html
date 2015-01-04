@@ -1,0 +1,49 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+        <div class="center sliding">Каркулятор</div>
+        <div class="right">
+            <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <!-- Page, data-page contains page name-->
+    <div data-page="services" class="page">
+        <!-- Scrollable page content-->
+        <div class="page-content">
+            <div class="content-block">
+                <div class="content-block-inner inset" style="font-size: 64px;" id="calcText">123</div><br><br>
+                <div class="row">
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-lightblue">+/-</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-lightblue">/</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-lightblue">*</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-red">C</a></div>
+                </div><br>
+                <div class="row">
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-green">7</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-green">8</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-green">9</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-lightblue"><</a></div>
+                </div><br>
+                <div class="row">
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-green">4</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-green">5</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-green">6</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-lightblue">-</a></div>
+                </div><br>
+                <div class="row">
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-green" onclick="calcAppend('1')">1</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-green" onclick="calcAppend('2')">2</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-green" onclick="calcAppend('3')">3</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-lightblue">+</a></div>
+                </div><br>
+                <div class="row">
+                    <div class="col-50"><a href="#" class="button button-big button-fill color-green" onclick="calcAppend('0')">0</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-green">.</a></div>
+                    <div class="col-25"><a href="#" class="button button-big button-fill color-orange">=</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
