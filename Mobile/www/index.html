@@ -6,7 +6,9 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>My App</title>
         <link rel="stylesheet" href="css/framework7.min.css">
+        <link rel="stylesheet" href="css/framework7.themes.css">
         <link rel="stylesheet" href="css/my-app.css">
+        <link rel="stylesheet" href="css/kitchen-sink.css">
         <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/jQueryRotate.2.1.js"></script>
     </head>
@@ -16,10 +18,47 @@
         
         <div class="panel-overlay"></div>
         
-        <div class="panel panel-left panel-reveal">
-            <div class="content-block">
-                <p>Left panel content goes here</p>
+        <div class="panel panel-left panel-cover layout-dark">
+            <div class="content-block-title">Навигация</div>
+            <div class="content-block"></div>
+            <div class="list-block">
+                <ul>
+                    <li><a href="compass.html" class="close-panel item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-compass"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Компас</div>
+                            </div>
+                        </div>
+                    </a></li>
+                    <li><a href="ant.html" class="close-panel item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-ant"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Муравьи</div>
+                            </div>
+                        </div>
+                    </a></li>
+                    <li><a href="popover.html" class="close-panel item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Каркулятор</div>
+                            </div>
+                        </div>
+                    </a></li>
+                    <li><a href="github.html" class="close-panel item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">GitHub</div>
+                            </div>
+                        </div>
+                    </a></li>
+
+                </ul>
             </div>
+
         </div>
         
         <div class="panel panel-right panel-cover">
@@ -35,7 +74,7 @@
                 <div class="navbar">
                     <div class="navbar-inner">
                         
-                        <div class="center sliding">Awesome App</div>
+                        <div class="center sliding">Программирование для мобильных устройств</div>
                         <div class="right">
                             <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
                         </div>
@@ -47,14 +86,14 @@
                     <div data-page="index" class="page">
                         
                         <div class="page-content">
-                            <div class="content-block-title">Welcome To My Awesome App</div>
+                            <div class="content-block-title">Выполнил</div>
                             <div class="content-block">
                                 <div class="content-block-inner">
-                                    <p>Couple of worlds here because my app is so awesome!</p>
-                                    <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
+                                    <p>Студент третьего курса группы ЗП-21</p>
+                                    <p>Петренко П.О. </p>
                                 </div>
                             </div>
-                            <div class="content-block-title">What about simple navigation?</div>
+                            <div class="content-block-title">Список заданий</div>
                             <div class="list-block">
                                 <ul>
                                     <li><a href="compass.html" class="item-link">
@@ -66,30 +105,23 @@
                                     <li><a href="ant.html" class="item-link">
                                         <div class="item-content">
                                             <div class="item-inner">
-                                                <div class="item-title">Services</div>
+                                                <div class="item-title">Муравьи</div>
                                             </div>
                                         </div></a></li>
-                                    <li><a href="form.html" class="item-link">
+                                    <li><a href="calc.html" class="item-link">
                                         <div class="item-content">
                                             <div class="item-inner">
-                                                <div class="item-title">Form</div>
+                                                <div class="item-title">Каркулятор</div>
                                             </div>
                                         </div></a></li>
                                 </ul>
-                            </div>
-                            <div class="content-block-title">Side panels</div>
-                            <div class="content-block">
-                                <div class="row">
-                                    <div class="col-50"><a href="#" data-panel="left" class="button open-panel">Left Panel</a></div>
-                                    <div class="col-50"><a href="#" data-panel="right" class="button open-panel">Right Panel</a></div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="toolbar">
-                    <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>
+                    <div class="toolbar-inner"><a href="https://github.com/avallac/Sibsutis/tree/master/Mobile" class="link">GitHub</a><a href="mailto:avallac@academ.org" class="link">Написать письмо</a></div>
                 </div>
             </div>
         </div>
