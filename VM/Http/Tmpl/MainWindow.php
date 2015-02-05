@@ -39,14 +39,14 @@ foreach (range(0, \VM\Memory::MAX) as $number) {
 
         $('#reset').click(function() {
             $.ajax({
-                url: '/reset',
+                url: 'reset',
                 success: function() { location.reload(); }
             });
         });
 
         setInterval(function(){
             $.ajax({
-                url: '/load',
+                url: 'load',
                 success: function($data) {
                     $('.redTd').removeClass('redTd');
                     var VM = JSON.parse($data);
