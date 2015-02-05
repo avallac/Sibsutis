@@ -2,29 +2,28 @@
 <script src="http://www.appelsiini.net/projects/jeditable/jquery.jeditable.js" type="text/javascript" charset="utf-8"></script>
 
 <style type="text/css">
-    .editable input[type=submit] {
-        color: #F00;
-        font-weight: bold;
-    }
-    .editable input[type=button] {
-        color: #0F0;
-        font-weight: bold;
-    }
-    .someclass input {
+    .memoryCell input {
         width: 25px;
     }
-
+    .memoryTd {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        text-align: center;
+    }
+    .redTd {
+        background-color: red;
+    }
 </style>
 
 <table style="border-collapse: collapse; border: 1px solid black;" border="1" cellpadding="5">
     <tr>
-
 <?php
 foreach (range(0, \VM\Memory::MAX) as $number) {
     if (($number%20 == 0) && $number) {
         echo "</tr><tr>";
     }
-    echo '<td class="edit" id="m'.$number.'" style="width: 30px; height: 30px; padding: 0px; text-align: center; valign: middle; align: center;">0</td>';
+    echo '<td class="memoryTd edit" id="m'.$number.'">0</td>';
 }
 ?>
     </tr>
@@ -35,7 +34,7 @@ foreach (range(0, \VM\Memory::MAX) as $number) {
         var seconds = 2;
 
         $('.edit').editable('changeMemory', {
-            cssclass : 'someclass'
+            cssclass : 'memoryCell'
         });
 
         $('#reset').click(function() {
@@ -49,9 +48,14 @@ foreach (range(0, \VM\Memory::MAX) as $number) {
             $.ajax({
                 url: '/load',
                 success: function($data) {
+                    $('.redTd').removeClass('redTd');
                     var VM = JSON.parse($data);
                     VM['memory'].forEach(function(e, i){
-                        $('#m'+i).html(e);
+                        var edit = $('#m'+i).children('.memoryCell').length;
+                        if ($('#m'+i).html() != e && !edit) {
+                            $('#m' + i).html(e);
+                            $('#m' + i).addClass('redTd');
+                        }
                     })
                 }
             });
