@@ -9,4 +9,4 @@ require_once('System/VM.php');
 $VM = new \System\VM();
 
 $server = new \Http\Server();
-$server->run('10.0.0.106', 8080, $VM);
+$server->run('0.0.0.0', 8080, $VM);

@@ -29,4 +29,10 @@ class MainController
     {
         return "404 Not Found";
     }
+
+    public function load($VM)
+    {
+        $export = array('memory' => $VM->memory->export());
+        return json_encode($export);
+    }
 }

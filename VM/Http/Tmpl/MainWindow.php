@@ -24,7 +24,7 @@ foreach (range(0, \VM\Memory::MAX) as $number) {
     if (($number%20 == 0) && $number) {
         echo "</tr><tr>";
     }
-    echo '<td class="edit" id="m'.$number.'" style="width: 30px; height: 30px; padding: 0px; text-align: center; valign: middle; align: center;">'.$this->memory[$number].'</td>';
+    echo '<td class="edit" id="m'.$number.'" style="width: 30px; height: 30px; padding: 0px; text-align: center; valign: middle; align: center;">0</td>';
 }
 ?>
     </tr>
@@ -32,14 +32,30 @@ foreach (range(0, \VM\Memory::MAX) as $number) {
 <input type="button" id="reset">
 <script>
     $(document).ready(function() {
+        var seconds = 2;
+
         $('.edit').editable('changeMemory', {
             cssclass : 'someclass'
         });
+
         $('#reset').click(function() {
             $.ajax({
                 url: '/reset',
                 success: function() { location.reload(); }
             });
         });
+
+        setInterval(function(){
+            $.ajax({
+                url: '/load',
+                success: function($data) {
+                    var VM = JSON.parse($data);
+                    VM['memory'].forEach(function(e, i){
+                        $('#m'+i).html(e);
+                    })
+                }
+            });
+        }, seconds * 1000)
     });
+
 </script>
