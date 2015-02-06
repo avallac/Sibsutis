@@ -19,28 +19,29 @@ class Server
         socket_bind($sock, $address, $port) or die('Could not bind to address');
         while (1) {
             socket_listen($sock);
-            $client = socket_accept($sock);
-            $input = socket_read($client, 1024);
-            $pattern1 = '/^(GET|POST) (\/[^ ]+) HTTP/';
-            if (preg_match($pattern1, $input, $matches)) {
-                if ($matches[1] == 'POST') {
-                    $strings = explode("\n", $input);
-                    parse_str(end($strings), $params);
-                }
-                if ($matches[2] !== '/favicon.ico') {
-                    $main = new MainController();
-                    $function = substr($matches[2], 1);
-                    if (method_exists($main, $function)) {
-                        $this->postReply($client, $main->$function($VM, $params));
-                    } else {
-                        $this->postReply($client, $main->e404());
+            if ($client = socket_accept($sock)) {
+                $input = socket_read($client, 1024);
+                $pattern1 = '/^(GET|POST) (\/[^ ]+) HTTP/';
+                if (preg_match($pattern1, $input, $matches)) {
+                    if ($matches[1] == 'POST') {
+                        $strings = explode("\n", $input);
+                        parse_str(end($strings), $params);
                     }
+                    if ($matches[2] !== '/favicon.ico') {
+                        $main = new MainController();
+                        $function = substr($matches[2], 1);
+                        if (method_exists($main, $function)) {
+                            $this->postReply($client, $main->$function($VM, $params));
+                        } else {
+                            $this->postReply($client, $main->e404());
+                        }
+                    }
+                } else {
+                    $main = new MainController();
+                    $this->postReply($client, $main->index($VM));
                 }
-            } else {
-                $main = new MainController();
-                $this->postReply($client, $main->index($VM));
+                socket_close($client);
             }
-            socket_close($client);
         }
         socket_close($sock);
     }

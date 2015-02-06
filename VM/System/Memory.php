@@ -1,16 +1,21 @@
 <?php
 
-namespace VM;
+namespace System;
 
 class Memory
 {
     const MAX = 99;
-    const CAPACITY = 7;
+    const CAPACITY = 15;
     private $memory;
 
     public function __construct()
     {
         $this->memory = array();
+        $this->reInit();
+    }
+
+    public function reInit()
+    {
         foreach (range(0, self::MAX) as $number) {
             $this->memory[$number] = 0;
         }
@@ -18,6 +23,7 @@ class Memory
 
     public function get($num, &$val)
     {
+        $num = (int)$num;
         if ($this->isCorrect($num)) {
             $val = $this->memory[$num];
             return 1;
@@ -27,6 +33,7 @@ class Memory
 
     public function set($num, $val)
     {
+        $num = (int)$num;
         if ($this->isCorrect($num)) {
             $val = (int)$val;
             $val = $val % pow(2, self::CAPACITY);

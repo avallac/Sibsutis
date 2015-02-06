@@ -32,7 +32,18 @@ class MainController
 
     public function load($VM)
     {
-        $export = array('memory' => $VM->memory->export());
+        $export = array(
+            'memory' => $VM->memory->export(),
+            'console'=> $VM->console->get(),
+            'ticks' => $VM->getTick(),
+            'instructionCounter' => $VM->getInstructionCounter(),
+            'acc' => $VM->getAcc()
+        );
         return json_encode($export);
+    }
+
+    public function cmd($VM, $params)
+    {
+        $VM->console->cmd($params['cmd'], 1);
     }
 }

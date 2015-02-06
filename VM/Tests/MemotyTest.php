@@ -6,7 +6,7 @@ class Unit_AppTest extends PHPUnit_Framework_TestCase
 {
     public function testGetSet()
     {
-        $memory = new \VM\Memory();
+        $memory = new System\Memory();
         $memory->set(1, 1);
         $this->assertEquals(1, $memory->get(2, $val));
         $this->assertEquals(0, $val);
