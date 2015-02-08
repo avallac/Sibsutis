@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -34,15 +34,81 @@
     </div>
 
     <div id="body">
-        <table width="650" border="0" align="center" cellpadding="0" cellspacing="0">
+        <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+            <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
+                    </tr>
+                    <tr>
+                        <td class="right-block"><p><strong>Accumulator:</strong></p><div id="acc"></div></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
+                    </tr>
+                </table>
+            </td><td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
+                    </tr>
+                    <tr>
+                        <td class="right-block"><p><strong>InstructionCounter:</strong></p><div id="instructionCounter"></div> </td>
+                    </tr>
+                    <tr>
+                        <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
+                    </tr>
+                </table>
+            </td></tr><tr><td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
+                    </tr>
+                    <tr>
+                        <td class="right-block"><p><strong>Operation:</strong></p> <div id="command"></div> </td>
+                    </tr>
+                    <tr>
+                        <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
+                    </tr>
+                </table>
+            </td><td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
+                    </tr>
+                    <tr>
+                        <td class="right-block"><p><strong>Flags:</strong></p> <div id="command"></div></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
+                    </tr>
+                </table>
+            </td>
+            </tr>
             <tr valign="top">
-                <td class="body_txt">
-                    <table style="border-collapse: collapse; border: 1px solid black;" border="1" cellpadding="5">
-                        <tr>
+                <td class="body_txt" colspan="2">
+                    <table style="border-collapse: collapse; border: 1px solid black; width: 100%;" border="1" cellpadding="5">
+                        <tr><td></td>
                     <?php
+                    foreach (range(0, 15) as $number) {
+                         echo '<td class="memoryTd" bgcolor="#cococo">' . base_convert($number,10,16) . '</td>';
+                    }
                     foreach (range(0, \System\Memory::MAX) as $number) {
-                        if (($number%16 == 0) && $number) {
-                            echo "</tr><tr>";
+                        if ($number%16 == 0) {
+                            echo '</tr><tr><td class="memoryTd" bgcolor="#cococo" width="0">'.base_convert((int)($number/16), 10, 16).'</td>';
                         }
                         echo '<td class="memoryTd edit" id="m'.$number.'">0</td>';
                     }
@@ -50,65 +116,6 @@
                         </tr>
                     </table>
                 </td>
-                <td width="200">
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
-                        </tr>
-                        <tr>
-                            <td class="right-block"><p><strong>Accumulator:</strong></p><div id="acc"></div></td>
-                        </tr>
-                        <tr>
-                            <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
-                        </tr>
-                        <tr>
-                            <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
-                        </tr>
-                    </table>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
-                        </tr>
-                        <tr>
-                            <td class="right-block"><p><strong>InstructionCounter:</strong></p><div id="instructionCounter"></div> </td>
-                        </tr>
-                        <tr>
-                            <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
-                        </tr>
-                        <tr>
-                            <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
-                        </tr>
-                    </table>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
-                        </tr>
-                        <tr>
-                            <td class="right-block"><p><strong>Operation:</strong></p> <div id="ticks"></div> </td>
-                        </tr>
-                        <tr>
-                            <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
-                        </tr>
-                        <tr>
-                            <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
-                        </tr>
-                    </table>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
-                        </tr>
-                        <tr>
-                            <td class="right-block"><p><strong>Flags:</strong></p> O E V M </td>
-                        </tr>
-                        <tr>
-                            <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
-                        </tr>
-                        <tr>
-                            <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
-                        </tr>
-                    </table>
-                   </td>
-            </tr>
             <tr>
             <td colspan="2">
                 <div id="output">
@@ -127,6 +134,24 @@
                     </form>
                 </div>
             </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea rows="20" style="width: 100%;" id="prog">
+00 LOAD  10
+01 STORE 12
+02 SUB   11
+03 JZ    9
+04 STORE 10
+05 MUL   12
+06 STORE 12
+07 LOAD  10
+08 JUMP  02
+09 HALT  00
+10 = 5
+11 = 1
+12 = 0</textarea><input id="make" type="button" style="width: 100%;" value="Запустить" onclick="return sendProgram()">
+                </td>
             </tr>
         </table>
     </div>
@@ -160,8 +185,6 @@
     }
 
 </style>
-
-<input type="button" id="reset">
 <script>
     $(document).ready(function() {
         var seconds = 0.5;
@@ -189,10 +212,23 @@
                     VM['console'].forEach(function(e, i) {
                         buff[i] = e;
                     });
-                    $('#m'+VM['instructionCounter']).addClass('yellowTd')
-                    $('#instructionCounter').html(VM['instructionCounter']);
-                    $('#ticks').html(VM['ticks']);
-                    $('#acc').html(VM['acc']);
+                    $('#instructionCounter').html("");
+                    VM['instructionCounter'].forEach(function(e, i) {
+                        $('#m'+e).addClass('yellowTd');
+                        $('#instructionCounter').append("CPU"+i+": "+e+"<br>");
+                    });
+                    $('#acc').html("");
+                    VM['acc'].forEach(function(e, i) {
+                        $('#acc').append("CPU"+i+": "+e+"<br>");
+                    });
+                    $('#command').html("");
+                    VM['command'].forEach(function(e, i) {
+                        $('#command').append("CPU"+i+" <b>"+e+"</b><br>");
+                    });
+                    $('#flags').html("");
+                    VM['flags'].forEach(function(e, i) {
+                        $('#flags').append("CPU"+i+" <b>"+e+"</b><br>");
+                    });
                     printConsole(buff);
                 }
             });
@@ -201,7 +237,7 @@
 
     function printConsole(buff)
     {
-        var i=0;
+        var i = 0;
         var output = $('#taag_output_text');
         output.html('');
         for(i = 0; i < 6; i++) {
@@ -212,10 +248,21 @@
     function reset()
     {
         $.ajax({
-            url: 'reset',
+            url: 'reset'
         });
         return false;
     }
+
+    function sendProgram()
+    {
+        $.ajax({
+            url: 'loadProgram',
+            type: "POST",
+            data: "prog="+JSON.stringify($('#prog').val())
+        });
+        return false;
+    }
+
     function sendCmd()
     {
         $.post( "cmd", { 'cmd': $('#inputfield').val() } );

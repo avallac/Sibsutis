@@ -4,7 +4,7 @@ namespace System;
 
 class Memory
 {
-    const MAX = 99;
+    const MAX = 127;
     const CAPACITY = 15;
     private $memory;
 

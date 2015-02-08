@@ -35,9 +35,10 @@ class MainController
         $export = array(
             'memory' => $VM->memory->export(),
             'console'=> $VM->console->get(),
-            'ticks' => $VM->getTick(),
             'instructionCounter' => $VM->getInstructionCounter(),
-            'acc' => $VM->getAcc()
+            'acc' => $VM->getAcc(),
+            'command' => $VM->getCurrentCommand(),
+            'flags' => $VM->getFlags()
         );
         return json_encode($export);
     }
@@ -45,5 +46,10 @@ class MainController
     public function cmd($VM, $params)
     {
         $VM->console->cmd($params['cmd'], 1);
+    }
+
+    public function loadProgram($VM, $params)
+    {
+        $VM->program(json_decode($params['prog']));
     }
 }

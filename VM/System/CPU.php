@@ -6,11 +6,12 @@ class CPU
 {
     const COMMAND_FLAG = 16384;
     const COMMAND_MASK = 16256;
-    const PARAM_MASK  = 127;
+    const PARAM_MASK = 127;
     private $instructionCounter = 0;
     private $acc = 0;
     private $VM;
-    private $stop = 0;
+    private $stop = 1;
+    private $curCommand;
 
     private static $commands = array(
         20 => 'LOAD',
@@ -25,6 +26,7 @@ class CPU
         43 => 'HALT'
 
     );
+
     public function __construct($VM)
     {
         $this->VM = $VM;
@@ -35,7 +37,12 @@ class CPU
     {
         $this->instructionCounter = 0;
         $this->acc = 0;
-        $this->stop = 0;
+        $this->stop = 1;
+    }
+
+    public function getCurrentCommand()
+    {
+        return $this->curCommand;
     }
 
     public function getAcc()
@@ -50,8 +57,12 @@ class CPU
 
     public function run()
     {
-        if(!$this->stop) {
-            print("Decode - ".$this->readMemory($this->instructionCounter)."\n");
+        $this->stop = 0;
+    }
+
+    public function tick()
+    {
+        if (!$this->stop) {
             $this->decode($this->readMemory($this->instructionCounter));
             $this->instructionCounter++;
         }
@@ -59,20 +70,23 @@ class CPU
 
     private function decode($command)
     {
-        if(!($command & self::COMMAND_FLAG)) {
+        if (!($command & self::COMMAND_FLAG)) {
             $command_id = $command & self::COMMAND_MASK;
             $command_id = $command_id >> 7;
             $param = $command & self::PARAM_MASK;
-            if(isset(self::$commands[$command_id])) {
+            if (isset(self::$commands[$command_id])) {
                 $eCommand = self::$commands[$command_id];
-                print("Is Command - ".$eCommand." param: $param\n");
+                print("Is Command - " . $eCommand . " param: $param\n");
                 if ($eCommand) {
                     $this->$eCommand($param);
+                    $this->curCommand = $eCommand . ":" . base_convert($param, 10, 16);
                 }
             } else {
+                $this->console->cmd("Bad command: " . $command, 0);
                 $this->HALT(0);
             }
-        }else{
+        } else {
+            $this->console->cmd("Bad command: " . $command, 0);
             $this->HALT(0);
         }
     }
@@ -83,6 +97,7 @@ class CPU
         $this->VM->memory->get($i, $tmp);
         return $tmp;
     }
+
     private function LOAD($param)
     {
         $this->acc = $this->readMemory($param);
@@ -118,13 +133,20 @@ class CPU
     private function HALT($param)
     {
         $this->stop = 1;
-        $this->instructionCounter = -1;
+    }
+
+    public function getFlags()
+    {
+        $ret = "";
+        if ($this->stop) {
+            $ret .= " T";
+        }
+        return $ret;
     }
 
     public static function getCommandID($command)
     {
-        return array_search($command ,self::$commands);
+        return array_search($command, self::$commands);
     }
-
 
 }
