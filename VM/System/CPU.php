@@ -24,7 +24,6 @@ class CPU
         41 => 'JNEG',
         42 => 'JZ',
         43 => 'HALT'
-
     );
 
     public function __construct($VM)
@@ -76,7 +75,6 @@ class CPU
             $param = $command & self::PARAM_MASK;
             if (isset(self::$commands[$command_id])) {
                 $eCommand = self::$commands[$command_id];
-                print("Is Command - " . $eCommand . " param: $param\n");
                 if ($eCommand) {
                     $this->$eCommand($param);
                     $this->curCommand = $eCommand . ":" . base_convert($param, 10, 16);

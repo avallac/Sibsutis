@@ -77,18 +77,24 @@ class VM
         return $ret;
     }
 
+    public static function encodeCommand($command, $param)
+    {
+        $command = CPU::getCommandID($command);
+        $ret = $command << 7;
+        $ret += $param;
+        return $ret;
+    }
+
     public function program($str)
     {
-        var_dump($str);
         $pg = explode("\n", $str);
         $pattern = '/(\d+)\s+(\S+)\s+(\d+)/';
         foreach ($pg as $command) {
             if (preg_match($pattern, $command, $matches)) {
                 if ($matches[2] == '=') {
                     $this->memory->set($matches[1], $matches[3]);
-                } elseif ($command = CPU::getCommandID($matches[2])) {
-                    $command = $command << 7;
-                    $command += $matches[3];
+                } elseif (CPU::getCommandID($matches[2])) {
+                    $command = self::encodeCommand($matches[2], $matches[3]);
                     $this->memory->set($matches[1], $command);
                     $this->console->cmd("Set: " . $matches[1] . " " . $command, 0);
                 } else {

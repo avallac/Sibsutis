@@ -13,12 +13,12 @@ $VM = new \System\VM();
 
 function sig_handler($sign)
 {
-    GLOBAL $VM;
+    global $VM;
     $VM->tick();
     \pcntl_alarm(1);
 }
 
-pcntl_signal(SIGALRM,  "sig_handler", true);
+pcntl_signal(SIGALRM, "sig_handler", true);
 \pcntl_alarm(1);
 $server = new \Http\Server();
 $server->run('0.0.0.0', 8080, $VM);
