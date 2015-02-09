@@ -148,5 +148,5 @@ class CPU
     {
         return array_search($command, self::$commands);
     }
-
 }
+
