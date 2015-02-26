@@ -12,8 +12,10 @@ class CPU
     private $VM;
     private $stop = 1;
     private $curCommand;
+    private $cpuId;
 
     private static $commands = array(
+        01 => 'CPUID',
         20 => 'LOAD',
         21 => 'STORE',
         30 => 'ADD',
@@ -23,12 +25,16 @@ class CPU
         40 => 'JUMP',
         41 => 'JNEG',
         42 => 'JZ',
-        43 => 'HALT'
+        43 => 'HALT',
+        52 => '_AND',
+        60 => 'CHL',
+        61 => 'SHR',
     );
 
-    public function __construct($VM)
+    public function __construct($VM, $id)
     {
         $this->VM = $VM;
+        $this->cpuId = $id;
         $this->reInit();
     }
 
@@ -92,8 +98,23 @@ class CPU
     private function readMemory($i)
     {
         $tmp = 0;
-        $this->VM->memory->get($i, $tmp);
-        return $tmp;
+        if ($this->VM->memory->get($i, $tmp)) {
+            return $tmp;
+        } else {
+            $this->HALT();
+        }
+    }
+
+    private function writeMemory($i, $val)
+    {
+        if (!$this->VM->memory->set($i, $val)) {
+            $this->HALT();
+        }
+    }
+
+    private function ADD($param)
+    {
+        $this->acc += $this->readMemory($param);
     }
 
     private function LOAD($param)
@@ -103,7 +124,7 @@ class CPU
 
     private function STORE($param)
     {
-        $this->VM->memory->set($param, $this->acc);
+        $this->writeMemory($param, $this->acc);
     }
 
     private function SUB($param)
@@ -118,6 +139,26 @@ class CPU
         }
     }
 
+    private function CHL($param)
+    {
+        $this->acc = $this->acc << $param;
+    }
+
+    private function SHR($param)
+    {
+        $this->acc = $this->acc >> $param;
+    }
+
+    private function _AND($param)
+    {
+        $this->acc = $this->acc & $param;
+    }
+
+    private function CPUID($param = '')
+    {
+        $this->acc = $this->cpuId | (VM::CPU << 3);
+    }
+
     private function MUL($param)
     {
         $this->acc *= $this->readMemory($param);
@@ -128,7 +169,7 @@ class CPU
         $this->instructionCounter = $param - 1;
     }
 
-    private function HALT($param)
+    private function HALT($param = '')
     {
         $this->stop = 1;
     }
@@ -147,4 +188,3 @@ class CPU
         return array_search($command, self::$commands);
     }
 }
-

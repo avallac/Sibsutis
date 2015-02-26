@@ -4,7 +4,7 @@ namespace System;
 
 class VM
 {
-    const CPU = 1;
+    const CPU = 2;
     public $memory;
     public $console;
     public $cpu = array();

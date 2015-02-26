@@ -87,7 +87,7 @@
                         <td><img src="http://avallac.academ.org/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
                     </tr>
                     <tr>
-                        <td class="right-block"><p><strong>Flags:</strong></p> <div id="command"></div></td>
+                        <td class="right-block"><p><strong>Flags:</strong></p> <div id="flags"></div></td>
                     </tr>
                     <tr>
                         <td><img src="http://avallac.academ.org/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
@@ -138,24 +138,62 @@
             <tr>
                 <td colspan="2">
                     <textarea rows="20" style="width: 100%;" id="prog">
-00 LOAD  10
-01 STORE 12
-02 SUB   11
-03 JZ    9
-04 STORE 10
-05 MUL   12
-06 STORE 12
-07 LOAD  10
-08 JUMP  02
-09 HALT  00
-10 = 5
-11 = 1
-12 = 0</textarea><input id="make" type="button" style="width: 100%;" value="Запустить" onclick="return sendProgram()">
+00 CPUID 00  взять cpu
+01 SHR   03  сдвиг на 3
+02 SUB   20  вычитаем 1
+03 STORE 23  запоминаем в 23
+04 MUL   22  умножаем на шаг
+05 ADD   21  добавляем сдвиг
+06 STORE 24  сохраняем полученный адрес в 23
+07 ADD   25  добавляем код store
+08 STORE 11  запоминаем в 12
+09 LOAD  24  грузим адрес подпрограммы
+10 ADD   26  добавляем код load
+11 = 0       автоматом сгенерированная команда
+12 HALT  00
+20 = 1
+21 = 48      сдвиг
+22 = 32      шаг
+23 = 0       ID
+25 = 2688    STORE
+26 = 2560    LOAD</textarea><input id="make" type="button" style="width: 100%;" value="Запустить" onclick="return sendProgram()">
                 </td>
             </tr>
         </table>
     </div>
 
+
+50 CPUID 00
+51 _AND  04
+52 JZ    16
+53 JUMP  32
+54 = 7
+16 LOAD  26
+17 STORE 28
+18 SUB   27
+19 JZ    25
+20 STORE 26
+21 MUL   28
+22 STORE 28
+23 LOAD  26
+24 JUMP  18
+25 HALT  00
+26 = 5
+27 = 2
+28 = 0
+32 LOAD  42
+33 STORE 44
+34 SUB   43
+35 JZ    41
+36 STORE 42
+37 MUL   44
+38 STORE 44
+39 LOAD  42
+40 JUMP  34
+41 HALT  00
+42 = 5
+43 = 2
+44 = 0
     <div id="footer">
         <div class="bottom_menu"><a href="http://avallac.academ.org">Home Page</a>  |  <a href="https://github.com/avallac/Sibsutis/tree/master/VM"">GitHub</a></div>
         <div class="bottom_addr"></div>
@@ -217,17 +255,19 @@
                         $('#m'+e).addClass('yellowTd');
                         $('#instructionCounter').append("CPU"+i+": "+e+"<br>");
                     });
-                    $('#acc').html("");
-                    VM['acc'].forEach(function(e, i) {
-                        $('#acc').append("CPU"+i+": "+e+"<br>");
+                    var m = ['instructionCounter', 'acc'];
+                    m.forEach(function(key) {
+                        $('#'+key).html("");
+                        VM[key].forEach(function (e, i) {
+                            $('#'+key).append("CPU" + i + ": " + e + "<br>");
+                        });
                     });
-                    $('#command').html("");
-                    VM['command'].forEach(function(e, i) {
-                        $('#command').append("CPU"+i+" <b>"+e+"</b><br>");
-                    });
-                    $('#flags').html("");
-                    VM['flags'].forEach(function(e, i) {
-                        $('#flags').append("CPU"+i+" <b>"+e+"</b><br>");
+                    var m = ['command', 'flags'];
+                    m.forEach(function(key) {
+                        $('#'+key).html("");
+                        VM[key].forEach(function (e, i) {
+                            $('#'+key).append("CPU" + i + ": <b>" + e + "</b><br>");
+                        });
                     });
                     printConsole(buff);
                 }
