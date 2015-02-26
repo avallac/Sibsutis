@@ -28,12 +28,12 @@ class Console
 
     public function cmd($cmd, $user)
     {
-        for($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             $this->buff[$i] = $this->buff[$i + 1];
         }
         if ($user) {
             $this->buff[5] = 'guest@sc> '.$cmd;
-        }else{
+        } else {
             $this->buff[5] = $cmd;
         }
 

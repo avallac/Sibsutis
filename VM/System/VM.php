@@ -4,7 +4,7 @@ namespace System;
 
 class VM
 {
-    CONST CPU = 1;
+    const CPU = 1;
     public $memory;
     public $console;
     public $cpu = array();
@@ -41,38 +41,11 @@ class VM
         return $this->tick;
     }
 
-    public function getInstructionCounter()
+    public function getCpuState($param)
     {
         $ret = array();
         foreach (range(0, self::CPU-1) as $number) {
-            $ret[]= $this->cpu[$number]->getInstructionCounter();
-        }
-        return $ret;
-    }
-
-    public function getAcc()
-    {
-        $ret = array();
-        foreach (range(0, self::CPU-1) as $number) {
-            $ret[]= $this->cpu[$number]->getAcc();
-        }
-        return $ret;
-    }
-
-    public function getCurrentCommand()
-    {
-        $ret = array();
-        foreach (range(0, self::CPU-1) as $number) {
-            $ret[]= $this->cpu[$number]->getCurrentCommand();
-        }
-        return $ret;
-    }
-
-    public function getFlags()
-    {
-        $ret = array();
-        foreach (range(0, self::CPU-1) as $number) {
-            $ret[]= $this->cpu[$number]->getFlags();
+            $ret[]= $this->cpu[$number]->$param();
         }
         return $ret;
     }
@@ -82,21 +55,21 @@ class VM
         var_dump($str);
         $pg = explode("\n", $str);
         $pattern = '/(\d+)\s+(\S+)\s+(\d+)/';
-        foreach($pg as $command) {
+        foreach ($pg as $command) {
             if (preg_match($pattern, $command, $matches)) {
-                if($matches[2] == '=') {
+                if ($matches[2] == '=') {
                     $this->memory->set($matches[1], $matches[3]);
-                }elseif($command = CPU::getCommandID($matches[2])){
+                } elseif ($command = CPU::getCommandID($matches[2])) {
                     $command = $command << 7;
                     $command += $matches[3];
                     $this->memory->set($matches[1], $command);
                     $this->console->cmd("Set: " . $matches[1] . " " . $command, 0);
-                }else{
-                    $this->console->cmd("Bad command: ".$command,0);
+                } else {
+                    $this->console->cmd("Bad command: " . $command, 0);
                     return;
                 }
-            }else{
-                $this->console->cmd("Bad command: ".$command,0);
+            } else {
+                $this->console->cmd("Bad command: " . $command, 0);
                 return;
             }
         }

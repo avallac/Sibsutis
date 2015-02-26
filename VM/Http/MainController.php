@@ -35,10 +35,10 @@ class MainController
         $export = array(
             'memory' => $VM->memory->export(),
             'console'=> $VM->console->get(),
-            'instructionCounter' => $VM->getInstructionCounter(),
-            'acc' => $VM->getAcc(),
-            'command' => $VM->getCurrentCommand(),
-            'flags' => $VM->getFlags()
+            'instructionCounter' => $VM->getCpuState('getInstructionCounter'),
+            'acc' => $VM->getCpuState('getAcc'),
+            'command' => $VM->getCpuState('getCurrentCommand'),
+            'flags' => $VM->getCpuState('getFlags')
         );
         return json_encode($export);
     }

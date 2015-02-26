@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Simple Computer</title>
-    <link href="/VM_Static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="http://avallac.academ.org/VM_Static/css/style.css" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://www.appelsiini.net/projects/jeditable/jquery.jeditable.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">
@@ -20,9 +20,9 @@
 <body>
 <div id="page">
     <div id="header">
-        <div id="logo"><img src="/VM_Static/images/logo.gif" alt=""></div>
+        <div id="logo"><img src="http://avallac.academ.org/VM_Static/images/logo.gif" alt=""></div>
         <div id="company_name">Simple Computer</div>
-        <img src="/VM_Static/images/header.jpg" alt="" width="720" height="273"></div>
+        <img src="http://avallac.academ.org/VM_Static/images/header.jpg" alt="" width="720" height="273"></div>
 
     <div id="menu">
         <table border="0" align="center" cellpadding="0" cellspacing="0">
@@ -39,61 +39,61 @@
             <td>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
                     </tr>
                     <tr>
                         <td class="right-block"><p><strong>Accumulator:</strong></p><div id="acc"></div></td>
                     </tr>
                     <tr>
-                        <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
                     </tr>
                     <tr>
-                        <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
                     </tr>
                 </table>
             </td><td>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
                     </tr>
                     <tr>
                         <td class="right-block"><p><strong>InstructionCounter:</strong></p><div id="instructionCounter"></div> </td>
                     </tr>
                     <tr>
-                        <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
                     </tr>
                     <tr>
-                        <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
                     </tr>
                 </table>
             </td></tr><tr><td>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
                     </tr>
                     <tr>
                         <td class="right-block"><p><strong>Operation:</strong></p> <div id="command"></div> </td>
                     </tr>
                     <tr>
-                        <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
                     </tr>
                     <tr>
-                        <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
                     </tr>
                 </table>
             </td><td>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td><img src="/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/right-block-top.gif" alt="" width="200" height="8"></td>
                     </tr>
                     <tr>
                         <td class="right-block"><p><strong>Flags:</strong></p> <div id="command"></div></td>
                     </tr>
                     <tr>
-                        <td><img src="/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/right-block-bottom.gif" alt="" width="200" height="8"></td>
                     </tr>
                     <tr>
-                        <td><img src="/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
+                        <td><img src="http://avallac.academ.org/VM_Static/images/spacer.gif" alt="" width="1" height="9"></td>
                     </tr>
                 </table>
             </td>
