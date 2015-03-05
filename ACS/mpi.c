@@ -1,17 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mpi.h>
+#include <pthread.h>
 
-#define DEBUG 1
+#define DEBUG 0
 
+int treads;
+int  nextProc, prevProc;
 char name[32];
 int kProd;
 int hA, wA, hB, wB;
 int sizeA, sizeB, partA, partB;
-int currentRank, clusterSize, virtualClusterSize;
+int currentRank, clusterSize, virtualClusterSize, realPartA;
 int * clusterPerformance;
+MPI_Status Status;
 
-void setA(int * A, int step)
+int  * A, * B, * C, * A_network, * tmpA;
+long data[1], CRC;
+int ids[10] = {0,1,2,3};
+
+pthread_t thrs[4];
+pthread_attr_t attrs;
+
+void setA(int step)
 {
     int j;
     int count = step * wA * partA + 1;
@@ -34,7 +45,7 @@ void setA(int * A, int step)
     #endif
 }
 
-void setB(int * B, int step, int prod, int toRank)
+void setB(int step, int prod, int toRank)
 {
     int i,j,k;
     int count = wA*hA + step*partB + 1, tmp1, tmp2, tmp3;
@@ -44,7 +55,7 @@ void setB(int * B, int step, int prod, int toRank)
     for (k = 0; k < prod; k++) {
         for (i = 0; i < partB; i++) {
             for (j = 0; j < hB; j++) {
-                if ((step*partB+i) < wB) {
+                if ((step*partB+i + k*partB) < wB) {
                     B[k*partB*hB+j+i*hB] = count + j*wB + i + k*partB;
                 } else {
                     B[k*partB*hB+j+i*hB] = 0;
@@ -60,24 +71,45 @@ void setB(int * B, int step, int prod, int toRank)
     #endif
 }
 
-
-void calculationOfTheMatrix(int * A, int * B, int *C, int k)
+void* calculationOfTheMatrixThread(void* me)
 {
     int i,j,l, tmp;
-    for (l = 0; l < partA; l++) {
+    int offset = *((int*)me);
+    for (l = offset; l < partA; l+=treads) {
         for (j = 0; j < partB*kProd; j++) {
             tmp = 0;
             for (i = 0; i < wA; i++) {
                 tmp += A[i+l*wA] * B[i+j*hB];
                 #if DEBUG > 1
-                    printf("[%i]Set [%ix%i] [%i x %i] + %i\n", currentRank, k*partA + l + j/kProd, currentRank*partB + j%kProd, A[i+l*wA], B[i+j*hB], A[i+l*wA] * B[i+j*hB]);
+                    printf("[%i][%i]Set [%ix%i] [%i x %i] + %i\n", currentRank, offset, realPartA*partA + l + j/kProd, currentRank*partB + j%kProd, A[i+l*wA], B[i+j*hB], A[i+l*wA] * B[i+j*hB]);
                 #endif
             }
-            C[k*partA+j*sizeA+l] = tmp;
-            //printf("k:%i partA:%i j:%i hB:%i l:%i\n", k, partA, j, hA, l);
-            //if(DEBUG >= 1) printf("[%i]Set [%ix%i] - %i {%i}\n", currentRank, k*partA + l + j/kProd, currentRank*partB + j%kProd, tmp, k*partA+j*sizeA+l);
+            #if DEBUG > 1
+                printf("[%i][%i]Set [%ix%i][%i] = %i\n", currentRank, offset, (realPartA*partA+j*sizeA+l)/partB, currentRank*partB + j%kProd, realPartA*partA+j*sizeA+l,  tmp);
+            #endif
+            C[realPartA*partA+j*sizeA+l] = tmp;
         }
     }
+}
+void calculationOfTheMatrix()
+{
+    int i;
+    for(i = 0; i<treads; i++) {
+        if (0!=pthread_create(&thrs[i], &attrs, calculationOfTheMatrixThread, &ids[i])) {
+            perror("Cannot create a thread");
+            abort();
+        }
+    }
+    MPI_Sendrecv(A, wA*partA, MPI_INT, nextProc, 0, A_network, wA*partA, MPI_INT, prevProc, 0, MPI_COMM_WORLD, &Status);
+    for(i = 0; i<treads; i++) {
+        if (0!=pthread_join(thrs[i], NULL)) {
+            perror("Cannot join a thread");
+            abort();
+        }
+    }
+    tmpA = A;
+    A = A_network;
+    A_network = tmpA;
 }
 
 int up(float v)
@@ -130,25 +162,35 @@ int main (int argc, char* argv[])
 {
     double t1, t2, startCalc, endCalc, startProg, endProg;
     float timeSum, timeBuff[1];
-    if (argc != 4) {
+    if (argc != 5) {
         printf("Set input.\n");
         return 0;
     }
-    MPI_Init (&argc, &argv);
+    int *provided;
+    MPI_Init_thread(&argc, &argv, MPI_THREAD_FUNNELED, provided);
+    if (0!=pthread_attr_init(&attrs)) {
+        perror("Cannot initialize attributes");
+        abort();
+    };
+    if (0!=pthread_attr_setdetachstate(&attrs, PTHREAD_CREATE_JOINABLE)) {
+        perror("Error in setting attributes");
+        abort();
+    }
     startProg = MPI_Wtime();
     hA = atoi(argv[1]);
     wA = atoi(argv[2]);
     hB = atoi(argv[2]);
     wB = atoi(argv[3]);
-    MPI_Status Status;
-    int  nextProc, prevProc, i, j, realPrevA;
+    treads= atoi(argv[4]);
+    int  i, j, realPrevA;
     long data[1], CRC;
-    int  * A, * B, * C;
+
     MPI_Comm_rank (MPI_COMM_WORLD, &currentRank);
     MPI_Comm_size (MPI_COMM_WORLD, &clusterSize);
 
     init();
     A = (int*) malloc (wA * partA * sizeof(int));
+    A_network = (int*) malloc (wA * partA * sizeof(int));
     B = (int*) malloc (kProd * hB * partB * sizeof(int));
     C = (int*) malloc (kProd * partA * sizeB * sizeof(int));
     #if DEBUG > 0
@@ -158,16 +200,16 @@ int main (int argc, char* argv[])
         printf("Start task %ix%i - %ix%i[clusterSize:%i partA:%i partB:%i virtualClusterSize:%i]\n", hA, wA, hB, wB, clusterSize, partA, partB, virtualClusterSize);
         int summSteps = kProd ;
         for(i = 1; i < clusterSize; i++){
-            setA(A, i);
+            setA(i);
             MPI_Send(A, wA*partA, MPI_INT, i, 0, MPI_COMM_WORLD);
             for (j = 0; j < clusterPerformance[i]; j++) {
-                setB(B, summSteps, 1, i);
+                setB(summSteps, 1, i);
                 MPI_Send(B, hB*partB, MPI_INT, i, 0, MPI_COMM_WORLD);
                 summSteps++;
             }
         }
-        setA(A, 0);
-        setB(B, 0, kProd, 0);
+        setA(0);
+        setB(0, kProd, 0);
     } else {
         MPI_Recv(A, wA*partA, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         if (kProd == 1) {
@@ -187,7 +229,6 @@ int main (int argc, char* argv[])
     }
     startCalc = MPI_Wtime();
     // Init calculat
-    calculationOfTheMatrix(A, B, C, currentRank);
     if ((currentRank + 1) == clusterSize) {
         nextProc = 0;
     } else {
@@ -198,21 +239,16 @@ int main (int argc, char* argv[])
     } else {
         prevProc = currentRank - 1;
     }
+    realPartA = currentRank;
+    calculationOfTheMatrix();
     realPrevA = prevProc;
-
     // Start main work
     for (j = 1; j < clusterSize; j++) {
-        t1 = MPI_Wtime();
-        MPI_Sendrecv_replace(A, wA*partA, MPI_INT, nextProc, 0, prevProc, 0, MPI_COMM_WORLD, &Status);
-        t2 = MPI_Wtime();
-        timeSum += t2 - t1;
-        calculationOfTheMatrix(A, B, C, realPrevA);
+        realPartA = realPrevA;
+        calculationOfTheMatrix();
         realPrevA --;
         if (realPrevA == -1) realPrevA += clusterSize;
     }
-    #if DEBUG > 0
-        printf("[%i][%s] network time: %f\n", currentRank, name, timeSum);
-    #endif
     endCalc = MPI_Wtime();
     // Get result
     data[0] = 0;
@@ -230,9 +266,8 @@ int main (int argc, char* argv[])
         }
         endProg = MPI_Wtime();
         printf(
-            "Result: %ld, average network latency: %.2f sec, elapsed time: %.4f, all time: %.4f\n",
+            "Result: %ld, elapsed time: %.4f, all time: %.4f\n",
             CRC,
-            timeSum/clusterSize,
             endCalc - startCalc,
             endProg - startProg
         );
