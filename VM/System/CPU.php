@@ -10,9 +10,14 @@ class CPU
     private $instructionCounter = 0;
     private $acc = 0;
     private $VM;
-    private $stop = 1;
     private $curCommand;
     private $cpuId;
+
+    private $stop = 1;
+    private $divideByZero = 0;
+    private $overflow = 0;
+    private $outOfMemory = 0;
+    private $incorrectCommand = 0;
 
     private static $commands = array(
         01 => 'CPUID',
@@ -75,22 +80,23 @@ class CPU
 
     private function decode($command)
     {
-        if (!($command & self::COMMAND_FLAG)) {
-            $command_id = $command & self::COMMAND_MASK;
-            $command_id = $command_id >> 7;
+        if ($command & self::COMMAND_FLAG) {
+            $commandId = ($command & self::COMMAND_MASK) >> 7;
             $param = $command & self::PARAM_MASK;
-            if (isset(self::$commands[$command_id])) {
-                $eCommand = self::$commands[$command_id];
+            if (isset(self::$commands[$commandId])) {
+                $eCommand = self::$commands[$commandId];
                 if ($eCommand) {
                     $this->$eCommand($param);
                     $this->curCommand = $eCommand . ":" . base_convert($param, 10, 16);
                 }
             } else {
-                $this->console->cmd("Bad command: " . $command, 0);
+                $this->VM->console->cmd("Bad command: " . $command, 0);
+                $this->incorrectCommand = 1;
                 $this->HALT(0);
             }
         } else {
-            $this->console->cmd("Bad command: " . $command, 0);
+            $this->VM->console->cmd("Command flag don't set: " . $command, 0);
+            $this->incorrectCommand = 1;
             $this->HALT(0);
         }
     }
@@ -101,6 +107,7 @@ class CPU
         if ($this->VM->memory->get($i, $tmp)) {
             return $tmp;
         } else {
+            $this->outOfMemory = 1;
             $this->HALT();
         }
     }
@@ -108,6 +115,7 @@ class CPU
     private function writeMemory($i, $val)
     {
         if (!$this->VM->memory->set($i, $val)) {
+            $this->outOfMemory = 1;
             $this->HALT();
         }
     }
@@ -159,6 +167,16 @@ class CPU
         $this->acc = $this->cpuId | (VM::CPU << 3);
     }
 
+    private function DIVIDE($param)
+    {
+        if ($this->readMemory($param)) {
+            $this->acc /= $this->readMemory($param);
+        } else {
+            $this->divideByZero = 1;
+            $this->HALT(0);
+        }
+    }
+
     private function MUL($param)
     {
         $this->acc *= $this->readMemory($param);
@@ -169,6 +187,13 @@ class CPU
         $this->instructionCounter = $param - 1;
     }
 
+    private function JNEG($param)
+    {
+        if ($this->acc < 0) {
+            $this->JUMP($param);
+        }
+    }
+
     private function HALT($param = '')
     {
         $this->stop = 1;
@@ -177,8 +202,20 @@ class CPU
     public function getFlags()
     {
         $ret = "";
+        if ($this->overflow) {
+            $ret .= " П";
+        }
+        if ($this->divideByZero) {
+            $ret .= " 0";
+        }
+        if ($this->outOfMemory) {
+            $ret .= " М";
+        }
         if ($this->stop) {
             $ret .= " T";
+        }
+        if ($this->incorrectCommand) {
+            $ret .= " Е";
         }
         return $ret;
     }
@@ -186,5 +223,10 @@ class CPU
     public static function getCommandID($command)
     {
         return array_search($command, self::$commands);
+    }
+
+    public static function getCommandName($commandId)
+    {
+        return self::$commands[$commandId];
     }
 }

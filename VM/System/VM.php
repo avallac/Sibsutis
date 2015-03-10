@@ -55,13 +55,15 @@ class VM
         $command = CPU::getCommandID($command);
         $ret = $command << 7;
         $ret += $param;
+        $ret += CPU::COMMAND_FLAG;
         return $ret;
     }
 
     public function program($str)
     {
+        var_dump($str);
         $pg = explode("\n", $str);
-        $pattern = '/(\d+)\s+(\S+)\s+(\d+)/';
+        $pattern = '/^(\d+)\s+(\S+)\s+(\d+)/';
         foreach ($pg as $command) {
             if (preg_match($pattern, $command, $matches)) {
                 if ($matches[2] == '=') {

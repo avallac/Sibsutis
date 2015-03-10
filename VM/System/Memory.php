@@ -45,7 +45,21 @@ class Memory
 
     public function export()
     {
-        return $this->memory;
+        $ret = array();
+        for ($i= 0; $i <= self::MAX; $i++) {
+            if ($this->memory[$i] & CPU::COMMAND_FLAG) {
+                $commandId = ($this->memory[$i] & CPU::COMMAND_MASK) >> 7;
+                $param = $this->memory[$i] & CPU::PARAM_MASK;
+                if ($commandName = CPU::getCommandName($commandId)) {
+                    $ret[] = "$commandName $param";
+                } else {
+                    $ret[] = "$commandId $param";
+                }
+            } else {
+                $ret[] = "+".$this->memory[$i];
+            }
+        }
+        return $ret;
     }
 
     private function isCorrect($num)

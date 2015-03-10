@@ -5,7 +5,7 @@
     <title>Simple Computer</title>
     <link href="http://avallac.academ.org/VM_Static/css/style.css" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="http://www.appelsiini.net/projects/jeditable/jquery.jeditable.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://avallac.academ.org/VM_Static/jquery_jeditable/jquery.jeditable.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">
 
         form { padding: 0px; margin: 0px; }
@@ -103,12 +103,12 @@
                     <table style="border-collapse: collapse; border: 1px solid black; width: 100%;" border="1" cellpadding="5">
                         <tr><td></td>
                     <?php
-                    foreach (range(0, 15) as $number) {
+                    foreach (range(0, 9) as $number) {
                          echo '<td class="memoryTd" bgcolor="#cococo">' . base_convert($number,10,16) . '</td>';
                     }
                     foreach (range(0, \System\Memory::MAX) as $number) {
-                        if ($number%16 == 0) {
-                            echo '</tr><tr><td class="memoryTd" bgcolor="#cococo" width="0">'.base_convert((int)($number/16), 10, 16).'</td>';
+                        if ($number%10 == 0) {
+                            echo '</tr><tr><td class="memoryTd" bgcolor="#cococo" width="0">'.(int)($number/10).'</td>';
                         }
                         echo '<td class="memoryTd edit" id="m'.$number.'">0</td>';
                     }
@@ -207,7 +207,7 @@
 
 <style type="text/css">
     .memoryCell input {
-        width: 25px;
+        width: 55px;
     }
     .memoryTd {
         width: 30px;
@@ -229,6 +229,8 @@
         var buff = new Array();
 
         $('.edit').editable('changeMemory', {
+            loadurl  : 'getMemory',
+            loadtype: 'POST',
             cssclass : 'memoryCell'
         });
 
@@ -242,8 +244,8 @@
                     var VM = JSON.parse($data);
                     VM['memory'].forEach(function(e, i){
                         var edit = $('#m'+i).children('.memoryCell').length;
-                        if ($('#m'+i).html() != e && !edit) {
-                            $('#m' + i).html(e);
+                        if ($('#m'+i).html() != '<nobr>'+e+'</nobr>' && !edit) {
+                            $('#m' + i).html('<nobr>'+e+'</nobr>');
                             $('#m' + i).addClass('redTd');
                         }
                     });

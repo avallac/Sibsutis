@@ -20,6 +20,14 @@ class MainController
         return $val;
     }
 
+    public function getMemory($VM, $params)
+    {
+        $cel = substr($params['id'], 1);
+        $val = 0;
+        $VM->memory->get($cel, $val);
+        return $val;
+    }
+
     public function reset($VM, $params)
     {
         $VM->init();
