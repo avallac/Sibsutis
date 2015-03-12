@@ -137,63 +137,105 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <textarea rows="20" style="width: 100%;" id="prog">
-00 CPUID 00  взять cpu
-01 SHR   03  сдвиг на 3
-02 SUB   20  вычитаем 1
-03 STORE 23  запоминаем в 23
-04 MUL   22  умножаем на шаг
-05 ADD   21  добавляем сдвиг
-06 STORE 24  сохраняем полученный адрес в 23
-07 ADD   25  добавляем код store
-08 STORE 11  запоминаем в 12
-09 LOAD  24  грузим адрес подпрограммы
-10 ADD   26  добавляем код load
-11 = 0       автоматом сгенерированная команда
-12 HALT  00
-20 = 1
-21 = 48      сдвиг
-22 = 32      шаг
-23 = 0       ID
-25 = 2688    STORE
-26 = 2560    LOAD</textarea><input id="make" type="button" style="width: 100%;" value="Запустить" onclick="return sendProgram()">
+                    <textarea rows="20" style="width: 100%;" id="prog">00 JUMP 120
+1 = 5 задание
+05 MUL 42 умножаем на шаг
+06 STORE 44 сохраняем полученный адрес в 34
+07 LOAD 44 Грузим сдвиг
+08 ADD 46 добавляем код store
+09 ADD 45 добавляем счетчик созданных команд
+10 STORE 14 запоминаем в 14
+11 LOAD 50 грузим команду
+12 JZ 22 выход из цикла, если команды кончились
+13 ADD 44 добавляем код load
+14 = 0 автоматом сгенерированная команда
+15 LOAD 11
+16 ADD 40   Сдвигаем адрес копируемой команды
+17 STORE 11
+18 LOAD 45
+19 ADD 40   Увеличиваем счетчик созданных программ
+20 STORE 45
+21 JUMP 7   Цикл командам
+22 LOAD 46
+23 ADD 45
+24 ADD 44
+25 STORE 32
+26 ADD 40
+27 STORE 30
+28 ADD 40
+29 LOAD 127
+30 = 0 Автоматическая команда
+31 LOAD 1
+32 = 0 Автоматическая команда
+33 SUB 40
+34 STORE 1
+35 JUMP 100
+36 JUMP 04  Цикл по ядрам
+39 JUMP 64
+40 = 1 просто 1
+41 = 50 сдвиг
+42 = 20 шаг
+43 = 0 CPUs
+44 = 0 полученный сдвиг
+45 = 0 счетчик созданных команд
+46 STORE 50
+47 = 10 просто 10
+48 = 5 задача
+49 JZ 50
+50 LOAD  61
+51 STORE 63
+52 SUB   62
+53 JZ    60
+54 JNEG  60
+55 STORE 61
+56 MUL   63
+57 STORE 63
+58 LOAD  61
+59 JUMP  52
+60 HALT 0
+64 LOAD 63
+65 MUL 83
+66 STORE 2
+67 HALT 0
+90 LOAD 1
+91 STORE 61
+92 LOAD 127
+93 STORE 62
+94 LOAD 39
+95 STORE 60
+96 JUMP 50
+100 LOAD 49
+101 ADD 44
+102 STORE 106
+103 CPUID 00
+104 _AND 126 умножаем на битную матрицу
+105 SUB 43
+106 JZ 0
+107 LOAD 43
+108 SUB 40
+109 JZ 90    Если ядра кончились выходим
+110 STORE 43 Уменьшаем счетчик ядер
+111 LOAD 11
+112 SUB 45   Обнуляем стартовый адрес копируемых команд
+113 STORE 11
+114 LOAD 45
+115 SUB 45   Обнуляем счетчик команд
+116 STORE 45
+117 JUMP 29
+120 CPUID 00 взять cpu
+121 SHR 03 сдвиг на 3
+122 STORE 127 запоминаем в CPUs
+123 SUB 40 вычитаем 1
+124 STORE 43 запоминаем в CPU ID
+125 JUMP 05
+126 = 7</textarea><input id="make" type="button" style="width: 100%;" value="Запустить" onclick="return sendProgram()">
                 </td>
             </tr>
         </table>
     </div>
 
 
-50 CPUID 00
-51 _AND  04
-52 JZ    16
-53 JUMP  32
-54 = 7
-16 LOAD  26
-17 STORE 28
-18 SUB   27
-19 JZ    25
-20 STORE 26
-21 MUL   28
-22 STORE 28
-23 LOAD  26
-24 JUMP  18
-25 HALT  00
-26 = 5
-27 = 2
-28 = 0
-32 LOAD  42
-33 STORE 44
-34 SUB   43
-35 JZ    41
-36 STORE 42
-37 MUL   44
-38 STORE 44
-39 LOAD  42
-40 JUMP  34
-41 HALT  00
-42 = 5
-43 = 2
-44 = 0
+
     <div id="footer">
         <div class="bottom_menu"><a href="http://avallac.academ.org">Home Page</a>  |  <a href="https://github.com/avallac/Sibsutis/tree/master/VM"">GitHub</a></div>
         <div class="bottom_addr"></div>

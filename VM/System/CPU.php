@@ -159,7 +159,7 @@ class CPU
 
     private function _AND($param)
     {
-        $this->acc = $this->acc & $param;
+        $this->acc = $this->acc & $this->readMemory($param);
     }
 
     private function CPUID($param = '')
@@ -197,6 +197,7 @@ class CPU
     private function HALT($param = '')
     {
         $this->stop = 1;
+        $this->instructionCounter--;
     }
 
     public function getFlags()

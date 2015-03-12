@@ -20,7 +20,7 @@ class Server
         while (1) {
             socket_listen($sock);
             if ($client = socket_accept($sock)) {
-                $input = socket_read($client, 2048);
+                $input = socket_read($client, 4096);
                 $pattern1 = '/^(GET|POST) (\/[^ ]+) HTTP/';
                 if (preg_match($pattern1, $input, $matches)) {
                     if ($matches[1] == 'POST') {
