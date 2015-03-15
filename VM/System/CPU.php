@@ -21,6 +21,8 @@ class CPU
 
     private static $commands = array(
         01 => 'CPUID',
+        10 => 'READ',
+        11 => 'WRITE',
         20 => 'LOAD',
         21 => 'STORE',
         30 => 'ADD',
@@ -47,6 +49,10 @@ class CPU
     {
         $this->instructionCounter = 0;
         $this->acc = 0;
+        $this->divideByZero = 0;
+        $this->overflow = 0;
+        $this->outOfMemory = 0;
+        $this->incorrectCommand = 0;
         $this->stop = 1;
     }
 
@@ -123,6 +129,19 @@ class CPU
     private function ADD($param)
     {
         $this->acc += $this->readMemory($param);
+        $this->checkOverflow();
+    }
+
+    private function checkOverflow()
+    {
+        if ($this->acc > pow(2, Memory::CAPACITY - 1)) {
+            $this->overflow = 1;
+            $this->acc = $this->acc % pow(2, Memory::CAPACITY - 1);
+        }
+        if ($this->acc < 0) {
+            $this->overflow = 1;
+            $this->acc = $this->acc + pow(2, Memory::CAPACITY - 1);
+        }
     }
 
     private function LOAD($param)
@@ -138,6 +157,7 @@ class CPU
     private function SUB($param)
     {
         $this->acc -= $this->readMemory($param);
+        $this->checkOverflow();
     }
 
     private function JZ($param)
@@ -150,11 +170,13 @@ class CPU
     private function CHL($param)
     {
         $this->acc = $this->acc << $param;
+        $this->checkOverflow();
     }
 
     private function SHR($param)
     {
         $this->acc = $this->acc >> $param;
+        $this->checkOverflow();
     }
 
     private function _AND($param)
@@ -180,6 +202,7 @@ class CPU
     private function MUL($param)
     {
         $this->acc *= $this->readMemory($param);
+        $this->checkOverflow();
     }
 
     private function JUMP($param)
@@ -198,6 +221,33 @@ class CPU
     {
         $this->stop = 1;
         $this->instructionCounter--;
+    }
+
+    private function READ($param)
+    {
+        if($this->cpuId == 0) {
+            if(!$this->VM->isConsoleLock()){
+                $this->VM->console->cmd('Input:');
+            }
+            $val = 0;
+            if ($this->VM->console->getInput($val)) {
+                $this->acc = (int)$val;
+                $this->checkOverflow();
+                $this->STORE($param);
+                $this->VM->unsetConsoleLock();
+            } else {
+                $this->VM->setConsoleLock();
+                $this->instructionCounter--;
+            }
+
+        }elseif ($this->VM->isConsoleLock()) {
+            $this->instructionCounter--;
+        }
+    }
+
+    private function WRITE($param)
+    {
+        $this->VM->console->cmd('Result:' . $this->readMemory($param));
     }
 
     public function getFlags()

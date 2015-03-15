@@ -137,8 +137,10 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <textarea rows="20" style="width: 100%;" id="prog">00 JUMP 120
-1 = 5 задание
+
+<textarea rows="20" style="width: 100%;" id="prog">00 READ 02
+01 JUMP 120
+02 = 5 задание
 05 MUL 42 умножаем на шаг
 06 STORE 44 сохраняем полученный адрес в 34
 07 LOAD 44 Грузим сдвиг
@@ -165,10 +167,10 @@
 28 ADD 40
 29 LOAD 127
 30 = 0 Автоматическая команда
-31 LOAD 1
+31 LOAD 02
 32 = 0 Автоматическая команда
 33 SUB 40
-34 STORE 1
+34 STORE 02
 35 JUMP 100
 36 JUMP 04  Цикл по ядрам
 39 JUMP 64
@@ -180,7 +182,6 @@
 45 = 0 счетчик созданных команд
 46 STORE 50
 47 = 10 просто 10
-48 = 5 задача
 49 JZ 50
 50 LOAD  61
 51 STORE 63
@@ -196,8 +197,9 @@
 64 LOAD 63
 65 MUL 83
 66 STORE 2
-67 HALT 0
-90 LOAD 1
+67 WRITE 2
+68 HALT 0
+90 LOAD 02
 91 STORE 61
 92 LOAD 127
 93 STORE 62

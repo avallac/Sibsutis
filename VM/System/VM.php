@@ -9,6 +9,7 @@ class VM
     public $console;
     public $cpu = array();
     public $tick = 0;
+    private $consoleLock = 0;
 
     public function __construct()
     {
@@ -21,6 +22,7 @@ class VM
 
     public function init()
     {
+        $this->consoleLock = 0;
         $this->memory->reInit();
         $this->console->reInit();
         foreach (range(0, self::CPU-1) as $number) {
@@ -48,6 +50,21 @@ class VM
             $ret[]= $this->cpu[$number]->$param();
         }
         return $ret;
+    }
+
+    public function isConsoleLock()
+    {
+        return $this->consoleLock;
+    }
+
+    public function setConsoleLock()
+    {
+        $this->consoleLock = 1;
+    }
+
+    public function unsetConsoleLock()
+    {
+        $this->consoleLock = 0;
     }
 
     public static function encodeCommand($command, $param)
