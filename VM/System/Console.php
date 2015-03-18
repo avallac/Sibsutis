@@ -44,6 +44,7 @@ class Console
     {
         if ($this->userInput != '') {
             $val = $this->userInput;
+            $this->userInput = '';
             return 1;
         }
         return 0;
