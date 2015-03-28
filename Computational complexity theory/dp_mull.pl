@@ -6,13 +6,10 @@ sub printM
     if ($p1 == $p2) {
         return "M".$p1
     }
-    if ($p1 +1 == $p2) {
-        return "(M".$p1."*M".$p2.")";
-    }
-    $s1 = $return[$p1][$p2]->[0];
-    $e1 = $return[$p1][$p2]->[1];
-    $s2 = $return[$p1][$p2]->[2];
-    $e2 = $return[$p1][$p2]->[3];
+    my $s1 = $return[$p1][$p2]->[0];
+    my $e1 = $return[$p1][$p2]->[1];
+    my $s2 = $return[$p1][$p2]->[2];
+    my $e2 = $return[$p1][$p2]->[3];
     return "(".printM($s1,$e1)."*".printM($s2,$e2).")";
 }
 
