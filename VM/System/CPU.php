@@ -134,13 +134,13 @@ class CPU
 
     private function checkOverflow()
     {
-        if ($this->acc > pow(2, Memory::CAPACITY - 1)) {
+        if ($this->acc > pow(2, Memory::CAPACITY)) {
             $this->overflow = 1;
-            $this->acc = $this->acc % pow(2, Memory::CAPACITY - 1);
+            $this->acc = $this->acc % pow(2, Memory::CAPACITY);
         }
-        if ($this->acc < 0) {
+        if (($this->acc < - pow(2, Memory::CAPACITY))) {
             $this->overflow = 1;
-            $this->acc = $this->acc + pow(2, Memory::CAPACITY - 1);
+            $this->acc = $this->acc + pow(2, Memory::CAPACITY);
         }
     }
 
