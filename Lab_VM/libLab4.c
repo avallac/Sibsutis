@@ -1,4 +1,3 @@
-#include "libLab3.h"
 #include "libLab4.h"
 
 /*
@@ -53,3 +52,70 @@ int bc_printbigchar (int [2], int x, int y, enum color, enum color) -
 то выводится символ "пробел", иначе - символ, закрашивающий знакоместо
 (ACS_CKBOARD);
 */
+int bc_printbigchar (int big[2], int y, int x, enum colors color1, enum colors color2) {
+    int i, j, k;
+    int test;
+    mt_setfgcolor (color1);
+    mt_setbgcolor (color2);
+    for (k = 0; k < 2; k++) {
+        test = big[k];
+        for (i=0; i < 4; i++) {
+            for (j=0; j < 8; j++) {
+                mt_gotoXY(k*4+i+x,j+y);
+                if (test & 2147483648) {
+                    bc_printA ("█");
+                } else {
+                    bc_printA (" ");
+                }
+                test = test << 1;
+            }
+        }
+    }
+    return 0;
+}
+
+/*
+int bc_setbigcharpos (int * big, int x, int y, int value) - устанавли-
+вает значение знакоместа "большого символа" в строке x и столбце y в значение value;
+*/
+int bc_setbigcharpos (int * big, int x, int y, int value) {
+    big[y/4] |= (!!value << (31 - ( (y%4) * 8 + x)));
+}
+
+/*
+int bc_getbigcharpos(int * big, int x, int y, int *value) - возвращает
+значение позиции в "большом символе" в строке x и столбце y;
+*/
+int bc_getbigcharpos (int * big, int x, int y, int *value) {
+     *value = (big[y/4] >> (31 - ((y%4) * 8 + x))) & 1;
+}
+
+/*
+int bc_bigcharwrite (int fd, int * big, int count) - записывает заданное
+число "больших символов" в файл. Формат записи определяется пользователем;
+*/
+int bc_bigcharwrite (int fd, int * big, int count){
+	int i, j;
+	for(j=0; j < count; j++) {
+	    for(i=0; i < 2; i++) {
+    		write(fd, &big[i], sizeof(int));
+        }
+    }
+	return 0;
+}
+
+/*
+int bc_bigcharread (int fd, int * big, int need_count, int * count)
+считывает из файла заданное количество "больших символов". Третий параметр ука-
+зывает адрес переменной, в которую помещается количество считанных символов или
+0, в случае ошибки.
+*/
+int bc_bigcharread (int fd, int * big, int need_count, int *count) {
+    int i, j;
+    *count = 0;
+    for(i = 0; i < 2; i++) {
+        read(fd, &big[i], sizeof(int));
+    }
+    *count++;
+    return 0;
+}
