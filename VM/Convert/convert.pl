@@ -2,6 +2,8 @@
 use strict;
 
 my $currCommand = 0;
+my $goAnchors;
+my $DEBUG = 0;
 
 sub reversePolishNotation {
     my ($str) = @_;
@@ -16,22 +18,37 @@ sub reversePolishNotation {
     );
     my @stack = ();
     $str =~ s/ //g;
+    my $startBlock = 1;
     foreach my $e (split(//, $str)){
         if($e eq ')') {
+            if(!$startBlock) {
+                $out.='}'; $startBlock = 1;
+            }
             while($stack[int(@stack)-1] ne '(') {
                 $out .= pop(@stack);
             }
             pop(@stack);
         } elsif($e eq '(') {
+            if(!$startBlock) {
+                $out.='}'; $startBlock = 1;
+            }
             push(@stack, $e);
         } elsif($prior{$e}) {
+            if(!$startBlock) {
+                $out.='}'; $startBlock = 1;
+            }
             while($prior{$stack[int(@stack)-1]} >= $prior{$e}) {
                 $out .= pop(@stack);
             }
             push(@stack, $e);
         } else {
+            $out.='{' if $startBlock;            
             $out.=$e;
+            $startBlock = 0;
         }
+    }
+    if(!$startBlock) {
+        $out.='}'; $startBlock = 1;
     }
     while(int(@stack)) {
         $out .= pop(@stack);
@@ -44,11 +61,16 @@ sub polishToAsm {
     my $next = 1;
     my $oldNext = -1;
     my %use = ();
-    while($str =~ s/(\S\S[*+-\/\<\>])/$next/) {
+    $str =~s/{(\d+)}/{STATIC_$1}/g;
+    print "$str\n" if $DEBUG;
+    while($str =~ s/({\S+?}{\S+?}[*+-\/\<\>])/{$next}/) {
+        print "$str\n" if $DEBUG;
         my $e = $1;
-        if(my ($f, $s, $op) = $e=~/(\S)(\S)([*+-\/\<\>])/){
+        if(my ($f, $s, $op) = $e=~/{(\S+?)}{(\S+?)}([*+-\/\<\>])/){
+            print "$f!$s!$op\n" if $DEBUG;
             if($oldNext != $f) {
-                if (($oldNext == $s) && ($op eq '*') || ($op eq '+')) {
+                if (($oldNext == $s) && (($op eq '*') || ($op eq '+'))) {
+                    print "$oldNext == $s\n";
                     my $tmp = $s;
                     $s = $f;
                     $f = $tmp;
@@ -56,6 +78,8 @@ sub polishToAsm {
                     addCommand("STORE ".mapValue($oldNext)) if $oldNext!=-1;
                     addCommand("LOAD ".mapValue($f));
                 }
+            }else {
+                print "$oldNext == $f\n" if $DEBUG;
             }
             $use{$f} = 0;
             $use{$s} = 0;
@@ -101,7 +125,7 @@ my $usedValues = 0;
 my %prev = ();
 sub mapValue {
     my ($value)=@_;
-    #return $value;
+    print "Get $value - $values{$value}\n" if $DEBUG;
     return $values{$value} if $values{$value};
     $values{$value} = 127 - $usedValues;
     if($value=~/STATIC_(\d+)/) {
@@ -115,20 +139,45 @@ sub mapValue {
 
 #polishToAsm(reversePolishNotation('a + ( b - c ) * d + f'));
 
-open(IN, 'input.txt');
-while(my $str = <IN>) {
-    my ($com, $param) = $str =~/^\d+\s(\S+)\s(.+?)\n/;
-    next if($com eq 'REM');
+sub parseCommand {
+    my($id, $com, $param) = @_;
+    $goAnchors->{$id} = $currCommand;
     if($com eq 'INPUT') {
         addCommand('READ '.mapValue($param));
     } elsif($com eq 'PRINT') {
         addCommand('WRITE '.mapValue($param));
+    } elsif($com eq 'GOTO') {
+        addCommand('JUMP '.$goAnchors->{$param});
+    } elsif($com eq 'END') {
+        addCommand('HALT 0');
     } elsif($com eq 'LET') {
         my ($to, $exp) = $param =~/^(\S+)\s+=\s+(.+)/;
         polishToAsm(reversePolishNotation($exp));
         addCommand('STORE '.mapValue($to));
     } else {
-        #print $com."\n";
+        die $com;
+    }
+}
+sub parseIf {
+    my($id, $if, $com, $param) = @_;
+    polishToAsm(reversePolishNotation($if));
+    addCommand("JZ ".($currCommand+2));
+    parseCommand($id, $com, $param);
+    
+}
+die 'Bad input file' unless -e $ARGV[0];
+my ($e,$c,$p,$id);
+open(IN, $ARGV[0]);
+while(my $str = <IN>) {
+    my ($com, $param);
+    print "Parse command: $str" if $DEBUG;
+    if($str =~/^(\d+)\s+END/) {
+        parseCommand($1,'END',0)
+    } elsif(($id, $e, $c, $p) =  $str =~/^(\d+)\s+IF\s+(.+)\s+(\S+)\s(\d+)/) {
+        parseIf($id, $e,$c,$p);
+    } else {
+        ($id, $com, $param) = $str =~/^(\d+)\s(\S+)\s(.+?)\n/;
+        parseCommand($id,$com,$param) if($com ne 'REM');;
     }
 }
 close(IN);

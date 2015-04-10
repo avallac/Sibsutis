@@ -2,8 +2,10 @@
 20 INPUT A
 30 INPUT B
 30 INPUT C
-40 REM LET C = A + ( B - C ) + D * F > R
-40 LET D = A + ( B < C )
-50 REM IF C < 0 GOTO 20
-60 PRINT D
+30 INPUT D
+30 INPUT F
+30 INPUT R
+40 LET C = A + ( B - C ) + D * (F > R)
+50 IF (C + 10) < 0 GOTO 20
+60 PRINT C
 70 END

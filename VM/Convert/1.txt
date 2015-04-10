@@ -1,0 +1,8 @@
+10 REM Это комментарий
+20 INPUT A
+30 INPUT B
+40 LET C = A - B
+50 IF (C + 5) > 20 GOTO 20
+60 IF (C + 5) < 10 GOTO 20
+70 PRINT C
+80 END
