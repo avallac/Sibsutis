@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <sys/ioctl.h>
+#include <fcntl.h>
+#include <termios.h>
 
 enum colors {
         MT_BLACK,
@@ -19,3 +21,5 @@ int mt_setfgcolor (enum colors);
 int mt_setbgcolor (enum colors);
 int mt_gotoAndPrint(int, int, char *);
 int bc_box(int x1, int y1, int x2, int y2);
+int rk_cursorVisible(int flag);
+void setTermMode (int mode);

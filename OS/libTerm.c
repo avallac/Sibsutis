@@ -79,3 +79,28 @@ int bc_box(int x1, int y1, int x2, int y2) {
     mt_gotoAndPrint(x1+x2, y1+y2, "┘");
     return 0;
 }
+
+// включает/выключает курсор
+int rk_cursorVisible(int flag) {
+    if ((flag < 0) || (flag > 1)) return 1;
+    if (flag)
+        printf("\033[?12;25h");
+    else
+        printf("\033[?25l");
+}
+
+void setTermMode (int mode) {
+    static struct termios savetty;
+    static struct termios tty;
+    if (mode == 1) {
+        tcgetattr (0, &tty);
+        savetty = tty;
+        tty.c_lflag &= ~(ICANON|ECHO|ISIG);
+        tty.c_cc[VMIN] = 1;
+        tcsetattr (0, TCSAFLUSH, &tty);
+        rk_cursorVisible(0);
+    } else {
+        tcsetattr (0, TCSAFLUSH, &savetty);
+        rk_cursorVisible(1);
+    }
+}
