@@ -1,3 +1,5 @@
+#ifndef libTerm_h
+#define libTerm_h
 #include <stdio.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
@@ -23,3 +25,4 @@ int mt_gotoAndPrint(int, int, char *);
 int bc_box(int x1, int y1, int x2, int y2);
 int rk_cursorVisible(int flag);
 void setTermMode (int mode);
+#endif

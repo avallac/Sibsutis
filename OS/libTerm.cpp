@@ -87,6 +87,7 @@ int rk_cursorVisible(int flag) {
         printf("\033[?12;25h");
     else
         printf("\033[?25l");
+    return 0;
 }
 
 void setTermMode (int mode) {
