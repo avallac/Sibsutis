@@ -27,4 +27,5 @@ class Core
         int up(int id);
         int getCurrent();
         void stopProc (int i);
+        void drawSemaphore();
 };

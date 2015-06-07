@@ -79,6 +79,7 @@ int Core::down(int id) {
         return 0;
     } else {
         this->semaphore[id]--;
+        this->drawSemaphore();
         return 1;
     }
 }
@@ -91,15 +92,28 @@ int Core::up(int id) {
             this->procStatus[i] = 0;
             this->blockedProc[i] = 0;
             pthread_mutex_unlock(this->procStatusLock);
+            this->drawSemaphore();
             return 1;
         }
     }
     this->semaphore[id]++;
+    this->drawSemaphore();
     return 1;
 }
 
 int Core::getCurrent() {
     return this->currentProc;
+}
+
+void Core::drawSemaphore() {
+    int i;
+    pthread_mutex_lock(this->screen);
+    for (i = 1; i < 3; i++) {
+        mt_gotoXY(this->x+i,this->y+45);
+        printf("семафор %d: %d   ", i, this->semaphore[i]);
+    }
+    printf("\n");
+    pthread_mutex_unlock(this->screen);
 }
 
 void Core::stopProc (int i) {
