@@ -21,6 +21,7 @@ Clock * objClock;
 Core * core;
 Obj * firefly;
 Buffer * buffer;
+int interval;
 
 class AppW1 : public App
 {
@@ -113,17 +114,24 @@ void *key_handler(void *arg) {
 
 void enableAlarm() {
     struct itimerval timer;
-    timer.it_interval.tv_sec = 0;
-    timer.it_interval.tv_usec = 500000;
-    timer.it_value.tv_sec = 0;
-    timer.it_value.tv_usec = 500000;
+    timer.it_interval.tv_sec = interval/1000000;
+    timer.it_interval.tv_usec = interval % 1000000;
+    timer.it_value.tv_sec = interval/1000000;
+    timer.it_value.tv_usec = interval % 1000000;
     signal(SIGALRM, timer_handler);
     setitimer (ITIMER_REAL, &timer, 0);
 }
 
 
-int main(){
+int main(int argc, char *argv[]){
     int i;
+    if (argc < 2) {
+        printf("usage: main <HZ>\n");
+        return 0;
+    } else {
+        interval = 1000000 / atoi(argv[1]);
+    }
+
     srand (time(NULL));
     setTermMode(1);
     mt_clrscr();

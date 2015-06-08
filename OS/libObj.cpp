@@ -17,6 +17,7 @@ void Obj::draw() {
 
 void Obj::move() {
     this->draw();
+    pthread_mutex_lock(this->screen);
     mt_gotoXY(x + posX, y + posY);
     printf(" ");
     posX += moveX;
@@ -31,4 +32,5 @@ void Obj::move() {
     }
     mt_gotoXY(x + posX, y + posY);
     printf("🐞\n");
+    pthread_mutex_unlock(this->screen);
 }
