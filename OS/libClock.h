@@ -2,11 +2,10 @@
 #include "libTerm.h"
 #include <sys/time.h>
 
-class Clock
+class Clock: public Window
 {
     private:
         double startTime;
-        int x, y, h, w;
         pthread_mutex_t * screen;
         int timerCount;
     public:

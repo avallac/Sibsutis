@@ -105,3 +105,10 @@ void setTermMode (int mode) {
         rk_cursorVisible(1);
     }
 }
+
+void Window::setPosition(int a,int b, int c, int d) {
+    x = a;
+    y = b;
+    h = c;
+    w = d;
+}

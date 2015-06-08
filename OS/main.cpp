@@ -2,13 +2,16 @@
 #include "libClock.h"
 #include "libCore.h"
 #include "libBuffer.h"
+#include "libObj.h"
+#include "libApps.h"
 #include <sys/time.h>
 #include <signal.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <stdlib.h>
 
 
-#define N 3
+#define N 5
 pthread_mutex_t screen;
 pthread_t tid[2];
 
@@ -16,18 +19,73 @@ int exitFlag;
 
 Clock * objClock;
 Core * core;
+Obj * firefly;
 Buffer * buffer;
 
-#define EMPTY 1
-#define FULL 2
+class AppW1 : public App
+{
+    private:
+        int start, count;
+    public:
+        AppW1(pthread_mutex_t * p1) : App(p1) {
+            static int count = 0;
+            start = count * 100;
+            count++;
+        }
+
+        virtual void run() {
+            int i;
+            if (this->blocked) goto unlock_r1;
+            //tmp = rand() % 100+1;
+            count ++;
+            tmp = start + count;
+            this->add(tmp);
+            this->draw();
+            for (i=0; i <= 10; i++) {
+                if (i*i != tmp) {
+                    if (core->down(EMPTY)) {
+                        unlock_r1: this->blocked = 0;
+                        core->up(FULL);
+                        buffer->add(tmp);
+                        return;
+                    } else {
+                        this->blocked = 1;
+                        return;
+                    }
+                }
+            }
+        }
+
+        virtual char * getName() {
+            return "Пишет";
+        }
+};
+class AppR1 : public App
+{
+    public:
+        AppR1(pthread_mutex_t * p1) : App(p1) {}
+        virtual void run() {
+            if (this->blocked) goto unlock_w1;
+            if (core->down(FULL)) {
+                unlock_w1: this->blocked = 0;
+                core->up(EMPTY);
+                this->add(buffer->get());
+                this->draw();
+            } else {
+                this->blocked = 1;
+            }
+        }
+
+        virtual char * getName() {
+            return "Читает";
+        }
+};
+
 
 void timer_handler (int signum) {
-    int tmp, check;
-    core->runingProc --;
-    if (core->runingProc <= 0) {
-        core->chooseTask();
-    }
+    core->tick();
     objClock->tick();
+    firefly->move();
 }
 
 void *key_handler(void *arg) {
@@ -35,9 +93,7 @@ void *key_handler(void *arg) {
     while(!exitFlag) {
         read (0, &ch, 1);
         if (ch == 'q') exitFlag = 1;
-        if (ch == '0') core->stopProc(0);
-        if (ch == '1') core->stopProc(1);
-        if (ch == '2') core->stopProc(2);
+        if (ch == 's') core->stopProc(core->editProc);
         if (ch == '=') core->procQuantum[core->editProc]++;
         if (ch == '-') if(core->procQuantum[core->editProc]) core->procQuantum[core->editProc]--;
         if (ch == '\033') {
@@ -65,122 +121,27 @@ void enableAlarm() {
     setitimer (ITIMER_REAL, &timer, 0);
 }
 
-struct ring {
-	int val;
-	struct ring *next;
-};
-
-class App
-{
-    protected:
-        ring * head;
-        pthread_mutex_t * screen;
-        int blocked;
-        int numProc;
-        char * nameProc;
-    public:
-        App(pthread_mutex_t * p1): screen(p1) {
-            static int procCounter = 0;
-            int i;
-            ring * tmp, *old;
-            for(i = 0; i < 9; i++) {
-                tmp = new ring;
-                tmp->val = 0;
-                if (i == 0) {
-                    head = tmp;
-                } else {
-                    old->next = tmp;
-                }
-                old = tmp;
-            }
-            old -> next = head;
-            this->numProc = procCounter;
-            procCounter++;
-        }
-
-        void draw() {
-            pthread_mutex_lock(this->screen);
-            int i;
-            ring * tmp;
-            bc_box(6 + N, 1 + this->numProc * 13, 10, 12);
-            tmp = head;
-            for(i = 0; i < 9; i++) {
-                mt_gotoXY(7 + N + i,2 + this->numProc * 13);
-                printf("%d        ", tmp->val);
-                tmp = tmp->next;
-            }
-            mt_gotoXY(6 + N ,2 + this->numProc * 13);
-            printf(" Вывод: %d ", this->numProc);
-            mt_gotoXY(16 + N,2 + this->numProc * 13);
-            printf(" %s ", this->getName());
-            printf("\n");
-            pthread_mutex_unlock(this->screen);
-        }
-
-        void add(int val) {
-            head -> val = val;
-            head = head -> next;
-        }
-
-        virtual void run() {};
-        virtual char * getName() { return "default"; };
-
-};
-
-class AppR1 : public App
-{
-    public:
-        AppR1(pthread_mutex_t * p1) : App(p1) {}
-        virtual void run() {
-            if (this->blocked) goto unlock;
-            if (core->down(FULL)) {
-                unlock: this->blocked = 0;
-                core->up(EMPTY);
-                this->add(1);
-                this->draw();
-            } else {
-                this->blocked = 1;
-            }
-        }
-        virtual char * getName() {
-            return "Читает";
-        }
-};
-class AppW1 : public App
-{
-    private:
-        int count;
-    public:
-        AppW1(pthread_mutex_t * p1) : App(p1), count(0) {}
-        virtual void run() {
-            if (this->blocked) goto unlock;
-            this->count++;
-            if (core->down(EMPTY)) {
-                unlock: this->blocked = 0;
-                core->up(FULL);
-                this->add(this->count);
-                this->draw();
-            } else {
-                this->blocked = 1;
-            }
-        }
-        virtual char * getName() {
-            return "Пишет";
-        }
-};
-
 
 int main(){
     int i;
+    srand (time(NULL));
     setTermMode(1);
     mt_clrscr();
     pthread_mutex_init(&screen, NULL);
     pthread_create(&(tid[0]), NULL, &key_handler, NULL);
     objClock = new Clock(&screen);
-    core = new Core(&screen);
+    objClock->setPosition(1, 1, 2, 77);
+    objClock->draw();
+    core = new Core(&screen, N);
+    core->setPosition(4, 1, N + 1, 77);
+    core->draw();
     buffer = new Buffer(&screen);
+    buffer->setPosition(6 + N, 1, 6, 12);
     buffer->draw();
-    core->semaphore[FULL] = 10;
+    firefly = new Obj(&screen);
+    firefly->setPosition(13 + N, 1, 20, 77);
+    firefly->draw();
+    core->semaphore[EMPTY] = 5;
     enableAlarm();
     App * app[N];
     for(i = 0; i < N; i ++) {
@@ -189,6 +150,8 @@ int main(){
         } else {
             app[i] = new AppW1(&screen);
         }
+        app[i]->setPosition(6 + N, 1, 6, 12);
+        app[i]->draw();
     }
     while(!exitFlag){
         for(i = 0; i < N; i ++ ) {

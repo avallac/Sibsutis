@@ -1,10 +1,6 @@
 #include "libClock.h"
 
 Clock::Clock (pthread_mutex_t * p1): screen(p1) {
-    x = 1;
-    y = 1;
-    h = 2;
-    w = 51;
     struct timeval  tv;
     gettimeofday(&tv, NULL);
     this->startTime = (tv.tv_sec) * 1000 + (tv.tv_usec) / 1000 ;

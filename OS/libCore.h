@@ -1,12 +1,12 @@
 #include <pthread.h>
 #include "libTerm.h"
 
-class Core
+class Core: public Window
 {
     private:
         pthread_mutex_t * procStatusLock;
         pthread_mutex_t * screen;
-        int x, y, h, w;
+        int allProc;
         // 0 - wait
         // 1 - work
         // 2 - stop
@@ -19,7 +19,7 @@ class Core
         int editProc;
         int runingProc;
         int procQuantum[32];
-        Core(pthread_mutex_t *);
+        Core(pthread_mutex_t *, int);
         void printProcStatus(int);
         void draw();
         void chooseTask();
@@ -28,4 +28,6 @@ class Core
         int getCurrent();
         void stopProc (int i);
         void drawSemaphore();
+        void drowCounter();
+        void tick();
 };

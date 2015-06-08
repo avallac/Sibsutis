@@ -1,13 +1,10 @@
 #include "libCore.h"
 
-Core::Core (pthread_mutex_t * p1): screen(p1) {
-    x = 4;
-    y = 1;
-    h = 3+1;
-    w = 80;
+Core::Core (pthread_mutex_t * p1, int num): screen(p1), allProc(num) {
     runingProc = 0;
     this->procStatusLock = new pthread_mutex_t;
     pthread_mutex_init(this->procStatusLock, NULL);
+    this->currentProc = -1;
 }
 
 void Core::printProcStatus(int i) {
@@ -40,12 +37,14 @@ void Core::draw() {
     int i;
     pthread_mutex_lock(this->screen);
     bc_box(this->x, this->y, this->h, this->w);
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < this->allProc; i++) {
         mt_gotoXY(this->x+i+1,this->y+1);
         printProcStatus(i);
     }
     printf("\n");
     pthread_mutex_unlock(this->screen);
+    this->drawSemaphore();
+    this->drowCounter();
 }
 
 void Core::chooseTask() {
@@ -53,8 +52,8 @@ void Core::chooseTask() {
     pthread_mutex_lock(this->procStatusLock);
     if (this->currentProc == -1) this->currentProc = 0;
     if (this->procStatus[this->currentProc] == 1) this->procStatus[this->currentProc] = 0;
-    while(check <= 3) {
-        int checkProc = (this->currentProc + check) % 3;
+    while(check <= this->allProc) {
+        int checkProc = (this->currentProc + check) % this->allProc;
         if (this->procStatus[checkProc] == 0 && this->procQuantum[checkProc]) {
             this->procStatus[checkProc] = 1;
             this->currentProc = checkProc;
@@ -116,6 +115,22 @@ void Core::drawSemaphore() {
     }
     printf("\n");
     pthread_mutex_unlock(this->screen);
+}
+
+void Core::drowCounter() {
+    int i;
+    pthread_mutex_lock(this->screen);
+    mt_gotoXY(this->x+3,this->y+45);
+    printf("Тактов до смены: %d  \n", this->runingProc);
+    pthread_mutex_unlock(this->screen);
+}
+
+void Core::tick() {
+    this->runingProc --;
+    if (this->runingProc <= 0) {
+        this->chooseTask();
+    }
+    this->drowCounter();
 }
 
 void Core::stopProc (int i) {
