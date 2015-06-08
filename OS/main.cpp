@@ -10,7 +10,6 @@
 
 #define N 3
 pthread_mutex_t screen;
-pthread_mutex_t procStatusLock;
 pthread_t tid[2];
 
 int exitFlag;
@@ -73,11 +72,15 @@ struct ring {
 
 class App
 {
-    private:
+    protected:
         ring * head;
         pthread_mutex_t * screen;
+        int blocked;
+        int numProc;
+        char * nameProc;
     public:
         App(pthread_mutex_t * p1): screen(p1) {
+            static int procCounter = 0;
             int i;
             ring * tmp, *old;
             for(i = 0; i < 9; i++) {
@@ -91,19 +94,25 @@ class App
                 old = tmp;
             }
             old -> next = head;
+            this->numProc = procCounter;
+            procCounter++;
         }
+
         void draw() {
             pthread_mutex_lock(this->screen);
             int i;
             ring * tmp;
-            bc_box(15, 1, 10, 20);
-
+            bc_box(6 + N, 1 + this->numProc * 13, 10, 12);
             tmp = head;
             for(i = 0; i < 9; i++) {
-                mt_gotoXY(16+i,2);
+                mt_gotoXY(7 + N + i,2 + this->numProc * 13);
                 printf("%d        ", tmp->val);
                 tmp = tmp->next;
             }
+            mt_gotoXY(6 + N ,2 + this->numProc * 13);
+            printf(" Вывод: %d ", this->numProc);
+            mt_gotoXY(16 + N,2 + this->numProc * 13);
+            printf(" %s ", this->getName());
             printf("\n");
             pthread_mutex_unlock(this->screen);
         }
@@ -112,62 +121,78 @@ class App
             head -> val = val;
             head = head -> next;
         }
+
+        virtual void run() {};
+        virtual char * getName() { return "default"; };
+
+};
+
+class AppR1 : public App
+{
+    public:
+        AppR1(pthread_mutex_t * p1) : App(p1) {}
+        virtual void run() {
+            if (this->blocked) goto unlock;
+            if (core->down(FULL)) {
+                unlock: this->blocked = 0;
+                core->up(EMPTY);
+                this->add(1);
+                this->draw();
+            } else {
+                this->blocked = 1;
+            }
+        }
+        virtual char * getName() {
+            return "Читает";
+        }
+};
+class AppW1 : public App
+{
+    private:
+        int count;
+    public:
+        AppW1(pthread_mutex_t * p1) : App(p1), count(0) {}
+        virtual void run() {
+            if (this->blocked) goto unlock;
+            this->count++;
+            if (core->down(EMPTY)) {
+                unlock: this->blocked = 0;
+                core->up(FULL);
+                this->add(this->count);
+                this->draw();
+            } else {
+                this->blocked = 1;
+            }
+        }
+        virtual char * getName() {
+            return "Пишет";
+        }
 };
 
 
 int main(){
+    int i;
     setTermMode(1);
     mt_clrscr();
-
     pthread_mutex_init(&screen, NULL);
-    pthread_mutex_init(&procStatusLock, NULL);
     pthread_create(&(tid[0]), NULL, &key_handler, NULL);
-
     objClock = new Clock(&screen);
-    core = new Core(&procStatusLock, &screen);
+    core = new Core(&screen);
     buffer = new Buffer(&screen);
     buffer->draw();
     core->semaphore[FULL] = 10;
     enableAlarm();
-    int store[4];
-    int tmp[4];
-    App * app = new App(&screen);
-
+    App * app[N];
+    for(i = 0; i < N; i ++) {
+        if(i %2 ){
+            app[i] = new AppR1(&screen);
+        } else {
+            app[i] = new AppW1(&screen);
+        }
+    }
     while(!exitFlag){
-        if(core->getCurrent() == 0) {
-            if (store[0]) goto unlock_p0;
-            if (core->down(EMPTY)) {
-                unlock_p0: store[0] = 0;
-                core->up(FULL);
-            } else {
-                store[0] = 1;
-                // save state;
-            }
-        }
-        if(core->getCurrent() == 1) {
-            if (store[1]) goto unlock_p1;
-            tmp[1]++;
-            if (core->down(FULL)) {
-                unlock_p1: store[1] = 0;
-                core->up(EMPTY);
-                app->add(tmp[1]);
-                app->draw();
-
-            } else {
-                store[1] = 1;
-                // save state;
-            }
-        }
-        if(core->getCurrent() == 2) {
-            if (store[2]) goto unlock_p2;
-            if (core->down(FULL)) {
-                unlock_p2: store[2] = 0;
-                core->up(EMPTY);
-
-            } else {
-                store[2] = 1;
-                // save state;
-            }
+        for(i = 0; i < N; i ++ ) {
+            if(core->getCurrent() == i) app[i]->run();
         }
         sleep(2);
     }

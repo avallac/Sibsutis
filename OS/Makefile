@@ -2,7 +2,7 @@ all:			clean main
 main:			main.o libTerm.a libClock.a libCore.a libBuffer.a
 				gcc -o main main.o -L. -lTerm -lClock -lCore -lBuffer -lstdc++
 main.o:			main.cpp
-				gcc -c main.cpp
+				gcc -Wno-c++11-compat-deprecated-writable-strings -c main.cpp
 libTerm.a:		libTerm.o
 				ar rc libTerm.a libTerm.o
 				ranlib libTerm.a

@@ -19,7 +19,7 @@ class Core
         int editProc;
         int runingProc;
         int procQuantum[32];
-        Core(pthread_mutex_t *, pthread_mutex_t *);
+        Core(pthread_mutex_t *);
         void printProcStatus(int);
         void draw();
         void chooseTask();

@@ -1,11 +1,13 @@
 #include "libCore.h"
 
-Core::Core (pthread_mutex_t * p1, pthread_mutex_t * p2): procStatusLock(p1), screen(p2) {
+Core::Core (pthread_mutex_t * p1): screen(p1) {
     x = 4;
     y = 1;
     h = 3+1;
     w = 80;
     runingProc = 0;
+    this->procStatusLock = new pthread_mutex_t;
+    pthread_mutex_init(this->procStatusLock, NULL);
 }
 
 void Core::printProcStatus(int i) {
@@ -31,7 +33,7 @@ void Core::printProcStatus(int i) {
         printf("заблокирован");
     }
     mt_setfgcolor(MT_BLACK);
-    printf(" квантов: %d      ", this->procQuantum[i]);
+    printf(" квантов: %d   ", this->procQuantum[i]);
     printf("\n");
 }
 void Core::draw() {
