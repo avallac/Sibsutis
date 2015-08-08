@@ -152,8 +152,8 @@ int main(int argc, char *argv[]){
     core->semaphore[EMPTY] = 5;
     enableAlarm();
     App * app[N];
-    for(i = 0; i < N; i ++) {
-        if(i %2 ){
+    for (i = 0; i < N; i ++) {
+        if (i % 2 ){
             app[i] = new AppR1(&screen);
         } else {
             app[i] = new AppW1(&screen);
@@ -161,7 +161,7 @@ int main(int argc, char *argv[]){
         app[i]->setPosition(6 + N, 1, 6, 12);
         app[i]->draw();
     }
-    while(!exitFlag){
+    while (!exitFlag) {
         for(i = 0; i < N; i ++ ) {
             if(core->getCurrent() == i) app[i]->run();
         }

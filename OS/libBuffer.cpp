@@ -36,30 +36,31 @@ int Buffer::get() {
 void Buffer::draw() {
     int i;
     ring * tmp = tail;
-    pthread_mutex_lock(this->screen);
-    bc_box(this->x, this->y, this->h, this->w);
-    mt_gotoXY(this->x, this->y+1);
-    printf(" Буфер: ");
-    i = 0;
-    while (i < used) {
-        mt_gotoXY(this->x + 1 + i, 2);
-        printf("%d        ", tmp->val);
-        tmp = tmp->next;
-        i++;
+    if (!pthread_mutex_trylock(this->screen)) {
+        bc_box(this->x, this->y, this->h, this->w);
+        mt_gotoXY(this->x, this->y+1);
+        printf(" Буфер: ");
+        i = 0;
+        while (i < used) {
+            mt_gotoXY(this->x + 1 + i, 2);
+            printf("%d        ", tmp->val);
+            tmp = tmp->next;
+            i++;
+        }
+        while( i < 5) {
+            mt_gotoXY(this->x + 1 + i, 2);
+            printf("        ");
+            i++;
+        }
+        mt_gotoXY(this->x + 6,this->y + 2);
+        printf("[");
+        for (i = 0; i < used; i ++) {
+            printf("☢");
+        }
+        for(; i < 5; i ++) {
+            printf(" ");
+        }
+        printf("]\n");
+        pthread_mutex_unlock(this->screen);
     }
-    while( i < 5) {
-        mt_gotoXY(this->x + 1 + i, 2);
-        printf("        ");
-        i++;
-    }
-    mt_gotoXY(this->x + 6,this->y + 2);
-    printf("[");
-    for (i = 0; i < used; i ++) {
-        printf("☢");
-    }
-    for(; i < 5; i ++) {
-        printf(" ");
-    }
-    printf("]\n");
-    pthread_mutex_unlock(this->screen);
 }

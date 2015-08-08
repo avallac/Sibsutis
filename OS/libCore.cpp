@@ -35,14 +35,15 @@ void Core::printProcStatus(int i) {
 }
 void Core::draw() {
     int i;
-    pthread_mutex_lock(this->screen);
-    bc_box(this->x, this->y, this->h, this->w);
-    for (i = 0; i < this->allProc; i++) {
-        mt_gotoXY(this->x+i+1,this->y+1);
-        printProcStatus(i);
+    if (!pthread_mutex_trylock(this->screen)) {
+        bc_box(this->x, this->y, this->h, this->w);
+        for (i = 0; i < this->allProc; i++) {
+            mt_gotoXY(this->x+i+1,this->y+1);
+            printProcStatus(i);
+        }
+        printf("\n");
+        pthread_mutex_unlock(this->screen);
     }
-    printf("\n");
-    pthread_mutex_unlock(this->screen);
     this->drawSemaphore();
     this->drowCounter();
 }
@@ -108,21 +109,23 @@ int Core::getCurrent() {
 
 void Core::drawSemaphore() {
     int i;
-    pthread_mutex_lock(this->screen);
-    for (i = 1; i < 3; i++) {
-        mt_gotoXY(this->x+i,this->y+45);
-        printf("семафор %d: %d   ", i, this->semaphore[i]);
+    if (!pthread_mutex_trylock(this->screen)) {
+        for (i = 1; i < 3; i++) {
+            mt_gotoXY(this->x+i,this->y+45);
+            printf("семафор %d: %d   ", i, this->semaphore[i]);
+        }
+        printf("\n");
+        pthread_mutex_unlock(this->screen);
     }
-    printf("\n");
-    pthread_mutex_unlock(this->screen);
 }
 
 void Core::drowCounter() {
     int i;
-    pthread_mutex_lock(this->screen);
-    mt_gotoXY(this->x+3,this->y+45);
-    printf("Тактов до смены: %d  \n", this->runingProc);
-    pthread_mutex_unlock(this->screen);
+    if (!pthread_mutex_trylock(this->screen)) {
+        mt_gotoXY(this->x+3,this->y+45);
+        printf("Тактов до смены: %d  \n", this->runingProc);
+        pthread_mutex_unlock(this->screen);
+    }
 }
 
 void Core::tick() {

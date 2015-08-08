@@ -13,12 +13,13 @@ void Clock::draw () {
     double currentTime = (tv.tv_sec) * 1000 + (tv.tv_usec) / 1000 ;
     double progTime = this->startTime + 500 * this->timerCount;
     int unixTime = (int)(progTime/1000);
-    pthread_mutex_lock(this->screen);
-    bc_box(this->x, this->y, this->h, this->w);
-    mt_gotoXY(this->x+1,this->y+1);
-    printf("Время: %.2i:%.2i:%.2i ", (int)((unixTime % (24*3600))/3600) + 6, (int)((unixTime % 3600) / 60), unixTime % 60);
-    printf("(error %.0f ms)      \n", currentTime - progTime);
-    pthread_mutex_unlock(this->screen);
+    if (!pthread_mutex_trylock(this->screen)) {
+        bc_box(this->x, this->y, this->h, this->w);
+        mt_gotoXY(this->x+1,this->y+1);
+        printf("Время: %.2i:%.2i:%.2i ", (int)((unixTime % (24*3600))/3600) + 6, (int)((unixTime % 3600) / 60), unixTime % 60);
+        printf("(error %.0f ms)      \n", currentTime - progTime);
+        pthread_mutex_unlock(this->screen);
+    }
 }
 
 void Clock::tick() {
