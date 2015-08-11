@@ -124,7 +124,7 @@ void MoveObject::setPosition(int a,int b, int c, int d) {
     printf("┤");
     mt_setfgcolor(MT_BIRUZ);
     mt_gotoXY(this->x + this->h + 1, this->y+1);
-    printf(this->helpString);
+    printf(this->getHelp());
     mt_setfgcolor(MT_BLACK);
     this->changeSpeed(0);
 }

@@ -173,8 +173,8 @@ int main(int argc, char *argv[]){
     }
     enableAlarm();
     while (!exitFlag) {
-        for (i = 0; i < N; i ++ ) {
-            if (core->getCurrent() == i) app[i]->run();
+        if (core->getCurrent() >= 0){
+            app[core->getCurrent()]->run();
         }
         sleep(2);
     }

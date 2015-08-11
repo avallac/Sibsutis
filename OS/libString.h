@@ -5,12 +5,12 @@
 class String: public MoveObject
 {
     private:
-        int pos, moveX;
         ring * head;
         int line;
     public:
         String(pthread_mutex_t *, char *, int);
         void moveObj();
         void draw();
+        char * getHelp();
 };
 

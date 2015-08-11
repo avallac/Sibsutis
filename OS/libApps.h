@@ -12,12 +12,11 @@ class App: public Window
         int blocked;
         int numProc;
         int tmp;
-        char * nameProc;
     public:
         App(pthread_mutex_t * p1);
         void draw();
         void add(int val);
-        virtual void run() {};
+        virtual void run() = 0;
         virtual char * getName() { return "default"; };
         virtual void setPosition(int a,int b, int c, int d);
 };

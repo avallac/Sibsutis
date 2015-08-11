@@ -45,7 +45,6 @@ class Window
 class MoveObject: public Window
 {
     protected:
-        char * helpString;
         int speed;
         int step;
         pthread_mutex_t * screen;
@@ -55,5 +54,6 @@ class MoveObject: public Window
         void move();
         void changeSpeed(int d);
         virtual void moveObj() = 0;
+        virtual char * getHelp() = 0;
 };
 #endif

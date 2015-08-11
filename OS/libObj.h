@@ -9,5 +9,6 @@ class Obj: public MoveObject
         Obj(pthread_mutex_t *);
         void moveObj();
         void draw();
+        char * getHelp();
 };
 

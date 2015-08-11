@@ -10,9 +10,6 @@ String::String (pthread_mutex_t * p1, char * showString, int h): MoveObject(p1) 
     ring * tmp, *old;
     int len = strlen(showString);
     int i,j;
-    moveX = 1;
-    pos = 1;
-    helpString = "Используйте C/V для ускорения и замедления\n";
     j = 0;
     line = h;
     for(i = 0; i < h || len > j ; i++) {
@@ -41,6 +38,10 @@ String::String (pthread_mutex_t * p1, char * showString, int h): MoveObject(p1) 
 void String::moveObj() {
     head = head -> next;
     this->draw();
+}
+
+char * String::getHelp() {
+    return "Используйте C/V для ускорения и замедления\n";
 }
 
 void String::draw() {

@@ -5,7 +5,10 @@ Obj::Obj (pthread_mutex_t * p1): MoveObject(p1) {
     posY = 1;
     moveX = 1;
     moveY = 1;
-    helpString = "Используйте Z/X для ускорения и замедления\n";
+}
+
+char * Obj::getHelp() {
+    return "Используйте Z/X для ускорения и замедления\n";
 }
 
 void Obj::moveObj() {
