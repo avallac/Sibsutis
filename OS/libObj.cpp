@@ -1,23 +1,14 @@
 #include "libObj.h"
 
-Obj::Obj (pthread_mutex_t * p1): screen(p1) {
+Obj::Obj (pthread_mutex_t * p1): MoveObject(p1) {
     posX = 1;
     posY = 1;
     moveX = 1;
     moveY = 1;
+    helpString = "Используйте Z/X для ускорения и замедления\n";
 }
 
-void Obj::draw() {
-    int i;
-    if (!pthread_mutex_trylock(this->screen)) {
-        bc_box(this->x, this->y, this->h, this->w);
-        printf("\n");
-        pthread_mutex_unlock(this->screen);
-    }
-}
-
-void Obj::move() {
-    this->draw();
+void Obj::moveObj() {
     if (!pthread_mutex_trylock(this->screen)) {
         mt_gotoXY(x + posX, y + posY);
         printf(" ");
@@ -31,6 +22,13 @@ void Obj::move() {
             moveY *= -1;
             posY += 2 * moveY;
         }
+        pthread_mutex_unlock(this->screen);
+    }
+    this->draw();
+}
+
+void Obj::draw() {
+    if (!pthread_mutex_trylock(this->screen)) {
         mt_gotoXY(x + posX, y + posY);
         printf("🐞\n");
         pthread_mutex_unlock(this->screen);

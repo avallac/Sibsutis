@@ -37,7 +37,23 @@ class Window
     protected:
         int x, y, h, w;
     public:
-        void setPosition(int a,int b, int c, int d);
+        virtual void setPosition(int a,int b, int c, int d);
+        virtual void draw() = 0;
 
+};
+
+class MoveObject: public Window
+{
+    protected:
+        char * helpString;
+        int speed;
+        int step;
+        pthread_mutex_t * screen;
+    public:
+        MoveObject(pthread_mutex_t *);
+        void setPosition(int a,int b, int c, int d);
+        void move();
+        void changeSpeed(int d);
+        virtual void moveObj() = 0;
 };
 #endif

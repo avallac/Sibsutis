@@ -111,4 +111,48 @@ void Window::setPosition(int a,int b, int c, int d) {
     y = b;
     h = c;
     w = d;
+    bc_box(this->x, this->y, this->h, this->w);
+    this->draw();
+}
+
+void MoveObject::setPosition(int a,int b, int c, int d) {
+    Window::setPosition(a, b, c, d);
+    bc_box(this->x + this->h, this->y, 2, this->w);
+    mt_gotoXY(this->x + this->h, this->y);
+    printf("├");
+    mt_gotoXY(this->x + this->h, this->y + this->w);
+    printf("┤");
+    mt_setfgcolor(MT_BIRUZ);
+    mt_gotoXY(this->x + this->h + 1, this->y+1);
+    printf(this->helpString);
+    mt_setfgcolor(MT_BLACK);
+    this->changeSpeed(0);
+}
+
+void MoveObject::changeSpeed(int d) {
+    speed += d;
+    if (speed <= 0) {
+        speed = 1;
+    }
+    if (speed > 100) {
+        speed = 100;
+    }
+    if (!pthread_mutex_trylock(this->screen)) {
+        mt_gotoXY(this->x + this->h, this->y + 2);
+        printf(" Исполняется раз в %d тактов. ", speed);
+        pthread_mutex_unlock(this->screen);
+    }
+}
+
+MoveObject::MoveObject(pthread_mutex_t * p1): screen(p1) {
+    speed = 1;
+    step = 0;
+}
+
+void MoveObject::move() {
+    step ++;
+    if (step >= speed) {
+        step = 0;
+        this->moveObj();
+    }
 }

@@ -14,6 +14,7 @@ class Core: public Window
         int procStatus[32];
         int blockedProc[32];
         int currentProc;
+        int error;
     public:
         int semaphore[32];
         int editProc;
@@ -30,4 +31,7 @@ class Core: public Window
         void drawSemaphore();
         void drowCounter();
         void tick();
+        void setPosition(int a,int b, int c, int d);
+        void addError();
+        void drowError();
 };

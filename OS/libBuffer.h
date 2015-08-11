@@ -12,5 +12,6 @@ class Buffer: public Window
         void draw();
         void add(int);
         int get();
+        void setPosition(int a,int b, int c, int d);
 };
 

@@ -1,13 +1,13 @@
 all:			clean main
-main:			main.o libTerm.a libClock.a libCore.a libBuffer.a libObj.a libApps.a
-				gcc -o main main.o -L. -lTerm -lClock -lCore -lBuffer -lObj -lApps -lstdc++
+main:			main.o libTerm.a libClock.a libCore.a libBuffer.a libObj.a libApps.a libString.a
+				gcc -o main main.o -L. -lTerm -lClock -lCore -lBuffer -lObj -lApps -lstdc++ -lString
 main.o:			main.cpp
 				gcc -Wno-c++11-compat-deprecated-writable-strings -c main.cpp
 libTerm.a:		libTerm.o
 				ar rc libTerm.a libTerm.o
 				ranlib libTerm.a
 libTerm.o:		libTerm.cpp
-				gcc -Wno-c++11-compat-deprecated-writable-strings -c libTerm.cpp
+				gcc -Wno-c++11-compat-deprecated-writable-strings -Wno-format-security -c libTerm.cpp
 libClock.a:		libClock.o libTerm.a
 				ar rc libClock.a libClock.o
 				ranlib libClock.a
@@ -23,12 +23,17 @@ libBuffer.a:	libBuffer.o libTerm.a
 				ranlib libBuffer.a
 libBuffer.o:	libBuffer.cpp
 				gcc -c libBuffer.cpp -lTerm
-libObj.a:		libObj.o libObj.a
+libObj.a:		libObj.o libTerm.a
 				ar rc libObj.a libObj.o
 				ranlib libObj.a
 libObj.o:    	libObj.cpp
-				gcc -c libObj.cpp -lTerm
-libApps.a:		libApps.o libApps.a
+				gcc -Wno-c++11-compat-deprecated-writable-strings -c libObj.cpp -lTerm
+libString.a:	libString.o libTerm.a
+				ar rc libString.a libString.o
+				ranlib libString.a
+libString.o:   	libString.cpp
+				gcc -Wno-c++11-compat-deprecated-writable-strings -c libString.cpp -lTerm
+libApps.a:		libApps.o libTerm.a
 				ar rc libApps.a libApps.o
 				ranlib libApps.a
 libApps.o:    	libApps.cpp

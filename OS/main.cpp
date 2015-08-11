@@ -4,6 +4,7 @@
 #include "libBuffer.h"
 #include "libObj.h"
 #include "libApps.h"
+#include "libString.h"
 #include <sys/time.h>
 #include <signal.h>
 #include <unistd.h>
@@ -12,7 +13,8 @@
 
 
 #define N 5
-pthread_mutex_t screen;
+pthread_mutex_t mutex_screen;
+pthread_mutex_t mutex_timer;
 pthread_t tid[2];
 
 int exitFlag;
@@ -21,6 +23,7 @@ Clock * objClock;
 Core * core;
 Obj * firefly;
 Buffer * buffer;
+String * string;
 int interval;
 
 class AppW1 : public App
@@ -37,7 +40,6 @@ class AppW1 : public App
         virtual void run() {
             int i;
             if (this->blocked) goto unlock_r1;
-            //tmp = rand() % 100+1;
             count ++;
             tmp = start + count;
             this->add(tmp);
@@ -84,9 +86,15 @@ class AppR1 : public App
 
 
 void timer_handler (int signum) {
-    core->tick();
-    objClock->tick();
-    firefly->move();
+    if (!pthread_mutex_trylock(&mutex_timer)) {
+        core->tick();
+        objClock->tick();
+        firefly->move();
+        string->move();
+        pthread_mutex_unlock(&mutex_timer);
+    } else {
+        core->addError();
+    }
 }
 
 void *key_handler(void *arg) {
@@ -94,6 +102,10 @@ void *key_handler(void *arg) {
     while(!exitFlag) {
         read (0, &ch, 1);
         if (ch == 'q') exitFlag = 1;
+        if (ch == 'z') firefly->changeSpeed(-1);
+        if (ch == 'x') firefly->changeSpeed(+1);
+        if (ch == 'c') string->changeSpeed(-1);
+        if (ch == 'v') string->changeSpeed(+1);
         if (ch == 's') core->stopProc(core->editProc);
         if (ch == '=') core->procQuantum[core->editProc]++;
         if (ch == '-') if(core->procQuantum[core->editProc]) core->procQuantum[core->editProc]--;
@@ -125,8 +137,8 @@ void enableAlarm() {
 
 int main(int argc, char *argv[]){
     int i;
-    if (argc < 2) {
-        printf("usage: main <HZ>\n");
+    if (argc < 3) {
+        printf("usage: main <HZ> <STRING>\n");
         return 0;
     } else {
         interval = 1000000 / atoi(argv[1]);
@@ -135,38 +147,37 @@ int main(int argc, char *argv[]){
     srand (time(NULL));
     setTermMode(1);
     mt_clrscr();
-    pthread_mutex_init(&screen, NULL);
+    pthread_mutex_init(&mutex_screen, NULL);
+    pthread_mutex_init(&mutex_timer, NULL);
     pthread_create(&(tid[0]), NULL, &key_handler, NULL);
-    objClock = new Clock(&screen);
+    objClock = new Clock(&mutex_screen, interval);
     objClock->setPosition(1, 1, 2, 77);
-    objClock->draw();
-    core = new Core(&screen, N);
+    core = new Core(&mutex_screen, N);
     core->setPosition(4, 1, N + 1, 77);
-    core->draw();
-    buffer = new Buffer(&screen);
-    buffer->setPosition(6 + N, 1, 6, 12);
-    buffer->draw();
-    firefly = new Obj(&screen);
-    firefly->setPosition(13 + N, 1, 20, 77);
-    firefly->draw();
+    buffer = new Buffer(&mutex_screen);
+    buffer->setPosition(9 + N, 1, 6, 12);
+    firefly = new Obj(&mutex_screen);
+    firefly->setPosition(16 + N, 1, 10, 77);
+    string = new String(&mutex_screen, argv[2], 76);
+    string->setPosition(29 + N, 1, 2, 77);
     core->semaphore[EMPTY] = 5;
-    enableAlarm();
     App * app[N];
     for (i = 0; i < N; i ++) {
-        if (i % 2 ){
-            app[i] = new AppR1(&screen);
+        if (i % 2) {
+            app[i] = new AppR1(&mutex_screen);
         } else {
-            app[i] = new AppW1(&screen);
+            app[i] = new AppW1(&mutex_screen);
         }
-        app[i]->setPosition(6 + N, 1, 6, 12);
+        app[i]->setPosition(9 + N, (i + 1) * 13 + 1, 6, 12);
         app[i]->draw();
     }
+    enableAlarm();
     while (!exitFlag) {
-        for(i = 0; i < N; i ++ ) {
-            if(core->getCurrent() == i) app[i]->run();
+        for (i = 0; i < N; i ++ ) {
+            if (core->getCurrent() == i) app[i]->run();
         }
         sleep(2);
     }
-    pthread_mutex_destroy(&screen);
+    pthread_mutex_destroy(&mutex_screen);
     setTermMode(0);
 }

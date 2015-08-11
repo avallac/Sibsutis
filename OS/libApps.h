@@ -19,4 +19,5 @@ class App: public Window
         void add(int val);
         virtual void run() {};
         virtual char * getName() { return "default"; };
+        virtual void setPosition(int a,int b, int c, int d);
 };

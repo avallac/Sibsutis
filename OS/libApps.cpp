@@ -20,21 +20,24 @@ App::App(pthread_mutex_t * p1): screen(p1) {
     blocked = 0;
 }
 
+void App::setPosition(int a,int b, int c, int d) {
+    Window::setPosition(a, b, c, d);
+    mt_gotoXY(this->x , this->y + 1);
+    printf(" Вывод: %d ", this->numProc);
+    mt_gotoXY(this->x + this->h, this->y + 2);
+    printf("[%s]", this->getName());
+}
+
 void App::draw() {
     int i;
     ring * tmp;
     if (!pthread_mutex_trylock(this->screen)) {
-        bc_box(this->x, this->y + (this->numProc+1) * (this->w+1), this->h, this->w);
         tmp = head;
         for(i = 0; i < 5; i++) {
-            mt_gotoXY(this->x + i + 1, this->y + 1 + (this->numProc+1) * (this->w+1));
+            mt_gotoXY(this->x + i + 1, this->y + 1);
             printf("%d        ", tmp->val);
             tmp = tmp->next;
         }
-        mt_gotoXY(this->x , this->y + 1 + (this->numProc+1) * (this->w+1));
-        printf(" Вывод: %d ", this->numProc);
-        mt_gotoXY(this->x + this->h, this->y + 2 + (this->numProc+1) * (this->w+1));
-        printf("[%s]", this->getName());
         printf("\n");
         pthread_mutex_unlock(this->screen);
     }
