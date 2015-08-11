@@ -131,8 +131,8 @@ void MoveObject::setPosition(int a,int b, int c, int d) {
 
 void MoveObject::changeSpeed(int d) {
     speed += d;
-    if (speed <= 0) {
-        speed = 1;
+    if (speed < 0) {
+        speed = 0;
     }
     if (speed > 100) {
         speed = 100;
@@ -150,6 +150,7 @@ MoveObject::MoveObject(pthread_mutex_t * p1): screen(p1) {
 }
 
 void MoveObject::move() {
+    if (speed == 0) return;
     step ++;
     if (step >= speed) {
         step = 0;

@@ -49,9 +49,10 @@ void String::draw() {
     if (!pthread_mutex_trylock(this->screen)) {
         mt_gotoXY(x + 1, y + 1);
         tmp = head;
+        mt_setfgcolor(MT_BLUE);
         for(i = 0; i < line; i ++) {
-            if (i % 2) {
-
+            if (i > line / 2) {
+                mt_setfgcolor(MT_RED);
             }
             if(tmp->val < 0) {
                 printf("%c%c", tmp->val / 256 , tmp->val % 256);
@@ -60,6 +61,7 @@ void String::draw() {
             }
             tmp = tmp->next;
         }
+        mt_setfgcolor(MT_BLACK);
         pthread_mutex_unlock(this->screen);
     }
 }
