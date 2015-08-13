@@ -29,9 +29,9 @@ class Core: public Window
         int getCurrent();
         void stopProc (int i);
         void drawSemaphore();
-        void drowCounter();
+        void drawCounter();
         void tick();
         void setPosition(int a,int b, int c, int d);
         void addError();
-        void drowError();
+        void drawError();
 };

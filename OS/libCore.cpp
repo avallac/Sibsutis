@@ -64,8 +64,8 @@ void Core::draw() {
         pthread_mutex_unlock(this->screen);
     }
     this->drawSemaphore();
-    this->drowCounter();
-    this->drowError();
+    this->drawCounter();
+    this->drawError();
 }
 
 void Core::chooseTask() {
@@ -139,7 +139,7 @@ void Core::drawSemaphore() {
     }
 }
 
-void Core::drowCounter() {
+void Core::drawCounter() {
     int i;
     if (!pthread_mutex_trylock(this->screen)) {
         mt_gotoXY(this->x+3,this->y+45);
@@ -153,7 +153,7 @@ void Core::tick() {
     if (this->runingProc <= 0) {
         this->chooseTask();
     }
-    this->drowCounter();
+    this->drawCounter();
 }
 
 void Core::stopProc (int i) {
@@ -170,7 +170,7 @@ void Core::addError() {
     this->error++;
 }
 
-void Core::drowError() {
+void Core::drawError() {
     int i;
     if (!pthread_mutex_trylock(this->screen)) {
         mt_gotoXY(this->x+4,this->y+45);
