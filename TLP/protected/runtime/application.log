@@ -1,0 +1,1637 @@
+2015/11/02 00:53:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab2
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/index
+---
+2015/11/02 00:53:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab3".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab3')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab3')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab3')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab3
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab2
+---
+2015/11/02 00:53:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab4".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab4')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab4')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab4')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab4
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab3
+---
+2015/11/02 00:53:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab5".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab5')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab5')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab5')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab5
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab4
+---
+2015/11/02 00:53:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "kr".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('kr')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('kr')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/kr')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/kr
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab5
+---
+2015/11/02 00:53:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/kr
+---
+2015/11/02 00:53:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php
+---
+2015/11/02 00:53:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab1
+---
+2015/11/02 00:53:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php
+---
+2015/11/02 00:53:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php
+---
+2015/11/02 00:53:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php
+---
+2015/11/02 00:56:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php
+---
+2015/11/02 00:56:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab1
+---
+2015/11/02 00:56:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab2
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab1
+---
+2015/11/02 00:56:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab2
+---
+2015/11/02 00:56:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php
+---
+2015/11/02 00:57:37 [error] [php] Undefined variable: model (/media/sf_Sibsutis/TLP/protected/controllers/SiteController.php:54)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): SiteController->runAction()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/index.php?r=site/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php (54)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 00:57:38 [error] [php] Undefined variable: model (/media/sf_Sibsutis/TLP/protected/controllers/SiteController.php:54)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): SiteController->runAction()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/index.php?r=site/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php (54)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 00:57:48 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "Лабораторная 1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:878
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): CController->renderPartial('\xD0\x9B\xD0\xB0\xD0\xB1\xD0\xBE\xD1\x80\xD0\xB0\xD1\x82\xD0...', Array, true)
+#1 /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php(54): CController->render('\xD0\x9B\xD0\xB0\xD0\xB1\xD0\xBE\xD1\x80\xD0\xB0\xD1\x82\xD0...', Array)
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLab1()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab1
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab1
+---
+2015/11/02 00:58:21 [error] [php] Undefined variable: model (/media/sf_Sibsutis/TLP/protected/views/site/contact.php:38)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): SiteController->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php(54): SiteController->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLab1()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): SiteController->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/index.php?r=site/lab1
+in /media/sf_Sibsutis/TLP/protected/views/site/contact.php (38)
+in /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php (54)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 00:58:22 [error] [php] Undefined variable: model (/media/sf_Sibsutis/TLP/protected/views/site/contact.php:38)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): SiteController->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php(54): SiteController->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLab1()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): SiteController->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/index.php?r=site/lab1
+in /media/sf_Sibsutis/TLP/protected/views/site/contact.php (38)
+in /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php (54)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 00:58:24 [error] [php] Undefined variable: model (/media/sf_Sibsutis/TLP/protected/views/site/contact.php:38)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): SiteController->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php(54): SiteController->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLab1()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): SiteController->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/index.php?r=site/lab1
+in /media/sf_Sibsutis/TLP/protected/views/site/contact.php (38)
+in /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php (54)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:06:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab2
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab1
+---
+2015/11/02 01:07:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab2
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab1
+---
+2015/11/02 01:07:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab2
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab1
+---
+2015/11/02 01:07:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab2
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab1
+---
+2015/11/02 01:08:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab2
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab1
+---
+2015/11/02 01:13:33 [error] [php] include(СController.php): failed to open stream: No such file or directory (/media/sf_Sibsutis/libs/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php(4): spl_autoload_call()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(354): require()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(276): CWebApplication->createController()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/index.php
+in /media/sf_Sibsutis/TLP/protected/controllers/SiteController.php (4)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:13:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php?r=site/lab2
+HTTP_REFERER=http://study.local/TLP/index.php?r=site/lab1
+---
+2015/11/02 01:17:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/index.php/site/lab2
+HTTP_REFERER=http://study.local/TLP/index.php/site/lab1
+---
+2015/11/02 01:21:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:22:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:24:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:25:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:26:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab1
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:26:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab1
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:26:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab1
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:26:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:26:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab3".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab3')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab3')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab3')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab3
+HTTP_REFERER=http://study.local/TLP/site/lab2
+---
+2015/11/02 01:26:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab1
+HTTP_REFERER=http://study.local/TLP/site/lab3
+---
+2015/11/02 01:27:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab1
+HTTP_REFERER=http://study.local/TLP/site/lab3
+---
+2015/11/02 01:27:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab1
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:27:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:27:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab1
+HTTP_REFERER=http://study.local/TLP/site/lab2
+---
+2015/11/02 01:27:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab1')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab1')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab1
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:27:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/TLP/lab1
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:27:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/TLP/lab1
+HTTP_REFERER=http://study.local/TLP/site/lab1
+---
+2015/11/02 01:27:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/TLP/lab1/
+---
+2015/11/02 01:28:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/TLP/lab1/
+---
+2015/11/02 01:28:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/TLP/lab1/
+---
+2015/11/02 01:28:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/02 01:28:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/02 01:29:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/02 01:29:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/site/lab2
+---
+2015/11/02 01:29:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/02 01:29:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/02 01:30:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/02 01:30:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab3".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab3')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab3')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab3')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab3
+HTTP_REFERER=http://study.local/TLP/site/lab2
+---
+2015/11/02 01:30:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab4".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab4')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab4')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab4')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab4
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/02 01:30:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab5".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab5')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab5')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab5')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab5
+HTTP_REFERER=http://study.local/TLP/site/lab4
+---
+2015/11/02 01:34:51 [error] [php] include(Grammar.php): failed to open stream: No such file or directory (/media/sf_Sibsutis/libs/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(9): spl_autoload_call()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (9)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:37:18 [error] [php] explode() expects parameter 2 to be string, array given (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:20)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php(15): CFGrammar->add()
+#1 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(9): CFGrammar->__construct()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (20)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (25)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (15)
+2015/11/02 01:37:41 [error] [php] explode() expects parameter 2 to be string, array given (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:20)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php(15): CFGrammar->add()
+#1 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(9): CFGrammar->__construct()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (20)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (25)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (15)
+2015/11/02 01:39:41 [error] [php] include(Grammar.php): failed to open stream: No such file or directory (/media/sf_Sibsutis/libs/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(10): spl_autoload_call()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (10)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:39:54 [error] [php] include(Grammar.php): failed to open stream: No such file or directory (/media/sf_Sibsutis/libs/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(10): spl_autoload_call()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (10)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:39:59 [error] [php] include(Grammar.php): failed to open stream: No such file or directory (/media/sf_Sibsutis/libs/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(10): spl_autoload_call()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (10)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:40:03 [error] [php] Undefined index: used (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:208)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#7 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (208)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (178)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (17)
+2015/11/02 01:41:29 [error] [php] explode() expects parameter 2 to be string, array given (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:20)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php(131): CFGrammar->add()
+#1 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(16): CFGrammar->removeE()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (20)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (25)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (131)
+2015/11/02 01:42:11 [error] [php] explode() expects parameter 2 to be string, array given (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:20)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php(132): CFGrammar->add()
+#1 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(16): CFGrammar->removeE()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (20)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (25)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (132)
+2015/11/02 01:42:35 [error] [php] explode() expects parameter 2 to be string, array given (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:20)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php(131): CFGrammar->add()
+#1 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(16): CFGrammar->removeE()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (20)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (25)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (131)
+2015/11/02 01:43:57 [error] [php] explode() expects parameter 2 to be string, array given (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:20)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php(131): CFGrammar->add()
+#1 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(16): CFGrammar->removeE()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (20)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (25)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (131)
+2015/11/02 01:44:04 [error] [php] explode() expects parameter 2 to be string, array given (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:20)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php(131): CFGrammar->add()
+#1 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(16): CFGrammar->removeE()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (20)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (25)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (131)
+2015/11/02 01:44:41 [error] [php] Undefined index: used (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:212)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#7 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (212)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (178)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (17)
+2015/11/02 01:45:01 [error] [php] Undefined index: head (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:241)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#7 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (241)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (185)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (18)
+2015/11/02 01:48:24 [error] [php] Undefined variable: line (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:2)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (2)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:49:50 [error] [php] Invalid argument supplied for foreach() (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:1)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (1)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:51:06 [error] [php] Invalid argument supplied for foreach() (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:1)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (1)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:57:29 [error] [php] Undefined variable: count (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:3)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (3)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:57:45 [error] [php] Undefined variable: count (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:3)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (3)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:57:50 [error] [php] Undefined variable: count (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:3)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (3)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:58:06 [error] [php] Undefined variable: count (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:3)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (3)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:58:15 [error] [php] Undefined variable: count (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:3)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (3)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:58:39 [error] [php] Undefined variable: line (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:3)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (3)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:58:49 [error] [php] Undefined variable: line (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:3)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (3)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:58:57 [error] [php] Undefined variable: line (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:3)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (3)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:59:01 [error] [php] Undefined variable: line (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:3)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (3)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:59:12 [error] [php] Undefined variable: line (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:2)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (2)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:59:19 [error] [php] Undefined variable: line (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:2)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (2)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:59:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/02 01:59:22 [error] [php] Undefined variable: line (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:2)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (2)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:59:23 [error] [php] Undefined variable: line (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:2)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (2)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 01:59:44 [error] [php] Undefined variable: line (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:2)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (2)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 02:04:54 [error] [php] Undefined variable: model (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:13)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(20): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (13)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (20)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/02 02:09:47 [error] [exception.CException] exception 'CException' with message 'Property "Lab1Form.terminal" is not defined.' in /media/sf_Sibsutis/libs/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/helpers/CHtml.php(2728): CComponent->__get('terminal')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Lab1Form), 'terminal')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Lab1Form), 'terminal', Array)
+#3 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Lab1Form), 'terminal', Array)
+#4 /media/sf_Sibsutis/TLP/protected/views/lab1/index.php(15): CActiveForm->textField(Object(Lab1Form), 'terminal')
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require('/media/sf_Sibsu...')
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/media/sf_Sibsu...', Array, true)
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): CBaseController->renderFile('/media/sf_Sibsu...', Array, true)
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#9 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): CController->render('index', Array)
+#10 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#15 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#16 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#17 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/TLP/lab1
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/02 02:25:46 [error] [exception.CException] exception 'CException' with message 'Property "CRequiredValidator.when" is not defined.' in /media/sf_Sibsutis/libs/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/validators/CValidator.php(177): CComponent->__set('when', 'validateTermina...')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(287): CValidator::createValidator('required', Object(Lab1Form), 'terminal', Array)
+#2 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(260): CModel->createValidators()
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(304): CModel->getValidators('terminal')
+#4 /media/sf_Sibsutis/libs/yii/framework/web/helpers/CHtml.php(1513): CModel->isAttributeRequired('terminal')
+#5 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CActiveForm.php(600): CHtml::activeLabelEx(Object(Lab1Form), 'terminal', Array)
+#6 /media/sf_Sibsutis/TLP/protected/views/lab1/index.php(12): CActiveForm->labelEx(Object(Lab1Form), 'terminal')
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require('/media/sf_Sibsu...')
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/media/sf_Sibsu...', Array, true)
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): CBaseController->renderFile('/media/sf_Sibsu...', Array, true)
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#11 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): CController->render('index', Array)
+#12 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#15 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#17 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#18 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/TLP/lab1
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/02 02:26:32 [error] [exception.CException] exception 'CException' with message 'Property "CRequiredValidator.when" is not defined.' in /media/sf_Sibsutis/libs/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/validators/CValidator.php(177): CComponent->__set('when', Object(Closure))
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(287): CValidator::createValidator('required', Object(Lab1Form), 'terminal', Array)
+#2 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(260): CModel->createValidators()
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(304): CModel->getValidators('terminal')
+#4 /media/sf_Sibsutis/libs/yii/framework/web/helpers/CHtml.php(1513): CModel->isAttributeRequired('terminal')
+#5 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CActiveForm.php(600): CHtml::activeLabelEx(Object(Lab1Form), 'terminal', Array)
+#6 /media/sf_Sibsutis/TLP/protected/views/lab1/index.php(12): CActiveForm->labelEx(Object(Lab1Form), 'terminal')
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require('/media/sf_Sibsu...')
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/media/sf_Sibsu...', Array, true)
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): CBaseController->renderFile('/media/sf_Sibsu...', Array, true)
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#11 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): CController->render('index', Array)
+#12 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#15 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#17 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#18 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/TLP/lab1
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/03 08:41:19 [error] [exception.CException] exception 'CException' with message 'Property "Lab1Form.email" is not defined.' in /media/sf_Sibsutis/libs/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/validators/CRequiredValidator.php(58): CComponent->__get('email')
+#1 /media/sf_Sibsutis/libs/yii/framework/validators/CValidator.php(201): CRequiredValidator->validateAttribute(Object(Lab1Form), 'email')
+#2 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(159): CValidator->validate(Object(Lab1Form), NULL)
+#3 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(21): CModel->validate()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#10 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TLP/lab1
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/03 08:44:30 [error] [exception.CException] exception 'CException' with message 'Property "Lab1Form.nonterminal" is not defined.' in /media/sf_Sibsutis/libs/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/helpers/CHtml.php(2728): CComponent->__get('nonterminal')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/helpers/CHtml.php(2451): CHtml::resolveValue(Object(Lab1Form), 'nonterminal')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/helpers/CHtml.php(1533): CHtml::activeInputField('text', Object(Lab1Form), 'nonterminal', Array)
+#3 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Lab1Form), 'nonterminal', Array)
+#4 /media/sf_Sibsutis/TLP/protected/views/lab1/index.php(19): CActiveForm->textField(Object(Lab1Form), 'nonterminal')
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require('/media/sf_Sibsu...')
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/media/sf_Sibsu...', Array, true)
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): CBaseController->renderFile('/media/sf_Sibsu...', Array, true)
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#9 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(22): CController->render('index', Array)
+#10 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#15 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#16 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#17 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/TLP/lab1
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/03 08:46:43 [error] [php] Undefined index: lab1-form (/media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php:21)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:46:45 [error] [php] Undefined index: lab1-form (/media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php:21)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:46:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('lab2')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/lab2')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TLP/site/lab2
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/03 08:46:49 [error] [php] Undefined index: lab1-form (/media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php:21)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:46:50 [error] [php] Undefined index: lab1-form (/media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php:21)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:48:40 [error] [php] Undefined index: lab1-form (/media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php:21)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (21)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:51:03 [warning] [application] Failed to set unsafe attribute "nonterminal" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:54:33 [warning] [application] Failed to set unsafe attribute "nonterminal" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:54:37 [warning] [application] Failed to set unsafe attribute "nonterminal" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:54:51 [warning] [application] Failed to set unsafe attribute "nonterminal" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:55:00 [warning] [application] Failed to set unsafe attribute "nonterminal" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:57:17 [warning] [application] Failed to set unsafe attribute "nonterminal" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 08:57:25 [warning] [application] Failed to set unsafe attribute "nonterminal" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:02:25 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:02:25 [error] [exception.CException] exception 'CException' with message 'Property "Lab1Form.noneterminal" is not defined.' in /media/sf_Sibsutis/libs/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/validators/CRequiredValidator.php(58): CComponent->__get('noneterminal')
+#1 /media/sf_Sibsutis/libs/yii/framework/validators/CValidator.php(201): CRequiredValidator->validateAttribute(Object(Lab1Form), 'noneterminal')
+#2 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(159): CValidator->validate(Object(Lab1Form), NULL)
+#3 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(24): CModel->validate()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#10 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TLP/lab1
+HTTP_REFERER=http://study.local/TLP/lab1
+---
+2015/11/03 09:02:32 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:02:39 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:03:06 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:03:49 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:05:47 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:05:52 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:05:58 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:07:00 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:07:00 [error] [php] Undefined index: S (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:59)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/Lab1Form.php(51): CFGrammar->setTarget()
+#1 /media/sf_Sibsutis/libs/yii/framework/validators/CInlineValidator.php(42): Lab1Form->checkTarget()
+#2 /media/sf_Sibsutis/libs/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute()
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(159): CInlineValidator->validate()
+#4 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(24): Lab1Form->validate()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (59)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (71)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (51)
+2015/11/03 09:07:03 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:07:03 [error] [php] Undefined index: S (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:59)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/Lab1Form.php(51): CFGrammar->setTarget()
+#1 /media/sf_Sibsutis/libs/yii/framework/validators/CInlineValidator.php(42): Lab1Form->checkTarget()
+#2 /media/sf_Sibsutis/libs/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute()
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(159): CInlineValidator->validate()
+#4 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(24): Lab1Form->validate()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (59)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (71)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (51)
+2015/11/03 09:07:21 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:07:21 [error] [php] Undefined offset: 2 (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:59)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/Lab1Form.php(51): CFGrammar->setTarget()
+#1 /media/sf_Sibsutis/libs/yii/framework/validators/CInlineValidator.php(42): Lab1Form->checkTarget()
+#2 /media/sf_Sibsutis/libs/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute()
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(159): CInlineValidator->validate()
+#4 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(24): Lab1Form->validate()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (59)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (71)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (51)
+2015/11/03 09:08:12 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:08:12 [error] [php] Undefined offset: 2 (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:59)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/Lab1Form.php(51): CFGrammar->setTarget()
+#1 /media/sf_Sibsutis/libs/yii/framework/validators/CInlineValidator.php(42): Lab1Form->checkTarget()
+#2 /media/sf_Sibsutis/libs/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute()
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(159): CInlineValidator->validate()
+#4 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(24): Lab1Form->validate()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (59)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (71)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (51)
+2015/11/03 09:09:08 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:09:08 [error] [php] Undefined index: S (/media/sf_Sibsutis/TLP/protected/models/CFGrammar.php:59)
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/models/Lab1Form.php(51): CFGrammar->setTarget()
+#1 /media/sf_Sibsutis/libs/yii/framework/validators/CInlineValidator.php(42): Lab1Form->checkTarget()
+#2 /media/sf_Sibsutis/libs/yii/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute()
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(159): CInlineValidator->validate()
+#4 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(24): Lab1Form->validate()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (59)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (71)
+in /media/sf_Sibsutis/TLP/protected/models/CFGrammar.php (51)
+2015/11/03 09:09:27 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:09:46 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:09:51 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:13:46 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:14:02 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:15:43 [error] [php] include(checkG.php): failed to open stream: No such file or directory (/media/sf_Sibsutis/libs/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /media/sf_Sibsutis/libs/yii/framework/YiiBase.php(303): class_exists()
+#2 /media/sf_Sibsutis/libs/yii/framework/validators/CValidator.php(174): import()
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(287): createValidator()
+#4 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(260): Lab1Form->createValidators()
+#5 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(547): Lab1Form->getValidators()
+#6 /media/sf_Sibsutis/libs/yii/framework/base/CModel.php(468): Lab1Form->getSafeAttributeNames()
+#7 /media/sf_Sibsutis/libs/yii/framework/base/CComponent.php(152): Lab1Form->setAttributes()
+#8 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(22): Lab1Form->__set()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:15:50 [warning] [application] Failed to set unsafe attribute "body" of "Lab1Form".
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (22)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:29:06 [error] [php] Undefined variable: g (/media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php:10)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (10)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:29:32 [error] [php] Invalid argument supplied for foreach() (/media/sf_Sibsutis/TLP/protected/views/lab1/index.php:57)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(31): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/TLP/index.php(13): CWebApplication->run()
+REQUEST_URI=/TLP/lab1
+in /media/sf_Sibsutis/TLP/protected/views/lab1/index.php (57)
+in /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php (31)
+in /media/sf_Sibsutis/TLP/index.php (13)
+2015/11/03 09:31:10 [error] [exception.CException] exception 'CException' with message 'Property "Lab1Controller.target" is not defined.' in /media/sf_Sibsutis/libs/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /media/sf_Sibsutis/TLP/protected/controllers/Lab1Controller.php(17): CComponent->__get('target')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#7 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /media/sf_Sibsutis/TLP/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/TLP/lab1
+HTTP_REFERER=http://study.local/TLP/lab1
+---
