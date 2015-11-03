@@ -92,8 +92,8 @@ void Core::chooseTask() {
 }
 
 int Core::down(int id) {
+    pthread_mutex_lock(this->procStatusLock);
     if (this->semaphore[id] == 0) {
-        pthread_mutex_lock(this->procStatusLock);
         this->procStatus[this->currentProc] = 3;
         this->blockedProc[this->currentProc] = id;
         this->runingProc = 0;
@@ -102,15 +102,16 @@ int Core::down(int id) {
     } else {
         this->semaphore[id]--;
         this->drawSemaphore();
+        pthread_mutex_unlock(this->procStatusLock);
         return 1;
     }
 }
 
 int Core::up(int id) {
+    pthread_mutex_lock(this->procStatusLock);
     int i;
     for(i = 0; i < 16; i ++) {
         if (this->blockedProc[i] == id) {
-            pthread_mutex_lock(this->procStatusLock);
             this->procStatus[i] = 0;
             this->blockedProc[i] = 0;
             pthread_mutex_unlock(this->procStatusLock);
@@ -119,6 +120,7 @@ int Core::up(int id) {
         }
     }
     this->semaphore[id]++;
+    pthread_mutex_unlock(this->procStatusLock);
     this->drawSemaphore();
     return 1;
 }

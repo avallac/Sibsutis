@@ -153,13 +153,13 @@ int main(int argc, char *argv[]){
     objClock = new Clock(&mutex_screen, interval);
     objClock->setPosition(1, 1, 2, 77);
     core = new Core(&mutex_screen, N);
-    core->setPosition(4, 1, N + 1, 77);
+    core->setPosition(4, 1, 6, 77);
     buffer = new Buffer(&mutex_screen);
-    buffer->setPosition(9 + N, 1, 6, 12);
+    buffer->setPosition(14, 1, 6, 12);
     firefly = new Obj(&mutex_screen);
-    firefly->setPosition(16 + N, 1, 10, 77);
+    firefly->setPosition(21, 1, 10, 77);
     string = new String(&mutex_screen, argv[2], 76);
-    string->setPosition(29 + N, 1, 2, 77);
+    string->setPosition(34, 1, 2, 77);
     core->semaphore[EMPTY] = 5;
     App * app[N];
     for (i = 0; i < N; i ++) {
