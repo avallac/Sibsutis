@@ -164,29 +164,53 @@ class CFGrammar
         );
     }
 
+    private function returnPrev($i, $queue, $exist)
+    {
+        $ret = array();
+        if ($i < 0) {
+            return array(array());
+        }
+        if (in_array($queue[$i][0], $exist)) {
+            return array();
+        }
+        $new = array_merge($exist, array($queue[$i][0]));
+        foreach ($queue[$i][1] as $old) {
+            $ret = array_merge($this->returnPrev($old, $queue, $new), $ret);
+        }
+        foreach ($ret as $k => $v) {
+            $ret[$k][]= $queue[$i][0];
+        }
+        return $ret;
+    }
+
     public function generate($len)
     {
         $return = array();
         $exists = array($this->target);
-        $queue = array(array($this->target, -1));
+        $queue = array(array($this->target, array(-1)));
         for ($i = 0; isset($queue[$i]); $i++) {
             if ($queue[$i][0] === 'S1') {
                 $str = array('S1');
             } else {
                 $str = str_split($queue[$i][0]);
             }
-            $term = 1;
             for ($j = 0; isset($str[$j]); $j++) {
                 if ($this->V[$str[$j]]['type'] == self::TYPE_NT) {
-                    $term = 0;
+                    $queue[$i][2] = 0;
                     $rep = $str[$j];
                     foreach ($this->rules as $rule) {
                         if ($rule['l'] == $rep) {
                             $str[$j] = $rule['r'];
                             if (strlen(implode($str)) <= $len) {
                                 if (!in_array(implode($str), $exists)) {
-                                    $queue[] = array(implode($str), $i);
+                                    $queue[] = array(implode($str), array($i), 1);
                                     $exists[] = implode($str);
+                                } else {
+                                    foreach ($queue as $k => $v) {
+                                        if ($v[0] === implode($str)) {
+                                            $queue[$k][1][] = $i;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -194,14 +218,15 @@ class CFGrammar
                     break;
                 }
             }
-            if ($term) {
-                $prev = $i;
-                $out = array();
-                while ($prev >= 0) {
-                    array_unshift($out, $queue[$prev][0]);
-                    $prev = $queue[$prev][1];
+        }
+        for ($i = 0; isset($queue[$i]); $i++) {
+            if ($queue[$i][2]) {
+                $ret = $this->returnPrev($i, $queue, array());
+                $arr = array();
+                foreach ($ret as $e) {
+                     $arr[]= implode(" => ", $e);
                 }
-                $return[]=implode(" => ", $out);
+                $return[] = $arr;
             }
         }
         return $return;

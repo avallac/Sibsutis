@@ -4,5 +4,3 @@ CREATE TABLE tbl_cases (
     name VARCHAR(128) NOT NULL,
     rule TEXT NOT NULL
 );
-
-INSERT INTO tbl_cases (labNum, name, rule) VALUES (1, 'pass1','bla bla');

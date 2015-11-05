@@ -227,3 +227,18 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+table.output {
+	width: 100%;
+}
+table.output TD {
+	border-bottom: 1px solid #0066A4;
+	border-left: 1px solid #0066A4;
+	border-right: 1px solid #0066A4;
+	padding: 3px;
+}
+table.output TH {
+	text-align: left;
+	background:white url(bg.gif) repeat-x left top;
+	color: white;
+}

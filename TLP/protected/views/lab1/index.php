@@ -50,9 +50,12 @@
     <br><br><br>
 <?php endif; ?>
 <?php if (isset($gModel['strings'])): ?>
-    <h2>Вывод:</h2>
-    <?php $count = 1; ?>
-    <?php foreach ($gModel['strings'] as $line): ?>
-    <?= $count++ ?>) <?= $line ?><br>
+    <table cellspacing="0" class="output">
+    <tr><th>Вывод:</th></tr>
+    <?php foreach ($gModel['strings'] as $lines): ?>
+        <tr><td><?php foreach ($lines as $line): ?>
+            <?= $line ?><br>
+        <?php endforeach; ?></td></tr>
     <?php endforeach; ?>
+    </table>
 <?php endif; ?>
