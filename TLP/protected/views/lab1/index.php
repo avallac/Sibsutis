@@ -1,14 +1,14 @@
 <div class="form">
-
+<table border="0">
+<tr><td>
     <?php $form=$this->beginWidget('CActiveForm', array(
-        'id'=>'lab1-form',
+        'id'=>'lab-form',
         'enableClientValidation'=>true,
         'clientOptions'=>array(
             'validateOnSubmit'=>true,
         ),
     )); ?>
     <?php echo CHtml::errorSummary($model); ?>
-
     <div class="row">
         <?php echo $form->labelEx($model,'terminal'); ?>
         <?php echo $form->textField($model,'terminal'); ?>
@@ -30,17 +30,29 @@
         <?php echo $form->error($model,'rule'); ?>
     </div>
     <div class="row buttons">
-        <?php echo CHtml::submitButton('Submit'); ?>
+        <?php echo CHtml::submitButton('Построить', array('submit' => Yii::app()->createUrl('lab1/index'))); ?>
     </div>
-
     <?php $this->endWidget(); ?>
-
-</div><!-- form -->
-
-
-Вывод:<br>
-<?php $count = 1; ?>
-<?php foreach ($output as $line): ?>
-<?= $count++ ?>) <?= $line ?><br>
-<?php endforeach; ?>
-
+</td><td>
+        <?php $this->widget('SaveFormWidget'); ?>
+</td></tr></table>
+</div>
+<div id="footer"></div>
+<?php if (isset($gModel['rules'])): ?>
+    <h2>После оптимизации:</h2>
+    <b>Терминалы:</b> {<?= $gModel['term'] ?>}<br>
+    <b>Нетерминалы:</b> {<?= $gModel['nonterm'] ?>}<br>
+    <b>Целевой символ:</b> <?= $gModel['target'] ?><br>
+    <b>Правила:</b><br>
+    <?php foreach ($gModel['rules'] as $line): ?>
+        &nbsp;&nbsp;<?= $line ?><br>
+    <?php endforeach; ?>
+    <br><br><br>
+<?php endif; ?>
+<?php if (isset($gModel['strings'])): ?>
+    <h2>Вывод:</h2>
+    <?php $count = 1; ?>
+    <?php foreach ($gModel['strings'] as $line): ?>
+    <?= $count++ ?>) <?= $line ?><br>
+    <?php endforeach; ?>
+<?php endif; ?>

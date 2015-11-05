@@ -7,9 +7,6 @@ class Lab1Form extends CFormModel
     public $target;
     public $rule;
 
-    /**
-     * Declares the validation rules.
-     */
     public function rules()
     {
         return array(
@@ -52,6 +49,11 @@ class Lab1Form extends CFormModel
                 return;
             }
             $g->addRules($this->rule);
+            if (!strlen($g->getError())) {
+                $g->removeE();
+                $g->removeOrphan();
+                $g->removeUnavailable();
+            }
         }
         if (strlen($g->getError())) {
             $this->addError($attribute, $g->getError());

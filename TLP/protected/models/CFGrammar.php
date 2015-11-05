@@ -30,13 +30,15 @@ class CFGrammar
     {
         $VT = $this->parseInput($VT);
         foreach ($VT as $e) {
-            if (strlen($e) > 1) {
+            if (strlen($e) > 1 && $e!=='S1') {
                 $this->error("Элемент '$e' длинее одного символа.");
             }
             if (!isset($this->V[$e])) {
                 $this->V[$e] = array();
                 $this->V[$e]['type'] = $type;
                 $this->V[$e]['empty'] = $empty;
+                $this->V[$e]['used'] = 0;
+                $this->V[$e]['head'] = 0;
                 if ($type == self::TYPE_T || $type == self::TYPE_EMPTY) {
                     $this->V[$e]['used'] = 1;
                 }
@@ -58,7 +60,7 @@ class CFGrammar
     {
         if (isset($this->V[$e])) {
             if ($this->V[$e]['type'] == self::TYPE_EMPTY) {
-                $this->error("Беда, пролзла пустота.");
+                $this->error("Беда, пролезла пустота.");
             }
             return 1;
         } else {
@@ -151,6 +153,17 @@ class CFGrammar
         }
     }
 
+    public function export($len)
+    {
+        return array(
+            'strings' => $this->generate($len),
+            'rules' => $this->getRules(),
+            'term' => $this->getTerm(),
+            'nonterm' => $this->getNonTerm(),
+            'target' => $this->target,
+        );
+    }
+
     public function generate($len)
     {
         $return = array();
@@ -185,11 +198,10 @@ class CFGrammar
                 $prev = $i;
                 $out = array();
                 while ($prev >= 0) {
-                    array();
                     array_unshift($out, $queue[$prev][0]);
                     $prev = $queue[$prev][1];
                 }
-                $return[]=implode(" => ", $out)."\n";
+                $return[]=implode(" => ", $out);
             }
         }
         return $return;
@@ -207,16 +219,43 @@ class CFGrammar
         $this->clean('head');
     }
 
-    public function dumpV()
+    public function getTerm()
     {
-        var_dump($this->V);
+        $ret = array();
+        foreach ($this->V as $t => $v) {
+            if ($v['type'] == self::TYPE_T && $v['head'] == 1) {
+                $ret []= $t;
+            }
+        }
+        return implode(", ", $ret);
     }
 
-    public function dumpRules()
+    public function getNonTerm()
     {
-        foreach ($this->rules as $rule) {
-            print($rule['l'] . "->" . $rule['r'] . "\n");
+        $ret = array();
+        foreach ($this->V as $t => $v) {
+            if ($v['type'] == self::TYPE_NT && $v['used'] == 1) {
+                $ret []= $t;
+            }
         }
+        return implode(", ", $ret);
+    }
+
+    public function getRules()
+    {
+        $ret = array();
+        $out = array();
+        foreach ($this->rules as $rule) {
+            if (isset($out[$rule['l']])) {
+                $out[$rule['l']] .= '|' . $rule['r'];
+            } else {
+                $out[$rule['l']] = $rule['l'] . '=>' . $rule['r'];
+            }
+        }
+        foreach ($out as $rule) {
+            $ret [] = $rule;
+        }
+        return $ret;
     }
 
     private function rCheck($param)
@@ -227,11 +266,11 @@ class CFGrammar
             foreach ($this->rules as $rule) {
                 $change = 1;
                 foreach (str_split($rule['r']) as $e) {
-                    if (!isset($this->V[$e][$param])) {
+                    if (!$this->V[$e][$param]) {
                         $change = 0;
                     }
                 }
-                if ($change && !isset($this->V[$rule['l']][$param])) {
+                if ($change && !$this->V[$rule['l']][$param]) {
                     $this->V[$rule['l']][$param] = 1;
                     $mod = 1;
                 }
@@ -247,7 +286,7 @@ class CFGrammar
             foreach ($this->rules as $rule) {
                 if ($this->V[$rule['l']][$param]) {
                     foreach (str_split($rule['r']) as $e) {
-                        if (!isset($this->V[$e][$param])) {
+                        if (!$this->V[$e][$param]) {
                             $this->V[$e][$param] = 1;
                             $mod = 1;
                         }
@@ -260,7 +299,7 @@ class CFGrammar
     private function clean($param)
     {
         foreach ($this->V as $t => $v) {
-            if (!isset($v[$param])) {
+            if (!$v[$param]) {
                 $tmp = array();
                 foreach ($this->rules as $rule) {
                     if (!substr_count($rule['r'], $t) && !substr_count($rule['l'], $t)) {

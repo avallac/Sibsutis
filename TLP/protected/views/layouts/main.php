@@ -39,7 +39,9 @@
 			),
 		)); ?>
 	</div>
+	<div style="margin: 0 50px 0 50px;">
 	<?php echo $content; ?>
+	</div>
 
 	<div class="clear"></div>
 
