@@ -19,9 +19,7 @@ class Lab1Controller extends LabController
                 $g->add($model->nonterminal, CFGrammar::TYPE_NT);
                 $g->setTarget($model->target);
                 $g->addRules($model->rule);
-                $g->removeE();
-                $g->removeOrphan();
-                $g->removeUnavailable();
+                $g->optimize();
                 $gModel = $g->export(3);
             }
         }

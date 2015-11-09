@@ -12,6 +12,9 @@ class Lab2Controller extends LabController
         $model = new Lab2Form;
         if (isset($_POST['Lab2Form'])) {
             $model->attributes = $_POST['Lab2Form'];
+            if ($model->validate()) {
+
+            }
         }
         $this->render('index', array('model'=>$model));
     }

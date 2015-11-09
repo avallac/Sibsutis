@@ -21,17 +21,18 @@ class CFGrammar
         $this->add("#", self::TYPE_EMPTY, 1);
     }
 
-    public function parseInput($str)
+    public static function parseInput($str)
     {
         return explode(',', str_replace(" ", "", $str));
     }
 
     public function add($VT, $type, $empty = 0)
     {
-        $VT = $this->parseInput($VT);
+        $VT = self::parseInput($VT);
         foreach ($VT as $e) {
             if (strlen($e) > 1 && $e!=='S1') {
                 $this->error("Элемент '$e' длинее одного символа.");
+                return false;
             }
             if (!isset($this->V[$e])) {
                 $this->V[$e] = array();
@@ -44,8 +45,10 @@ class CFGrammar
                 }
             } else {
                 $this->error("Элемент '$e' повторяется.");
+                return false;
             }
         }
+        return true;
     }
 
     public function setTarget($target)
@@ -53,7 +56,9 @@ class CFGrammar
         if ($this->checkNT($target)) {
             $this->target = $target;
             $this->V[$target]['head'] = 1;
+            return true;
         }
+        return false;
     }
 
     public function checkExists($e)
@@ -62,10 +67,11 @@ class CFGrammar
             if ($this->V[$e]['type'] == self::TYPE_EMPTY) {
                 $this->error("Беда, пролезла пустота.");
             }
-            return 1;
+            return true;
         } else {
             $this->error("Элемент '$e' не найден.");
         }
+        return false;
     }
 
     public function checkNT($nt)
@@ -86,31 +92,45 @@ class CFGrammar
         }
     }
 
+    public function optimize()
+    {
+        $this->removeE();
+        $this->removeOrphan();
+        $this->removeUnavailable();
+    }
+
     public function addRule($rule)
     {
         if (preg_match('/^(\S)->(.+)$/', $rule, $m)) {
             if ($m[1] === $m[2]) {
-                return;
+                return true;
             }
             foreach ($this->rules as $rule) {
                 if ($rule['l'] === $m[1] && $rule['r'] === $m[2]) {
-                    return;
+                    return true;
                 }
             }
-            $this->checkNT($m[1]);
-            foreach (explode('|', $m[2]) as $e) {
-                if ($e === '#') {
-                    $this->V[$m[1]]['empty'] = 1;
-                } else {
-                    $e = str_replace('#', '', $e);
-                    $this->rules [] = array('l' => $m[1], 'r' => $e);
-                    foreach (str_split($e) as $eV) {
-                        $this->checkExists($eV);
+            if ($this->checkNT($m[1])) {
+                foreach (explode('|', $m[2]) as $e) {
+                    if ($e === '#') {
+                        $this->V[$m[1]]['empty'] = 1;
+                    } else {
+                        $e = str_replace('#', '', $e);
+                        $this->rules [] = array('l' => $m[1], 'r' => $e);
+                        foreach (str_split($e) as $eV) {
+                            if (!$this->checkExists($eV)) {
+                                return false;
+                            }
+                        }
                     }
                 }
+                return true;
+            } else {
+                return false;
             }
         } else {
             $this->error("Правило '$rule' не опознано.");
+            return false;
         }
     }
 
@@ -185,6 +205,9 @@ class CFGrammar
 
     public function generate($len)
     {
+        if ($this->target === '') {
+            return '';
+        }
         $return = array();
         $exists = array($this->target);
         $queue = array(array($this->target, array(-1)));

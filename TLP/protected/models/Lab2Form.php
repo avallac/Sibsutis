@@ -11,7 +11,9 @@ class Lab2Form extends CFormModel
     {
         return array(
             array('check, begin, end, graph', 'required'),
-            //array('terminal', 'checkG', 0),
+            array('graph', 'check', 0),
+            array('begin', 'check', 1),
+            array('ends', 'check', 2),
         );
     }
 
@@ -23,6 +25,44 @@ class Lab2Form extends CFormModel
             'end' => 'Множество конечных состояний',
             'graph' => 'Граф',
         );
+    }
+
+    public function check($attribute, $params)
+    {
+        $error = 0;
+        $FSM = new FSM();
+        $parser = new GoJSParser($this->graph);
+        if (!$FSM->setLanguage($parser->getLang())) {
+            $this->addError($attribute, $FSM->getError());
+            $error = 1;
+        }
+        if (!$FSM->setStates($parser->getStates())) {
+            $this->addError($attribute, $FSM->getError());
+            $error = 1;
+        }
+        if (!$FSM->setRules($parser->getRules())) {
+            $error = 1;
+        }
+        if ($params[0] >= 1) {
+            if ($error) {
+                return;
+            }
+            if (!$FSM->setBegin($this->begin)) {
+                $error = 1;
+            }
+        }
+        if ($params[0] >= 2) {
+            if ($error) {
+                return;
+            }
+            if (!$FSM->setEnd($this->end)) {
+                $error = 1;
+            }
+        }
+        if ($error) {
+            $this->addError($attribute, $FSM->getError());
+        }
+
     }
 
 }
