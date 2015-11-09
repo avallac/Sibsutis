@@ -12,7 +12,7 @@
     <?php echo $form->hiddenField($saveModel, 'form'); ?>
 </div>
 <div class="row buttons">
-    <?php echo CHtml::submitButton('Сохранить', array('submit' => Yii::app()->createUrl('lab1/save'))); ?>
+    <?php echo CHtml::submitButton('Сохранить', array('submit' => Yii::app()->createUrl('lab' . $lab . '/save'))); ?>
 </div>
 <script>
     $('#save-form').submit(function(e){
@@ -28,6 +28,6 @@
 <?php $this->endWidget(); ?>
 
 <?php foreach ($cases as $e): ?>
-    <a href="<?= Yii::app()->createUrl('lab1/load', array('id' => $e->id)) ?>"><?= $e->name ?><br>
+    <a href="<?= Yii::app()->createUrl('lab' . $lab . '/load', array('id' => $e->id)) ?>"><?= $e->name ?><br>
 <?php endforeach; ?>
 

@@ -1,9 +1,11 @@
 <?php
 
-class Lab1Controller extends Controller
+class Lab1Controller extends LabController
 {
 
     public $pageTitle = "Лабораторная 1";
+    public $labNum = 1;
+    public $formName = 'Lab1Form';
 
     public function actionIndex()
     {
@@ -24,31 +26,5 @@ class Lab1Controller extends Controller
             }
         }
         $this->render('index', array('gModel' => $gModel, 'model'=>$model));
-    }
-
-    public function actionSave()
-    {
-        $model = new Lab1Form;
-        $saveModel = new SaveForm;
-        if (isset($_POST['SaveForm'])) {
-            $saveModel->attributes = $_POST['SaveForm'];
-            $model->attributes = json_decode($_POST['SaveForm']['form'], 1);
-            if ($saveModel->validate() && $model->validate()) {
-                $case = new CaseRecord();
-                $case->labNum = 1;
-                $case->name = $saveModel->filename;
-                $case->rule = $saveModel->form;
-                $case->save();
-            }
-        }
-        $this->render('index', array('model'=>$model));
-    }
-
-    public function actionLoad($id)
-    {
-        $case = CaseRecord::model()->find('id=:ID', array(':ID'=>$id));
-        $model = new Lab1Form;
-        $model->attributes = json_decode($case->rule, 1);
-        $this->render('index', array('model'=>$model));
     }
 }

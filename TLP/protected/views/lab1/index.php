@@ -34,7 +34,7 @@
     </div>
     <?php $this->endWidget(); ?>
 </td><td>
-        <?php $this->widget('SaveFormWidget'); ?>
+        <?php $this->widget('SaveFormWidget', array('lab' => 1)); ?>
 </td></tr></table>
 </div>
 <div id="footer"></div>
