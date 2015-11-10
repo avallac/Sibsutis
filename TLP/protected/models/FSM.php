@@ -28,6 +28,16 @@ class FSM
         return true;
     }
 
+    public function getLanguage()
+    {
+        return implode(', ', array_keys($this->lang));
+    }
+
+    public function getStates()
+    {
+        return implode(', ', array_keys($this->states));
+    }
+
     public function setStates($states)
     {
         $this->states = array();
@@ -95,6 +105,38 @@ class FSM
             return true;
         }
         return false;
+    }
+
+    public function export($str)
+    {
+        return array(
+            'output' => $this->check($str),
+            'lang' => $this->getLanguage(),
+            'states' => $this->getStates()
+        );
+    }
+
+    public function check($str)
+    {
+        $cur = $this->begin;
+        $states = "($cur, $str)";
+        $str = str_split($str);
+        while ($a = array_shift($str)) {
+            if (!isset($this->rule[$cur][$a])) {
+                return array("Правила перехода '$a' из состояние '$cur' не обнаружено.", $states);
+            } else {
+                $cur = $this->rule[$cur][$a];
+                if (count($str)) {
+                    $states .= " ├─ (" . $cur . ", " . implode($str) . ")";
+                } else {
+                    $states .= " ├─ (" . $cur . ", #)";
+                }
+            }
+        }
+        if (!isset($this->end[$cur])) {
+            return array("Конечное состояние достигнуто не было", $states);
+        }
+        return array("Строчка принята.", $states);
     }
 
     public function getError()

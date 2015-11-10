@@ -6,6 +6,7 @@ class FSMTest extends CTestCase
     {
         $FSM = new FSM();
         $this->assertTrue($FSM->setLanguage("a,b,c,d"));
+        $this->assertEquals('a, b, c, d', $FSM->getLanguage());
         $this->assertFalse($FSM->setLanguage("a,b,cc,d"));
         $this->assertEquals("Буква 'cc' слишком длинная.", $FSM->getError());
         $this->assertFalse($FSM->setLanguage("a,b,c,d,c"));

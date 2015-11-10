@@ -28,6 +28,7 @@
 <?php $this->endWidget(); ?>
 
 <?php foreach ($cases as $e): ?>
-    <a href="<?= Yii::app()->createUrl('lab' . $lab . '/load', array('id' => $e->id)) ?>"><?= $e->name ?><br>
+    <a href="<?= Yii::app()->createUrl('lab' . $lab . '/load', array('id' => $e->id)) ?>"><?= $e->name ?></a>
+    (<a href="<?= Yii::app()->createUrl('lab' . $lab . '/delete', array('id' => $e->id)) ?>">del</a>)<br>
 <?php endforeach; ?>
 

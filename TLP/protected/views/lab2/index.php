@@ -41,6 +41,20 @@ $cs->registerScriptFile($baseUrl . '/js/graph.js');
             </td></tr>
     </table>
     <div id="myDiagram" style="background-color: whitesmoke; border: solid 1px black; width: 100%; height: 400px"></div>
+    <div id="footer"></div>
+    <?php if (isset($FSMModel['lang'])): ?>
+        <h2> Информация:</h2>
+        <b> Алфавит:</b> {<?= $FSMModel['lang'] ?>}<br>
+        <b> Список состояний:</b> {<?= $FSMModel['states'] ?>}<br>
+        <br><br><br>
+    <?php endif; ?>
+    <?php if (isset($FSMModel['output'])): ?>
+        <table cellspacing="0" class="output">
+            <tr><th colspan="2">Вывод:</th></tr>
+            <tr><td width="100">Результат</td><td><?= $FSMModel['output'][0]; ?></td></tr>
+            <tr><td width="100">Последовательность</td><td><?= $FSMModel['output'][1]; ?></td></tr>
+        </table>
+    <?php endif; ?>
 </div>
 
 <script>

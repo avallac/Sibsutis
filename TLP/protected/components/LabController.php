@@ -32,4 +32,11 @@ class LabController extends Controller
         $model->attributes = json_decode($case->rule, 1);
         $this->render('index', array('model'=>$model));
     }
+
+    public function actionDelete($id)
+    {
+        $case = CaseRecord::model()->find('id=:ID', array(':ID'=>$id));
+        $case->delete();
+        $this->redirect('index');
+    }
 }
