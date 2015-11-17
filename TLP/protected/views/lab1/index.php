@@ -9,21 +9,13 @@
         ),
     )); ?>
     <?php echo CHtml::errorSummary($model); ?>
-    <div class="row">
-        <?php echo $form->labelEx($model,'terminal'); ?>
-        <?php echo $form->textField($model,'terminal'); ?>
-        <?php echo $form->error($model,'terminal'); ?>
-    </div>
-    <div class="row">
-        <?php echo $form->labelEx($model,'nonterminal'); ?>
-        <?php echo $form->textField($model,'nonterminal'); ?>
-        <?php echo $form->error($model,'nonterminal'); ?>
-    </div>
-    <div class="row">
-        <?php echo $form->labelEx($model,'target'); ?>
-        <?php echo $form->textField($model,'target'); ?>
-        <?php echo $form->error($model,'target'); ?>
-    </div>
+    <?php foreach(array('terminal', 'nonterminal', 'target') as $e):?>
+        <div class="row">
+            <?php echo $form->labelEx($model, $e); ?>
+            <?php echo $form->textField($model, $e); ?>
+            <?php echo $form->error($model, $e); ?>
+        </div>
+    <?php endforeach;?>
     <div class="row">
         <?php echo $form->labelEx($model,'rule'); ?>
         <?php echo $form->textArea($model,'rule',array('rows'=>6, 'cols'=>50)); ?>
@@ -38,21 +30,21 @@
 </td></tr></table>
 </div>
 <div id="footer"></div>
-<?php if (isset($gModel['rules'])): ?>
+<?php if (isset($labModel['rules'])): ?>
     <h2>После оптимизации:</h2>
-    <b>Терминалы:</b> {<?= $gModel['term'] ?>}<br>
-    <b>Нетерминалы:</b> {<?= $gModel['nonterm'] ?>}<br>
-    <b>Целевой символ:</b> <?= $gModel['target'] ?><br>
+    <b>Терминалы:</b> {<?= $labModel['term'] ?>}<br>
+    <b>Нетерминалы:</b> {<?= $labModel['nonterm'] ?>}<br>
+    <b>Целевой символ:</b> <?= $labModel['target'] ?><br>
     <b>Правила:</b><br>
-    <?php foreach ($gModel['rules'] as $line): ?>
+    <?php foreach ($labModel['rules'] as $line): ?>
         &nbsp;&nbsp;<?= $line ?><br>
     <?php endforeach; ?>
     <br><br><br>
 <?php endif; ?>
-<?php if (isset($gModel['strings'])): ?>
+<?php if (isset($labModel['strings'])): ?>
     <table cellspacing="0" class="output">
     <tr><th>Вывод:</th></tr>
-    <?php foreach ($gModel['strings'] as $lines): ?>
+    <?php foreach ($labModel['strings'] as $lines): ?>
         <tr><td><?php foreach ($lines as $line): ?>
             <?= $line ?><br>
         <?php endforeach; ?></td></tr>

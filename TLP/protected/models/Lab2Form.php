@@ -30,9 +30,9 @@ class Lab2Form extends CFormModel
     public function check($attribute, $params)
     {
         $error = 0;
-        $FSM = new FSM();
+        $FSM = new FiniteStateMachine();
         $parser = new GoJSParser($this->graph);
-        if (!$FSM->setLanguage($parser->getLang())) {
+        if (!$FSM->setAbc($parser->getLang())) {
             $this->addError($attribute, $FSM->getError());
             $error = 1;
         }
@@ -64,5 +64,5 @@ class Lab2Form extends CFormModel
         }
 
     }
-
 }
+

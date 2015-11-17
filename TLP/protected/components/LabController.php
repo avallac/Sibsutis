@@ -3,9 +3,23 @@
  * Controller is the customized base controller class.
  * All controller classes for this application should extend from this base class.
  */
-class LabController extends Controller
+abstract class LabController extends Controller
 {
     public $labNum;
+    public $formName;
+
+    public function actionIndex()
+    {
+        $model = new $this->formName;
+        $labModel = array();
+        if (isset($_POST[$this->formName])) {
+            $model->attributes = $_POST[$this->formName];
+            if ($model->validate()) {
+                $labModel = $this->runLab($model);
+            }
+        }
+        $this->render('index', array('model'=>$model, 'labModel' => $labModel));
+    }
 
     public function actionSave()
     {
