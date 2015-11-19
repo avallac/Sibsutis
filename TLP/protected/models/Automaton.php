@@ -9,11 +9,13 @@ abstract class Automaton
     protected $states = array();
     protected $begin;
     protected $end = array();
+    protected $stack = array();
+    protected $rule = array();
 
     public function setAbc($language, $type = 'abc')
     {
         $arr = &$this->$type;
-        $arr = array();
+        $arr = array('#' => 1);
         $lang = CFGrammar::parseInput($language);
         foreach ($lang as $e) {
             if (strlen($e) > 1) {
@@ -73,6 +75,41 @@ abstract class Automaton
         return false;
     }
 
+    public function export($str)
+    {
+        return array(
+            'output' => $this->check($str),
+            'lang' => $this->getLanguage(),
+            'states' => $this->getStates()
+        );
+    }
+
+    public function getStack()
+    {
+        if (empty($this->stack)) {
+            return '#';
+        } else {
+            return implode($this->stack);
+        }
+    }
+
+    public function setStack($stack)
+    {
+        $this->stack = array();
+        $inputStack = CFGrammar::parseInput($stack);
+        foreach ($inputStack as $e) {
+            if ($e !== '#') {
+                if (isset($this->abcStack[$e])) {
+                    $this->stack[] = $e;
+                } else {
+                    $this->error("Элемент '$e' не найден в алфавите магазина.");
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     protected function checkState($state)
     {
         if (isset($this->states[$state])) {
@@ -83,9 +120,10 @@ abstract class Automaton
         }
     }
 
-    protected function checkLang($a)
+    protected function checkAbc($a, $type = 'abc')
     {
-        if (isset($this->abc[$a])) {
+        $arr = &$this->$type;
+        if (isset($arr[$a])) {
             return 1;
         } else {
             $this->error("Буква '$a' не найдена.");

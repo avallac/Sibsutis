@@ -3,8 +3,6 @@
 
 class FiniteStateMachine extends Automaton
 {
-    private $rule = array();
-
     public function setRules($rules)
     {
         $this->rule = array();
@@ -18,7 +16,7 @@ class FiniteStateMachine extends Automaton
 
     public function setRule($from, $to, $a)
     {
-        if ($this->checkState($from) && $this->checkState($to) && $this->checkLang($a)) {
+        if ($this->checkState($from) && $this->checkState($to) && $this->checkAbc($a)) {
             if (!isset($this->rule[$from])) {
                 $this->rule[$from] = array();
             }
@@ -30,15 +28,6 @@ class FiniteStateMachine extends Automaton
             return true;
         }
         return false;
-    }
-
-    public function export($str)
-    {
-        return array(
-            'output' => $this->check($str),
-            'lang' => $this->getLanguage(),
-            'states' => $this->getStates()
-        );
     }
 
     public function check($str)

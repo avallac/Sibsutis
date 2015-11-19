@@ -2,6 +2,7 @@
 
 class Lab3Form extends CFormModel
 {
+    public $check;
     public $states;
     public $abcLang;
     public $abcStack;
@@ -14,7 +15,7 @@ class Lab3Form extends CFormModel
     public function rules()
     {
         return array(
-            array('states, abcLang, abcStack, begin, beginStack, end, rule', 'required'),
+            array('check, states, abcLang, abcStack, begin, beginStack, end, rule', 'required'),
             array('states', 'check', 0),
             array('abcLang', 'check', 1),
             array('abcStack', 'check', 2),
@@ -28,8 +29,9 @@ class Lab3Form extends CFormModel
     public function attributeLabels()
     {
         return array(
-            'states'=>'Множество состояний',
-            'abcLang'=>'Алфавит языка',
+            'check' => 'Строка для проверки',
+            'states' => 'Множество состояний',
+            'abcLang' => 'Алфавит языка',
             'abcStack' => 'Алфавит магазина',
             'begin' => 'Начальное состояние',
             'beginStack' => 'Начальное содержимое стека',
@@ -74,6 +76,9 @@ class Lab3Form extends CFormModel
             if ($error) {
                 return;
             }
+            if (!$DPDA->setStack($this->beginStack)) {
+                $error = 1;
+            }
         }
         if ($params[0] >= 5) {
             if ($error) {
@@ -86,6 +91,9 @@ class Lab3Form extends CFormModel
         if ($params[0] >= 6) {
             if ($error) {
                 return;
+            }
+            if (!$DPDA->setRules($this->rule)) {
+                $error = 1;
             }
         }
         if ($error) {

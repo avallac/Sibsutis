@@ -1,6 +1,6 @@
 <?php
 
-class FSMTest extends CTestCase
+class FiniteStateMachineTest extends CTestCase
 {
     public function testInputLang()
     {

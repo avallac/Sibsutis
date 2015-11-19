@@ -9,7 +9,7 @@
                     ),
                 )); ?>
                 <?php echo CHtml::errorSummary($model); ?>
-                <?php foreach(array('states', 'abcLang', 'abcStack', 'begin', 'beginStack', 'end') as $e):?>
+                <?php foreach(array('check', 'states', 'abcLang', 'abcStack', 'begin', 'beginStack', 'end') as $e):?>
                 <div class="row">
                     <?php echo $form->labelEx($model, $e); ?>
                     <?php echo $form->textField($model, $e); ?>
@@ -30,24 +30,11 @@
             </td></tr></table>
 </div>
 <div id="footer"></div>
-<?php if (isset($labModel['rules'])): ?>
-    <h2>После оптимизации:</h2>
-    <b>Терминалы:</b> {<?= $labModel['term'] ?>}<br>
-    <b>Нетерминалы:</b> {<?= $labModel['nonterm'] ?>}<br>
-    <b>Целевой символ:</b> <?= $labModel['target'] ?><br>
-    <b>Правила:</b><br>
-    <?php foreach ($labModel['rules'] as $line): ?>
-        &nbsp;&nbsp;<?= $line ?><br>
-    <?php endforeach; ?>
-    <br><br><br>
-<?php endif; ?>
-<?php if (isset($labModel['strings'])): ?>
+<?php if (isset($labModel['output'])): ?>
     <table cellspacing="0" class="output">
-        <tr><th>Вывод:</th></tr>
-        <?php foreach ($labModel['strings'] as $lines): ?>
-            <tr><td><?php foreach ($lines as $line): ?>
-                        <?= $line ?><br>
-                    <?php endforeach; ?></td></tr>
-        <?php endforeach; ?>
+        <tr><th colspan="2">Вывод:</th></tr>
+        <tr><td width="100">Результат</td><td><?= $labModel['output'][0]; ?></td></tr>
+        <tr><td width="100">Последовательность</td><td><?= $labModel['output'][1]; ?></td></tr>
     </table>
 <?php endif; ?>
+</div>
