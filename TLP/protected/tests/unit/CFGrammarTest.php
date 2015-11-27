@@ -31,4 +31,47 @@ class CFGrammarTest extends CTestCase
         $this->assertTrue($g->addRule("c->a"));
         $this->assertTrue($g->addRule("c->a|d"));
     }
+
+    public function testGenerate()
+    {
+        $g = new CFGrammar();
+        $g->add("a", CFGrammar::TYPE_T);
+        $g->add("d", CFGrammar::TYPE_T);
+        $g->add("S", CFGrammar::TYPE_NT);
+        $g->add("A", CFGrammar::TYPE_NT);
+        $g->setTarget("S");
+        $g->addRule("S->AA");
+        $g->addRule("A->Sa|#");
+        $g->optimize();
+        $ret = $g->export(3);
+        $check = [
+            'strings' => [
+                [
+                    "S` => #"
+                ],
+                [
+                    "S` => S => A => a"
+                ],
+                [
+                    'S` => S => A => Sa => Aa => aa',
+                    'S` => S => AA => aA => aa'
+                ],
+                [
+                    'S` => S => A => Sa => Aa => Saa => Aaa => aaa',
+                    'S` => S => A => Sa => AAa => aAa => aaa',
+                    'S` => S => AA => aA => aSa => aAa => aaa',
+                    'S` => S => AA => SaA => AaA => aaA => aaa'
+                ]
+            ],
+            'rules' => [
+                'S=>AA|A',
+                'A=>Sa|a',
+                'S`=>#|S'
+            ],
+            'term' => 'a',
+            'nonterm' => 'S, A, S`',
+            'target' => 'S`'
+        ];
+        $this->assertEquals($check, $ret);
+    }
 }

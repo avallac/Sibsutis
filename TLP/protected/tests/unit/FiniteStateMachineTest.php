@@ -6,7 +6,7 @@ class FiniteStateMachineTest extends CTestCase
     {
         $FSM = new FiniteStateMachine();
         $this->assertTrue($FSM->setAbc("a,b,c,d"));
-        $this->assertEquals('a, b, c, d', $FSM->getLanguage());
+        $this->assertEquals('#, a, b, c, d', $FSM->getLanguage());
         $this->assertFalse($FSM->setAbc("a,b,cc,d"));
         $this->assertEquals("Буква 'cc' слишком длинная.", $FSM->getError());
         $this->assertFalse($FSM->setAbc("a,b,c,d,c"));
@@ -69,7 +69,7 @@ class FiniteStateMachineTest extends CTestCase
         $export = $FSM->export('ab');
         $this->assertEquals('Строчка принята.', $export['output'][0]);
         $this->assertEquals('(q0, ab) ├─ (q1, b) ├─ (q2, #)', $export['output'][1]);
-        $this->assertEquals('a, b, c, d', $export['lang']);
+        $this->assertEquals('#, a, b, c, d', $export['lang']);
         $this->assertEquals('q0, q1, q2', $export['states']);
         $export = $FSM->export('aab');
         $this->assertEquals("Правила перехода 'a' из состояние 'q1' не обнаружено.", $export['output'][0]);
