@@ -1,3 +1,6 @@
 .idea
 */assets/
 libs/
+report/
+TLP/protected/data/storage.db
+TLP/protected/runtime/

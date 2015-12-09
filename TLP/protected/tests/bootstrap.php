@@ -1,7 +1,7 @@
 <?php
 
-// change the following paths if necessary
-$yiit=dirname(__FILE__).'/../../../libs/yii/framework/yiit.php';
-$config=dirname(__FILE__).'/../config/main.php';
-require_once($yiit);
-Yii::createWebApplication($config);
+require_once("../models/Automaton.php");
+require_once("../models/CFGrammar.php");
+require_once("../models/FiniteStateMachine.php");
+require_once("../models/DeterministicPushdownAutomaton.php");
+require_once("../models/CFTranslate.php");

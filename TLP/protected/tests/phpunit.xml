@@ -10,4 +10,24 @@
 		<browser name="Firefox" browser="*firefox" />
 	</selenium>
 
+	<filter>
+		<whitelist addUncoveredFilesFromWhitelist="true">
+			<file>../models/Automaton.php</file>
+			<file>../models/CFGrammar.php</file>
+			<file>../models/FiniteStateMachine.php</file>
+			<file>../models/DeterministicPushdownAutomaton.php</file>
+			<file>../models/CFTranslate.php</file>
+		</whitelist>
+	</filter>
+
+	<logging>
+		<log type="coverage-html"
+			 target="../../../report/TLP"
+			 title="TLP"
+			 charset="UTF-8"
+			 yui="true"
+			 highlight="true"
+			 lowUpperBound="35" highLowerBound="70" />
+	</logging>
+
 </phpunit>

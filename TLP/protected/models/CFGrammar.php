@@ -6,10 +6,10 @@ class CFGrammar
     const TYPE_NT = 2;
     const TYPE_EMPTY = 3;
 
-    private $target = '';
-    private $V = array();
-    private $rules = array();
-    private $error = '';
+    protected $target = '';
+    protected $V = array();
+    protected $rules = array();
+    protected $error = '';
 
     public function getError()
     {
@@ -84,9 +84,13 @@ class CFGrammar
 
     public function addRules($rules)
     {
+        $this->rules = [];
         foreach (explode("\n", $rules) as $rule) {
-            $this->addRule(trim($rule));
+            if (!$this->addRule(trim($rule))) {
+                return false;
+            }
         }
+        return true;
     }
 
     public function optimize()
@@ -96,16 +100,24 @@ class CFGrammar
         $this->removeUnavailable();
     }
 
+    public function checkExistRule($m)
+    {
+        foreach ($this->rules as $rule) {
+            if ($rule['l'] === $m[1] && $rule['r'] === $m[2]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public function addRule($rule)
     {
         if (preg_match('/^(\S)->(.+)$/', $rule, $m)) {
             if ($m[1] === $m[2]) {
                 return true;
             }
-            foreach ($this->rules as $rule) {
-                if ($rule['l'] === $m[1] && $rule['r'] === $m[2]) {
-                    return true;
-                }
+            if ($this->checkExistRule($m)) {
+                return true;
             }
             if ($this->checkNT($m[1])) {
                 foreach (explode('|', $m[2]) as $e) {
@@ -133,30 +145,40 @@ class CFGrammar
         }
     }
 
+    protected function makeEmptyAlt()
+    {
+    }
+
+    protected function replaceNT($rule, $t)
+    {
+        $count = substr_count($rule['r'], $t);
+        if ($count) {
+            $exp = explode($t, $rule['r']);
+            for ($i = 0; $i < (pow(2, $count) - 1); $i++) {
+                $newRule = '';
+                $j = 0;
+                foreach ($exp as $k => $e) {
+                    $newRule .= $e;
+                    if ($i & pow(2, $j)) {
+                        $newRule .= $t;
+                    }
+                    $j++;
+                }
+                if ($newRule !== '') {
+                    $this->addRule($rule['l'] . "->" . $newRule);
+                }
+            }
+        }
+    }
+
     public function removeE()
     {
         $this->rCheck('empty');
+        $this->makeEmptyAlt();
         foreach ($this->V as $t => $v) {
             if (($v['type'] == self::TYPE_NT) && ($v['empty'] == 1)) {
                 foreach ($this->rules as $rule) {
-                    $count = substr_count($rule['r'], $t);
-                    if ($count) {
-                        $exp = explode($t, $rule['r']);
-                        for ($i = 0; $i < (pow(2, $count) - 1); $i++) {
-                            $newRule = '';
-                            $j = 0;
-                            foreach ($exp as $e) {
-                                $newRule .= $e;
-                                if ($i & pow(2, $j)) {
-                                    $newRule .= $t;
-                                }
-                                $j++;
-                            }
-                            if ($newRule !== '') {
-                                $this->addRule($rule['l'] . "->" . $newRule);
-                            }
-                        }
-                    }
+                    $this->replaceNT($rule, $t);
                 }
             }
         }
@@ -208,7 +230,7 @@ class CFGrammar
     public function generate($len)
     {
         if ($this->target === '') {
-            return '';
+            return false;
         }
         $return = array();
         $exists = array($this->target);
@@ -257,37 +279,69 @@ class CFGrammar
         return $return;
     }
 
+    public function translate($queue, $i)
+    {
+        $ret = array();
+        $next = $queue[$i];
+        while ($next[1] != -1) {
+            $ret [] = $next[0];
+            $next = $queue[$next[1]];
+        }
+        $ret [] = $queue[0][0];
+        return join("=>", $ret);
+    }
+
+    public function searchFirstNT($str)
+    {
+        $arr = str_split($str);
+        for ($j = 0; $j < sizeof($arr); $j ++) {
+            if ($this->V[$arr[$j]]['type'] == self::TYPE_NT) {
+                return $j;
+            }
+        }
+        return sizeof($arr);
+    }
+
+    public function checkInput($str)
+    {
+        $arr = str_split($str);
+        for ($j = 0; $j < sizeof($arr); $j ++) {
+            if (!isset($this->V[$arr[$j]])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public function parse($str)
     {
         $exists = array();
         $queue = [[$str, -1]];
-        for ($i = 0; isset($queue[$i]); $i++) {
-            foreach ($this->rules as $rule) {
-                if (($queue[$i][0] === $this->target) && ($this->target !== 'S`') ||
-                    (($rule['l'] === 'S`') && $rule['r'] === $queue[$i][0])) {
-                    $ret = array();
-                    $next = $queue[$i];
-                    while ($next[1] != -1) {
-                        $ret [] = $next[0];
-                        $next = $queue[$next[1]];
+        if ($this->checkInput($str)) {
+            for ($i = 0; isset($queue[$i]); $i++) {
+                foreach ($this->rules as $rule) {
+                    if (($queue[$i][0] === $this->target) && ($this->target !== 'S`') ||
+                        (($rule['l'] === 'S`') && $rule['r'] === $queue[$i][0])
+                    ) {
+                        return $this->translate($queue, $i);
                     }
-                    $ret [] = $queue[0][0];
-                    return join("=>", $ret);
-                }
-                if ($rule['l'] === 'S`') {
-                    continue;
-                }
-                $ofset = 0;
-                while (($pos = strpos($queue[$i][0], $rule['r'], $ofset)) !== false) {
-                    $tmp = substr_replace($queue[$i][0], $rule['l'], $pos, strlen($rule['r']));
-                    $ofset = $pos + 1;
-                    if (!isset($exists[$tmp])) {
-                        $queue[] = [$tmp, $i];
-                        $exists[$tmp] = 1;
+                    if ($rule['l'] === 'S`') {
+                        continue;
+                    }
+                    if (($pos = strrpos($queue[$i][0], $rule['r'])) !== false) {
+                        if ($pos > $this->searchFirstNT($queue[$i][0])) {
+                            continue;
+                        }
+                        $tmp = substr_replace($queue[$i][0], $rule['l'], $pos, strlen($rule['r']));
+                        if (!isset($exists[$tmp])) {
+                            $queue[] = [$tmp, $i, $rule, $pos];
+                            $exists[$tmp] = 1;
+                        }
                     }
                 }
             }
         }
+        return false;
     }
 
     public function removeOrphan()
@@ -394,7 +448,7 @@ class CFGrammar
         }
     }
 
-    private function error($str)
+    protected function error($str)
     {
         $this->error = $str;
     }

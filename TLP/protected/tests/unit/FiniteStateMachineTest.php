@@ -1,6 +1,6 @@
 <?php
 
-class FiniteStateMachineTest extends CTestCase
+class FiniteStateMachineTest extends PHPUnit_Framework_TestCase
 {
     public function testInputLang()
     {
@@ -44,28 +44,35 @@ class FiniteStateMachineTest extends CTestCase
     public function testRules()
     {
         $FSM = new FiniteStateMachine();
-        $FSM->setStates("a,b,d");
+        $this->assertTrue($FSM->setStates("a,b,d"));
         $this->assertFalse($FSM->setRule("a", "b", "c"));
         $this->assertEquals("Буква 'c' не найдена.", $FSM->getError());
-        $FSM->setAbc("c");
+        $this->assertTrue($FSM->setAbc("c"));
         $this->assertTrue($FSM->setRule("a", "b", "c"));
         $this->assertFalse($FSM->setRule("a", "d", "c"));
         $this->assertEquals("Выход 'c' из 'a' повторяется.", $FSM->getError());
     }
 
+    public function testSetRules()
+    {
+        $FSM = new FiniteStateMachine();
+        $this->assertFalse($FSM->setRules([['q0','q111','a']]));
+        $this->assertEquals("Состояние 'q0' не найдено.", $FSM->getError());
+    }
+
     public function testExport()
     {
         $FSM = new FiniteStateMachine();
-        $FSM->setAbc("a,b,c,d");
-        $FSM->setStates("q0,q1,q2");
-        $FSM->setBegin("q0");
-        $FSM->setEnd("q2");
-        $FSM->setRules(
+        $this->assertTrue($FSM->setAbc("a,b,c,d"));
+        $this->assertTrue($FSM->setStates("q0,q1,q2"));
+        $this->assertTrue($FSM->setBegin("q0"));
+        $this->assertTrue($FSM->setEnd("q2"));
+        $this->assertTrue($FSM->setRules(
             array(
                 array('q0','q1','a'),
                 array('q1','q2','b'),
             )
-        );
+        ));
         $export = $FSM->export('ab');
         $this->assertEquals('Строчка принята.', $export['output'][0]);
         $this->assertEquals('(q0, ab) ├─ (q1, b) ├─ (q2, #)', $export['output'][1]);
@@ -74,14 +81,16 @@ class FiniteStateMachineTest extends CTestCase
         $export = $FSM->export('aab');
         $this->assertEquals("Правила перехода 'a' из состояние 'q1' не обнаружено.", $export['output'][0]);
         $this->assertEquals('(q0, aab) ├─ (q1, ab)', $export['output'][1]);
-        $FSM->setRules(
+        $this->assertTrue($FSM->setRules(
             array(
                 array('q0','q1','a'),
                 array('q1','q1','a'),
                 array('q1','q2','b'),
             )
-        );
+        ));
         $export = $FSM->export('aab');
         $this->assertEquals('Строчка принята.', $export['output'][0]);
+        $export = $FSM->export('aa');
+        $this->assertEquals('Конечное состояние достигнуто не было', $export['output'][0]);
     }
 }
