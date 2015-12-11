@@ -341,7 +341,7 @@ class CFGrammar
                 }
             }
         }
-        return false;
+        return 'Последовательность не распознана.';
     }
 
     public function removeOrphan()

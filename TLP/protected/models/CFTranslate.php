@@ -85,12 +85,20 @@ class CFTranslate extends CFGrammar
         }
     }
 
+    public function export($string)
+    {
+        return array(
+            'strings' => $this->parse($string),
+            'rules' => $this->getRules(),
+            'term' => $this->getTerm(),
+            'nonterm' => $this->getNonTerm(),
+            'target' => $this->target,
+        );
+    }
+
     public function addRule($rule)
     {
         if (preg_match('/^(\S)->(.+),(.+)$/', $rule, $m)) {
-            if ($m[1] === $m[2]) {
-                return true;
-            }
             foreach ($this->rules as $rule) {
                 if ($rule['l'] === $m[1] && $rule['r'] === $m[2]) {
                     $this->error("Правило дублируется '".$m[1]."->".$m[2]."'.");
@@ -130,7 +138,9 @@ class CFTranslate extends CFGrammar
                         $this->error("Нетерминалы не совпадают '$e, $m[3]'.");
                         return false;
                     }
-                    $this->rules [] = array('l' => $m[1], 'r' => $e, 'tr' => $m[3]);
+                    if ($m[1] !== $e) {
+                        $this->rules [] = array('l' => $m[1], 'r' => $e, 'tr' => $m[3]);
+                    }
                 }
                 return true;
             } else {
@@ -155,7 +165,7 @@ class CFTranslate extends CFGrammar
             $next = $queue[$next[1]];
         }
         $ret [] = "(".$next[0].",".$translate.")";
-        return join("=>", $ret);
+        return $ret;
     }
 
     protected function replaceNT($rule, $t)

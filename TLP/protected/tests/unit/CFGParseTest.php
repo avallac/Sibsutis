@@ -24,8 +24,8 @@ class CFGParseTest extends PHPUnit_Framework_TestCase
             ["S=>aA,aA", "A=>BC,BC", "B=>a,b", "C=>a,c", "S=>a,abc", "A=>C,bC", "A=>B,Bc"],
             $g->getRules()
         );
-        $this->assertEquals("(S,S)=>(aA,aA)=>(aBC,aBC)=>(aaC,abC)=>(aaa,abc)", $g->parse('aaa'));
-        $this->assertEquals("(S,S)=>(a,abc)", $g->parse('a'));
+        $this->assertEquals(["(S,S)", "(aA,aA)", "(aBC,aBC)", "(aaC,abC)", "(aaa,abc)"], $g->parse('aaa'));
+        $this->assertEquals(["(S,S)", "(a,abc)"], $g->parse('a'));
     }
 
     public function testMet()
@@ -52,22 +52,24 @@ class CFGParseTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($g->setTarget('S'));
         $g->optimize();
         $this->assertEquals(
-            "(S,S)=>".
-            "((S),S)=>".
-            "((P),P)=>".
-            "((A*A),A*A)=>".
-            "(((S+S)*A),(S+S)*A)=>".
-            "(((P+S)*A),(P+S)*A)=>".
-            "(((a+S)*A),(a+S)*A)=>".
-            "(((a+(S))*A),(a+S)*A)=>".
-            "(((a+(P))*A),(a+P)*A)=>".
-            "(((a+(A*A))*A),(a+A*A)*A)=>".
-            "(((a+(P*A))*A),(a+P*A)*A)=>".
-            "(((a+(a*A))*A),(a+a*A)*A)=>".
-            "(((a+(a*P))*A),(a+a*P)*A)=>".
-            "(((a+(a*a))*A),(a+a*a)*A)=>".
-            "(((a+(a*a))*P),(a+a*a)*P)=>".
-            "(((a+(a*a))*a),(a+a*a)*a)",
+            [
+                "(S,S)",
+                "((S),S)",
+                "((P),P)",
+                "((A*A),A*A)",
+                "(((S+S)*A),(S+S)*A)",
+                "(((P+S)*A),(P+S)*A)",
+                "(((a+S)*A),(a+S)*A)",
+                "(((a+(S))*A),(a+S)*A)",
+                "(((a+(P))*A),(a+P)*A)",
+                "(((a+(A*A))*A),(a+A*A)*A)",
+                "(((a+(P*A))*A),(a+P*A)*A)",
+                "(((a+(a*A))*A),(a+a*A)*A)",
+                "(((a+(a*P))*A),(a+a*P)*A)",
+                "(((a+(a*a))*A),(a+a*a)*A)",
+                "(((a+(a*a))*P),(a+a*a)*P)",
+                "(((a+(a*a))*a),(a+a*a)*a)"
+            ],
             $g->parse('((a+(a*a))*a)')
         );
     }
@@ -85,8 +87,8 @@ class CFGParseTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($g->addRule("B->0A"));
         $this->assertTrue($g->addRule("S->B1"));
         $this->assertEmpty($g->getError());
-        $this->assertFalse($g->parse('000a'));
-        $this->assertFalse($g->parse('000'));
+        $this->assertEquals("Последовательность не распознана.", $g->parse('000a'));
+        $this->assertEquals("Последовательность не распознана.", $g->parse('000'));
         $this->assertEquals("S=>B1=>0A1=>0001", $g->parse('0001'));
     }
 
@@ -139,7 +141,7 @@ class CFGParseTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($g->addRule("A->0|1|#,0"));
         $this->assertEquals('', $g->getError());
         $g->optimize();
-        $this->assertEquals("(S,S)=>(AA,AA)=>(0A,0A)=>(01,00)", $g->parse('01'));
+        $this->assertEquals(["(S,S)", "(AA,AA)", "(0A,0A)", "(01,00)"], $g->parse('01'));
     }
 
     public function testInputTerm3()
@@ -187,6 +189,8 @@ class CFGParseTest extends PHPUnit_Framework_TestCase
         $g->add("A", CFGrammar::TYPE_NT);
         $this->assertFalse($g->addRule("A->Aa,bA"));
         $this->assertEquals("Неизвестный элемент 'a'.", $g->getError());
+        $this->assertFalse($g->addRule("b->b,b"));
+        $this->assertEquals("Элемент 'b' не нетерминал.", $g->getError());
     }
 
 
