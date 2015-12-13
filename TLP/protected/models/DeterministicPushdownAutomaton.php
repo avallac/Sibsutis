@@ -2,6 +2,7 @@
 
 class DeterministicPushdownAutomaton extends Automaton
 {
+    protected $pattern = '/\(([^,]+),(.),(.)\)=\{\(([^,]+),(.)(.?)\)\}()/';
     public function setRules($rules)
     {
         $this->rule = array();
@@ -13,23 +14,26 @@ class DeterministicPushdownAutomaton extends Automaton
         return true;
     }
 
+    public function checkRule($m)
+    {
+        return !$this->checkState($m[1]) ||
+        !$this->checkAbc($m[2]) ||
+        !$this->checkAbc($m[3], 'abcStack') ||
+        !$this->checkState($m[4]) ||
+        !$this->checkAbc($m[5], 'abcStack') ||
+        ($m[6] !== '' && !$this->checkAbc($m[6], 'abcStack'));
+    }
+
     public function addRule($rule)
     {
-        $pattern = '/\(([^,]+),(.),(.)\)=\{\(([^,]+),(.)(.?)\)\}/';
-        if (preg_match($pattern, $rule, $m)) {
-            if (
-                !$this->checkState($m[1]) ||
-                !$this->checkAbc($m[2]) ||
-                !$this->checkAbc($m[3], 'abcStack') ||
-                !$this->checkState($m[4]) ||
-                !$this->checkAbc($m[5], 'abcStack') ||
-                ($m[6] !== '' && !$this->checkAbc($m[6], 'abcStack'))
-            ) {
+
+        if (preg_match($this->pattern, $rule, $m)) {
+            if ($this->checkRule($m)) {
                 $count = count($this->rule) + 1;
                 $this->error($this->getError() . " В правиле номер " . $count . " - " . $rule);
                 return false;
             }
-            $this->rule[$m[1]][$m[2]][$m[3]] = array($m[4], $m[5], $m[6]);
+            $this->rule[$m[1]][$m[2]][$m[3]] = array($m[4], $m[5], $m[6], $m[7]);
         } else {
             $this->error("Правило '$rule' не опознано.");
             return false;
@@ -46,12 +50,18 @@ class DeterministicPushdownAutomaton extends Automaton
         }
     }
 
+    public function printOut($state, $input, $stack, $out)
+    {
+        return "(" . $state . ", " . $input . ", " . $stack .")";
+    }
+
     public function check($str)
     {
         $cur = $this->begin;
-        $states = "($cur, $str, " . $this->getStack() . ")";
+        $states = [$this->printOut($cur, $str, $this->getStack(), '')];
         $str = str_split($str);
         $oldState = [0, '', ''];
+        $out = '';
         while (!empty($str) || !empty($this->stack)) {
             if (
                 $oldState[0] === $cur &&
@@ -73,7 +83,10 @@ class DeterministicPushdownAutomaton extends Automaton
             }
             if (!isset($this->rule[$cur][$a][$b])) {
                 $b = $this->mapEmpty($b);
-                return array("Правил перехода из состояние '$cur' (строка: '$realA', стэк: '$b') не обнаружено.", $states);
+                return array(
+                    "Правил перехода из состояние '$cur' (строка: '$realA', стэк: '$b') не обнаружено.",
+                    $states
+                );
             } else {
                 if ($this->rule[$cur][$a][$b][1] !== '#') {
                     if ($this->rule[$cur][$a][$b][2] !== '') {
@@ -81,8 +94,11 @@ class DeterministicPushdownAutomaton extends Automaton
                     }
                     array_unshift($this->stack, $this->rule[$cur][$a][$b][1]);
                 }
+                if ($this->rule[$cur][$a][$b][3] !== '#') {
+                    $out .= $this->rule[$cur][$a][$b][3];
+                }
                 $cur = $this->rule[$cur][$a][$b][0];
-                $states .= " ├─ (" . $cur . ", " . $this->mapEmpty(implode($str)) . ", " . $this->getStack() .")";
+                $states[] = $this->printOut($cur, $this->mapEmpty(implode($str)), $this->getStack(), $out);
             }
         }
         if (!isset($this->end[$cur])) {

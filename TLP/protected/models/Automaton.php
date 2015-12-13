@@ -5,6 +5,7 @@ abstract class Automaton
 
     protected $abc = array();
     protected $abcStack = array();
+    protected $abcTr = array();
     protected $error;
     protected $states = array();
     protected $begin;

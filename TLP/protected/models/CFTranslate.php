@@ -34,6 +34,9 @@ class CFTranslate extends CFGrammar
     {
         $ret = array();
         foreach (str_split($r) as $e) {
+            if (isset($this->trAbc[$e])) {
+                continue;
+            }
             if ($this->checkExists($e)) {
                 if ($this->V[$e]['type'] == self::TYPE_NT) {
                     $ret[]= $e;

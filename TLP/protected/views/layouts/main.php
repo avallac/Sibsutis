@@ -33,7 +33,7 @@
 				array('label'=>'Лабораторная 2', 'url'=>array('/lab2')),
 				array('label'=>'Лабораторная 3', 'url'=>array('/lab3')),
 				array('label'=>'Лабораторная 4', 'url'=>array('/lab4')),
-				array('label'=>'Лабораторная 5', 'url'=>array('/site/lab5')),
+				array('label'=>'Лабораторная 5', 'url'=>array('/lab5')),
 				array('label'=>'Курсовая работа', 'url'=>array('/site/kr')),
 
 			),

@@ -58,7 +58,19 @@ class DeterministicPushdownAutomatonTest extends PHPUnit_Framework_TestCase
         $check = [
             'output' => [
                 "Строчка принята.",
-                "(q0, dddd0011, Z) ├─ (q2, dddd0011, Z) ├─ (q2, ddd0011, Z) ├─ (q2, dd0011, Z) ├─ (q2, d0011, Z) ├─ (q2, 0011, Z) ├─ (q0, 011, 0Z) ├─ (q0, 11, 00Z) ├─ (q1, 1, 0Z) ├─ (q1, #, Z) ├─ (q0, #, #)",
+                [
+                    "(q0, dddd0011, Z)",
+                    "(q2, dddd0011, Z)",
+                    "(q2, ddd0011, Z)",
+                    "(q2, dd0011, Z)",
+                    "(q2, d0011, Z)",
+                    "(q2, 0011, Z)",
+                    "(q0, 011, 0Z)",
+                    "(q0, 11, 00Z)",
+                    "(q1, 1, 0Z)",
+                    "(q1, #, Z)",
+                    "(q0, #, #)"
+                ]
             ],
             'lang' => '#, 0, 1, d',
             'states' => 'q0, q1, q2',
@@ -70,7 +82,12 @@ class DeterministicPushdownAutomatonTest extends PHPUnit_Framework_TestCase
         $check = [
             'output' => [
                 "Правил перехода из состояние 'q0' (строка: 'd', стэк: '0') не обнаружено.",
-                "(q0, d0d011, Z) ├─ (q2, d0d011, Z) ├─ (q2, 0d011, Z) ├─ (q0, d011, 0Z)"
+                [
+                    "(q0, d0d011, Z)",
+                    "(q2, d0d011, Z)",
+                    "(q2, 0d011, Z)",
+                    "(q0, d011, 0Z)"
+                ]
             ],
             'lang' => '#, 0, 1, d',
             'states' => 'q0, q1, q2',
@@ -83,7 +100,14 @@ class DeterministicPushdownAutomatonTest extends PHPUnit_Framework_TestCase
         $check = [
             'output' => [
                 "Конечное состояние достигнуто не было",
-                "(q0, d01, Z) ├─ (q2, d01, Z) ├─ (q2, 01, Z) ├─ (q0, 1, 0Z) ├─ (q1, #, Z) ├─ (q0, #, #)"
+                [
+                    "(q0, d01, Z)",
+                    "(q2, d01, Z)",
+                    "(q2, 01, Z)",
+                    "(q0, 1, 0Z)",
+                    "(q1, #, Z)",
+                    "(q0, #, #)"
+                ]
             ],
             'lang' => '#, 0, 1, d',
             'states' => 'q0, q1, q2',
@@ -96,7 +120,10 @@ class DeterministicPushdownAutomatonTest extends PHPUnit_Framework_TestCase
         $check = [
             'output' => [
                 "Обнаружен цикл.",
-                "(q0, d01, Z) ├─ (q0, d01, Z)"
+                [
+                    "(q0, d01, Z)",
+                    "(q0, d01, Z)"
+                ]
             ],
             'lang' => '#, 0, 1, d',
             'states' => 'q0, q1, q2',

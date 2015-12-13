@@ -9,7 +9,7 @@
                     ),
                 )); ?>
                 <?php echo CHtml::errorSummary($model); ?>
-                <?php foreach(array('check', 'states', 'abcLang', 'abcStack', 'begin', 'beginStack', 'end') as $e):?>
+                <?php foreach(array('check', 'states', 'abcLang','abcTr' , 'abcStack', 'begin', 'beginStack', 'end') as $e):?>
                 <div class="row">
                     <?php echo $form->labelEx($model, $e); ?>
                     <?php echo $form->textField($model, $e); ?>
@@ -22,11 +22,11 @@
                     <?php echo $form->error($model, 'rule'); ?>
                 </div>
                 <div class="row buttons">
-                    <?php echo CHtml::submitButton('Построить', array('submit' => Yii::app()->createUrl('lab3/index'))); ?>
+                    <?php echo CHtml::submitButton('Построить', array('submit' => Yii::app()->createUrl('lab5/index'))); ?>
                 </div>
                 <?php $this->endWidget(); ?>
             </td><td>
-                <?php $this->widget('SaveFormWidget', array('lab' => 3)); ?>
+                <?php $this->widget('SaveFormWidget', array('lab' => 5)); ?>
             </td></tr></table>
 </div>
 <div id="footer"></div>

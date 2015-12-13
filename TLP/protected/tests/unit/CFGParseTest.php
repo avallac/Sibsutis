@@ -223,6 +223,19 @@ class CFGParseTest extends PHPUnit_Framework_TestCase
         $this->assertEquals("Нетерминалы не совпадают 'Aa, Bb'.", $g->getError());
     }
 
+    public function testExport()
+    {
+        $g = new CFTranslate();
+        $test = [
+            'strings' => "Последовательность не распознана.",
+            'rules' => [],
+            'term' => "",
+            'nonterm' => "",
+            'target' => ""
+        ];
+        $this->assertEquals($test, $g->export('123'));
+    }
+
     public function testDup()
     {
         $g = new CFTranslate();

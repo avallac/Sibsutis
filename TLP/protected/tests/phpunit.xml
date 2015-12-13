@@ -17,6 +17,7 @@
 			<file>../models/FiniteStateMachine.php</file>
 			<file>../models/DeterministicPushdownAutomaton.php</file>
 			<file>../models/CFTranslate.php</file>
+			<file>../models/SSTranslate.php</file>
 		</whitelist>
 	</filter>
 
