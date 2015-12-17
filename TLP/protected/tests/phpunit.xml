@@ -18,6 +18,7 @@
 			<file>../models/DeterministicPushdownAutomaton.php</file>
 			<file>../models/CFTranslate.php</file>
 			<file>../models/SSTranslate.php</file>
+			<file>../models/RegularGrammar.php</file>
 		</whitelist>
 	</filter>
 

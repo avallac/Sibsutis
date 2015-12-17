@@ -30,7 +30,7 @@ class Lab1Form extends CFormModel
 
     public function checkG($attribute, $params)
     {
-        $g = new CFGrammar();
+        $g = $this->getGrammar();
         $g->add($this->terminal, CFGrammar::TYPE_T);
         if ($params[0] >= 1) {
             if (strlen($g->getError())) {
@@ -58,5 +58,10 @@ class Lab1Form extends CFormModel
         if (strlen($g->getError())) {
             $this->addError($attribute, $g->getError());
         }
+    }
+
+    protected function getGrammar()
+    {
+        return new CFGrammar();
     }
 }

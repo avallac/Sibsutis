@@ -52,7 +52,6 @@ class CFGrammarTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($g->addRule("a-->c|d"));
         $this->assertEquals("Правило 'a-->c|d' не опознано.", $g->getError());
         $this->assertTrue($g->addRule("a->a"));
-        $this->assertTrue($g->addRule("c->b"));
     }
 
     public function testGenerate()

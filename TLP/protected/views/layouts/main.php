@@ -34,13 +34,13 @@
 				array('label'=>'Лабораторная 3', 'url'=>array('/lab3')),
 				array('label'=>'Лабораторная 4', 'url'=>array('/lab4')),
 				array('label'=>'Лабораторная 5', 'url'=>array('/lab5')),
-				array('label'=>'Курсовая работа', 'url'=>array('/site/kr')),
+				array('label'=>'Курсовая работа', 'url'=>array('/course')),
 
 			),
 		)); ?>
 	</div>
 	<div style="margin: 0 50px 0 50px;">
-	<?php echo $content; ?>
+	<br><?php echo $content; ?>
 	</div>
 
 	<div class="clear"></div>

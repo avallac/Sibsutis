@@ -10,6 +10,7 @@ class CFGrammar
     protected $V = array();
     protected $rules = array();
     protected $error = '';
+    protected $allowEqualLR = 1;
 
     public function getError()
     {
@@ -26,6 +27,15 @@ class CFGrammar
         return explode(',', str_replace(" ", "", $str));
     }
 
+    protected function addElement($e, $type, $empty = 0)
+    {
+        $this->V[$e] = array();
+        $this->V[$e]['type'] = $type;
+        $this->V[$e]['empty'] = $empty;
+        $this->V[$e]['used'] = 0;
+        $this->V[$e]['head'] = 0;
+    }
+
     public function add($VT, $type, $empty = 0)
     {
         $VT = self::parseInput($VT);
@@ -35,11 +45,7 @@ class CFGrammar
                 return false;
             }
             if (!isset($this->V[$e])) {
-                $this->V[$e] = array();
-                $this->V[$e]['type'] = $type;
-                $this->V[$e]['empty'] = $empty;
-                $this->V[$e]['used'] = 0;
-                $this->V[$e]['head'] = 0;
+                $this->addElement($e, $type, $empty);
                 if ($type == self::TYPE_T || $type == self::TYPE_EMPTY) {
                     $this->V[$e]['used'] = 1;
                 }
@@ -110,11 +116,27 @@ class CFGrammar
         return false;
     }
 
+    protected function validateRightPart($e)
+    {
+        foreach (str_split($e) as $eV) {
+            if (!$this->checkExists($eV)) {
+                $this->error("Неизвестный элемент '$eV'.");
+                return false;
+            }
+        }
+        return true;
+    }
+
     public function addRule($rule)
     {
         if (preg_match('/^(\S)->(.+)$/', $rule, $m)) {
             if ($m[1] === $m[2]) {
-                return true;
+                if ($this->allowEqualLR) {
+                    return true;
+                } else {
+                    $this->error("Правило '$rule' некоректно.");
+                    return false;
+                }
             }
             if ($this->checkExistRule($m)) {
                 return true;
@@ -126,12 +148,10 @@ class CFGrammar
                     } else {
                         $e = str_replace('#', '', $e);
                     }
-                    $this->rules [] = array('l' => $m[1], 'r' => $e);
-                    foreach (str_split($e) as $eV) {
-                        if (!$this->checkExists($eV)) {
-                            $this->error("Неизвестный элемент '$eV'.");
-                            return false;
-                        }
+                    if ($this->validateRightPart($e, $m)) {
+                        $this->rules [] = array('l' => $m[1], 'r' => $e);
+                    } else {
+                        return false;
                     }
                 }
                 return true;
@@ -367,11 +387,11 @@ class CFGrammar
         return implode(", ", $ret);
     }
 
-    public function getNonTerm()
+    public function getNonTerm($all = 0)
     {
         $ret = array();
         foreach ($this->V as $t => $v) {
-            if ($v['type'] == self::TYPE_NT && $v['used'] == 1) {
+            if ($v['type'] == self::TYPE_NT && (($v['used'] == 1) || $all)) {
                 $ret []= $t;
             }
         }
