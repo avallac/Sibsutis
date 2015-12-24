@@ -34,7 +34,7 @@
 				array('label'=>'Лабораторная 3', 'url'=>array('/lab3')),
 				array('label'=>'Лабораторная 4', 'url'=>array('/lab4')),
 				array('label'=>'Лабораторная 5', 'url'=>array('/lab5')),
-				array('label'=>'Курсовая работа', 'url'=>array('/course')),
+				array('label'=>'Курсовая работа', 'url'=>array('/lab6')),
 
 			),
 		)); ?>

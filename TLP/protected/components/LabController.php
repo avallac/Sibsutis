@@ -39,6 +39,13 @@ abstract class LabController extends Controller
         $this->render('index', array('model'=>$model));
     }
 
+    public function actionImport()
+    {
+        $model = new $this->formName;
+        $model->attributes = json_decode($_GET['import'], 1);
+        $this->render('index', array('model'=>$model));
+    }
+
     public function actionLoad($id)
     {
         $case = CaseRecord::model()->find('id=:ID', array(':ID'=>$id));

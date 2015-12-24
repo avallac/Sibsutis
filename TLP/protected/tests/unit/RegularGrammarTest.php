@@ -133,6 +133,29 @@ class RegularGrammarTest extends PHPUnit_Framework_TestCase
         $this->assertEquals("'fa': праволинейная грамматика", $reg->getError());
     }
 
+    public function testGen()
+    {
+        $reg = $this->getGrammar();
+        $this->assertTrue($reg->addRule("c->fa"));
+        $this->assertTrue($reg->addRule("f->d"));
+        $this->assertTrue($reg->addRule("f->a"));
+        $ret = $reg->export(3);
+        $this->assertEquals(
+            [
+                'strings' => [
+                    ['c => fa => da'],
+                    ['c => fa => aa']
+                ],
+                'rules' => ['c=>fa', 'f=>d|a'],
+                'term' => '',
+                'nonterm' => '',
+                'target' => 'c'
+            ],
+            $ret
+        );
+
+    }
+
     private function getGrammar()
     {
         $reg = new RegularGrammar();
