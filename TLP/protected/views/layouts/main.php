@@ -29,6 +29,7 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
+				array('label'=>'Главная', 'url'=>array('/')),
 				array('label'=>'Лабораторная 1', 'url'=>array('/lab1')),
 				array('label'=>'Лабораторная 2', 'url'=>array('/lab2')),
 				array('label'=>'Лабораторная 3', 'url'=>array('/lab3')),
