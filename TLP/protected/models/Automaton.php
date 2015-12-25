@@ -23,11 +23,13 @@ abstract class Automaton
                 $this->error("Буква '$e' слишком длинная.");
                 return false;
             }
-            if (!isset($arr[$e])) {
-                $arr[$e] = 1;
-            } else {
-                $this->error("Элемент '$e' повторяется.");
-                return false;
+            if ($e !== '#') {
+                if (!isset($arr[$e])) {
+                    $arr[$e] = 1;
+                } else {
+                    $this->error("Элемент '$e' повторяется.");
+                    return false;
+                }
             }
         }
         return true;
