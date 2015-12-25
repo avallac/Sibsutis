@@ -6,11 +6,13 @@ class Lab1Form extends CFormModel
     public $nonterminal;
     public $target;
     public $rule;
+    public $length;
 
     public function rules()
     {
         return array(
-            array('terminal, nonterminal, target, rule', 'required'),
+            array('terminal, nonterminal, target, rule, length', 'required'),
+            array('length', 'numerical', 'integerOnly' => true, 'min' => 1),
             array('terminal', 'checkG', 0),
             array('nonterminal', 'checkG', 1),
             array('target', 'checkG', 2),
@@ -21,6 +23,7 @@ class Lab1Form extends CFormModel
     public function attributeLabels()
     {
         return array(
+            'length'=>'Максимальная длина',
             'terminal'=>'Терминалы',
             'nonterminal'=>'Нетерминалы',
             'target' => 'Целевой символ',

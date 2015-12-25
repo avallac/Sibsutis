@@ -15,6 +15,6 @@ class Lab1Controller extends LabController
         $g->setTarget($model->target);
         $g->addRules($model->rule);
         $g->optimize();
-        return $g->export(3);
+        return $g->export($model->length);
     }
 }

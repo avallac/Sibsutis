@@ -15,7 +15,7 @@ $cs->registerScriptFile($baseUrl . '/js/graph.js');
                     ),
                 )); ?>
                 <?php echo CHtml::errorSummary($model); ?>
-                <?php foreach(array('terminal', 'nonterminal', 'target') as $e):?>
+                <?php foreach(array('length', 'terminal', 'nonterminal', 'target') as $e):?>
                     <div class="row">
                         <?php echo $form->labelEx($model, $e); ?>
                         <?php echo $form->textField($model, $e); ?>
