@@ -35,7 +35,7 @@ class FiniteStateMachine extends Automaton
         $cur = $this->begin;
         $states = "($cur, $str)";
         $str = str_split($str);
-        while ($a = array_shift($str)) {
+        while (($a = array_shift($str)) !== null) {
             if (!isset($this->rule[$cur][$a])) {
                 return array("Правила перехода '$a' из состояние '$cur' не обнаружено.", $states);
             } else {
