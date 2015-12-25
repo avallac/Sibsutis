@@ -59,6 +59,17 @@ class RegularGrammar extends CFGrammar
         return true;
     }
 
+    protected function existNT($str)
+    {
+        $arr = str_split($str);
+        for ($i = 0; isset($arr[$i]); $i++) {
+            if ($this->V[$arr[$i]]['type'] == CFGrammar::TYPE_NT) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     protected function validateRightPart($e)
     {
         $arr = [];
@@ -88,31 +99,38 @@ class RegularGrammar extends CFGrammar
     {
         $this->nextState = 0;
         $tmpRules = [];
+        $cash = [];
         $endState = $this->getNextState();
         foreach ($this->rules as $rule) {
-            if (strlen($rule['r']) == 1) {
-                if ($this->typeRegularGrammar == self::LL) {
-                    $tmpRules [] = [$endState, $rule['l'], $rule['r'][0]];
-                } else {
-                    $tmpRules [] = [$rule['l'], $endState, $rule['r'][0]];
-                }
-            } else {
-                $ls = str_split($rule['r']);
-                if ($this->typeRegularGrammar == self::LL) {
+            $ls = str_split($rule['r']);
+            if ($this->typeRegularGrammar == self::LL) {
+                if ($this->existNT($rule['r'])) {
                     $from = array_shift($ls);
-                    $to = $rule['l'];
                 } else {
-                    $from = $rule['l'];
-                    $to = array_pop($ls);
+                    $from = $endState;
                 }
-                $lastE = array_pop($ls);
-                foreach ($ls as $e) {
+                $to = $rule['l'];
+            } else {
+                $from = $rule['l'];
+                if ($this->existNT($rule['r'])) {
+                    $to = array_pop($ls);
+                } else {
+                    $to = $endState;
+                }
+            }
+            $lastE = array_pop($ls);
+            foreach ($ls as $e) {
+                if (!isset($cash[$from][$e])) {
                     $tmpTo = $this->getNextState();
+                    $cash[$from][$e] = $tmpTo;
                     $tmpRules [] = [$from, $tmpTo, $e];
                     $from = $tmpTo;
+                } else {
+                    $from = $cash[$from][$e];
                 }
-                $tmpRules [] = [$from, $to, $lastE];
             }
+            $cash[$from][$lastE] = $to;
+            $tmpRules [] = [$from, $to, $lastE];
         }
         if ($this->typeRegularGrammar == self::LL) {
             $target = $endState;
