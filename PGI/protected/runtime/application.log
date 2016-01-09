@@ -1,0 +1,1485 @@
+2016/01/09 07:54:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab1".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab1
+HTTP_REFERER=http://study.local/PGI/
+---
+2016/01/09 07:55:39 [error] [php] include(Lab1Form.php): failed to open stream: No such file or directory (/media/sf_Sibsutis/libs/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/components/LabController.php(13): spl_autoload_call()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/components/LabController.php (13)
+in /media/sf_Sibsutis/PGI/index.php (13)
+2016/01/09 07:56:16 [error] [exception.CException] exception 'CException' with message 'Lab1Controller cannot find the requested view "index".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:878
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#1 /media/sf_Sibsutis/PGI/protected/components/LabController.php(13): CController->render('index')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): LabController->actionIndex()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/PGI/lab1
+HTTP_REFERER=http://study.local/PGI/
+---
+2016/01/09 07:56:24 [error] [exception.CException] exception 'CException' with message 'Lab1Controller cannot find the requested view "index".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:878
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#1 /media/sf_Sibsutis/PGI/protected/components/LabController.php(13): CController->render('index')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): LabController->actionIndex()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1')
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/PGI/lab1
+HTTP_REFERER=http://study.local/PGI/
+---
+2016/01/09 08:00:21 [error] [php] Undefined variable: saveModel (/media/sf_Sibsutis/PGI/protected/components/views/index.php:9)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CWidget.php(244): ImageWidget->renderFile()
+#1 /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php(10): ImageWidget->render()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(181): ImageWidget->run()
+#3 /media/sf_Sibsutis/PGI/protected/views/lab1/index.php(1): Lab1Controller->widget()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab1Controller->renderInternal()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#8 /media/sf_Sibsutis/PGI/protected/components/LabController.php(13): Lab1Controller->render()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/components/views/index.php (9)
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (10)
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (1)
+2016/01/09 08:09:48 [error] [php] Undefined variable: type (/media/sf_Sibsutis/PGI/protected/components/ImageWidget.php:13)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab1Controller->renderInternal()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#4 /media/sf_Sibsutis/PGI/protected/components/LabController.php(13): Lab1Controller->render()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (13)
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (1)
+in /media/sf_Sibsutis/PGI/protected/components/LabController.php (13)
+2016/01/09 08:13:44 [error] [php] Array to string conversion (/media/sf_Sibsutis/PGI/protected/components/views/index.php:8)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CWidget.php(244): ImageWidget->renderFile()
+#1 /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php(19): ImageWidget->render()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(181): ImageWidget->run()
+#3 /media/sf_Sibsutis/PGI/protected/views/lab1/index.php(1): Lab1Controller->widget()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab1Controller->renderInternal()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#8 /media/sf_Sibsutis/PGI/protected/components/LabController.php(13): Lab1Controller->render()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/components/views/index.php (8)
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (19)
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (1)
+2016/01/09 08:14:20 [error] [php] Array to string conversion (/media/sf_Sibsutis/PGI/protected/components/views/index.php:8)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CWidget.php(244): ImageWidget->renderFile()
+#1 /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php(19): ImageWidget->render()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(181): ImageWidget->run()
+#3 /media/sf_Sibsutis/PGI/protected/views/lab1/index.php(1): Lab1Controller->widget()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab1Controller->renderInternal()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#8 /media/sf_Sibsutis/PGI/protected/components/LabController.php(13): Lab1Controller->render()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/components/views/index.php (8)
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (19)
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (1)
+2016/01/09 08:14:34 [error] [php] Array to string conversion (/media/sf_Sibsutis/PGI/protected/components/views/index.php:8)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CWidget.php(244): ImageWidget->renderFile()
+#1 /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php(19): ImageWidget->render()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(181): ImageWidget->run()
+#3 /media/sf_Sibsutis/PGI/protected/views/lab1/index.php(1): Lab1Controller->widget()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab1Controller->renderInternal()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#8 /media/sf_Sibsutis/PGI/protected/components/LabController.php(13): Lab1Controller->render()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/components/views/index.php (8)
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (19)
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (1)
+2016/01/09 08:39:54 [error] [php] Undefined variable: lab (/media/sf_Sibsutis/PGI/protected/components/views/index.php:10)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CWidget.php(244): ImageWidget->renderFile()
+#1 /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php(19): ImageWidget->render()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(181): ImageWidget->run()
+#3 /media/sf_Sibsutis/PGI/protected/views/lab1/index.php(1): Lab1Controller->widget()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab1Controller->renderInternal()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#8 /media/sf_Sibsutis/PGI/protected/components/LabController.php(14): Lab1Controller->render()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/components/views/index.php (10)
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (19)
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (1)
+2016/01/09 08:40:15 [error] [php] Trying to get property of non-object (/media/sf_Sibsutis/PGI/protected/components/views/index.php:10)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CWidget.php(244): ImageWidget->renderFile()
+#1 /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php(19): ImageWidget->render()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(181): ImageWidget->run()
+#3 /media/sf_Sibsutis/PGI/protected/views/lab1/index.php(1): Lab1Controller->widget()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab1Controller->renderInternal()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#8 /media/sf_Sibsutis/PGI/protected/components/LabController.php(14): Lab1Controller->render()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/components/views/index.php (10)
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (19)
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (1)
+2016/01/09 08:40:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "delete".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('delete')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1/delete')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/PGI/lab1/delete?filename=CAT_24.BMP
+HTTP_REFERER=http://study.local/PGI/lab1
+---
+2016/01/09 08:41:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "filename".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(270): CController->missingAction('filename')
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('filename')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab1/filename/C...')
+#3 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/PGI/lab1/filename/CAT_24.BMP
+HTTP_REFERER=http://study.local/PGI/lab1
+---
+2016/01/09 08:47:08 [error] [php] Missing argument 1 for CApplication::createUrl(), called in /media/sf_Sibsutis/PGI/protected/components/views/index.php on line 13 and defined (/media/sf_Sibsutis/libs/yii/framework/base/CApplication.php:549)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): ImageWidget->renderInternal()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CWidget.php(244): ImageWidget->renderFile()
+#2 /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php(19): ImageWidget->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(181): ImageWidget->run()
+#4 /media/sf_Sibsutis/PGI/protected/views/lab1/index.php(1): Lab1Controller->widget()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab1Controller->renderInternal()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#9 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(14): Lab1Controller->render()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionPre()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#15 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#17 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/pre?img=FISH_24.BMP
+in /media/sf_Sibsutis/PGI/protected/components/views/index.php (13)
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (19)
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (1)
+2016/01/09 08:47:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "CAT_8.BMP".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('CAT_8.BMP')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/CAT_8.BMP
+HTTP_REFERER=http://study.local/PGI/lab1/pre?img=FISH_24.BMP
+---
+2016/01/09 08:47:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "FISH_24.BMP".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('FISH_24.BMP')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/FISH_24.BMP
+HTTP_REFERER=http://study.local/PGI/lab1/pre?img=FISH_24.BMP
+---
+2016/01/09 08:47:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "CAT_4.BMP".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('CAT_4.BMP')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/CAT_4.BMP
+HTTP_REFERER=http://study.local/PGI/lab1/pre?img=FISH_24.BMP
+---
+2016/01/09 08:47:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "CAT_24.BMP".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('CAT_24.BMP')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/CAT_24.BMP
+HTTP_REFERER=http://study.local/PGI/lab1/pre?img=FISH_24.BMP
+---
+2016/01/09 08:52:14 [error] [php] Undefined variable: name (/media/sf_Sibsutis/PGI/protected/views/lab1/index.php:6)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/PGI/protected/components/LabController.php(14): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (6)
+in /media/sf_Sibsutis/PGI/protected/components/LabController.php (14)
+in /media/sf_Sibsutis/PGI/index.php (13)
+2016/01/09 08:52:17 [error] [php] Undefined variable: name (/media/sf_Sibsutis/PGI/protected/views/lab1/index.php:6)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#2 /media/sf_Sibsutis/PGI/protected/components/LabController.php(14): Lab1Controller->render()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (6)
+in /media/sf_Sibsutis/PGI/protected/components/LabController.php (14)
+in /media/sf_Sibsutis/PGI/index.php (13)
+2016/01/09 08:54:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab2".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab2')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab2
+HTTP_REFERER=http://study.local/PGI/site
+---
+2016/01/09 08:56:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab3".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab3')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab3
+HTTP_REFERER=http://study.local/PGI/site
+---
+2016/01/09 08:57:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab3".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab3')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab3
+HTTP_REFERER=http://study.local/PGI/lab3
+---
+2016/01/09 09:03:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab4".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab4')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab4
+HTTP_REFERER=http://study.local/PGI/lab3
+---
+2016/01/09 09:10:05 [error] [php] Array to string conversion (/media/sf_Sibsutis/PGI/protected/components/ImageWidget.php:13)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab1Controller->renderInternal()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#4 /media/sf_Sibsutis/PGI/protected/components/LabController.php(10): Lab1Controller->render()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (13)
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (1)
+in /media/sf_Sibsutis/PGI/protected/components/LabController.php (10)
+2016/01/09 09:10:16 [error] [php] Array to string conversion (/media/sf_Sibsutis/PGI/protected/components/ImageWidget.php:13)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab1Controller->renderInternal()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab1Controller->renderFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab1Controller->renderPartial()
+#4 /media/sf_Sibsutis/PGI/protected/components/LabController.php(10): Lab1Controller->render()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionIndex()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (13)
+in /media/sf_Sibsutis/PGI/protected/views/lab1/index.php (1)
+in /media/sf_Sibsutis/PGI/protected/components/LabController.php (10)
+2016/01/09 09:11:40 [error] [php] fopen(img/0): failed to open stream: No such file or directory (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:35)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionPre()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/pre?img=0
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (35)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (24)
+2016/01/09 09:13:41 [error] [php] fopen(img/0): failed to open stream: No such file or directory (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:35)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionPre()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/pre?img=0
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (35)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (24)
+2016/01/09 09:19:30 [error] [php] fopen(img/2): failed to open stream: No such file or directory (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:35)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab2Controller.php(12): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab2Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab2Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab2Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab2Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab2/img?img=2
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (35)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (24)
+2016/01/09 09:22:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "__URL__".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('__URL__')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/__URL__
+HTTP_REFERER=http://study.local/PGI/lab1
+---
+2016/01/09 09:24:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "__URL__".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('__URL__')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/__URL__
+HTTP_REFERER=http://study.local/PGI/lab1
+---
+2016/01/09 09:24:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('upload')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/upload
+HTTP_REFERER=http://study.local/PGI/lab1
+---
+2016/01/09 09:30:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pre/img/4".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('pre/img/4')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/pre/img/4
+HTTP_REFERER=http://study.local/PGI/lab1/pre?img=4
+---
+2016/01/09 09:31:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pre/img/4".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('pre/img/4')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/pre/img/4
+HTTP_REFERER=http://study.local/PGI/lab1/pre?img=4
+---
+2016/01/09 09:32:22 [error] [php] Undefined offset: 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:116)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(14): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (116)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:35:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/Последний загруженный файл".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('img/\xD0\x9F\xD0\xBE\xD1\x81\xD0\xBB\xD0\xB5\xD0...')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/img/%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%84%D0%B0%D0%B9%D0%BB
+HTTP_REFERER=http://study.local/PGI/lab1
+---
+2016/01/09 09:46:34 [error] [php] Undefined offset: 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:116)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab2Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab2Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab2Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab2Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab2Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab2/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (116)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:47:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab/pre".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab/pre')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab/pre?img=4
+HTTP_REFERER=http://study.local/PGI/lab3
+---
+2016/01/09 09:48:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab/pre".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab/pre')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab/pre?img=4
+HTTP_REFERER=http://study.local/PGI/lab3
+---
+2016/01/09 09:48:26 [error] [php] Undefined offset: 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:116)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab3Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab3Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab3Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab3Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab3Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab3/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (116)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:48:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab4".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab4')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab4
+HTTP_REFERER=http://study.local/PGI/lab3/pre?img=4
+---
+2016/01/09 09:50:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab4".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab4')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab4
+HTTP_REFERER=http://study.local/PGI/lab4
+---
+2016/01/09 09:50:19 [error] [exception.CException] exception 'CException' with message 'Lab4Controller cannot find the requested view "index".' in /media/sf_Sibsutis/libs/yii/framework/web/CController.php:878
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#1 /media/sf_Sibsutis/PGI/protected/components/LabController.php(9): CController->render('index')
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): LabController->actionIndex()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab4')
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/PGI/lab4
+HTTP_REFERER=http://study.local/PGI/lab4
+---
+2016/01/09 09:55:52 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab4Controller.php(14): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab4Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab4Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab4Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab4Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab4/img?img=0
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:55:59 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab4Controller.php(14): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab4Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab4Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab4Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab4Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab4/img?img=0
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:56:08 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab4Controller.php(14): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab4Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab4Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab4Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab4Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab4/img?img=0
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:56:56 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab4Controller.php(14): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab4Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab4Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab4Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab4Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab4/img?img=0
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:57:24 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab4Controller.php(14): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab4Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab4Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab4Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab4Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab4/img?img=1
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:57:50 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:58:03 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab2Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab2Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab2Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab2Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab2Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab2/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:58:10 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab3Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab3Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab3Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab3Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab3Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab3/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 09:58:15 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:00:53 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:00:57 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:02:11 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:03:11 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:08:08 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:08:24 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:08:39 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:08:58 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:09:30 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:09:32 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:09:58 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:10:02 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:10:03 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:10:44 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:11:06 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:11:20 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:112)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (112)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:12:51 [error] [php] Undefined offset: 153 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:113)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#1 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (113)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:19:44 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:99)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (99)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:22:28 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:99)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (99)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:22:34 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:99)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (99)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:22:37 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:99)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (99)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:22:56 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:99)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (99)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:23:06 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:99)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (99)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:23:22 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:99)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (99)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:24:56 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:99)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (99)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:25:26 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:100)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (100)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:25:52 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:100)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (100)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:26:27 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:100)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (100)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:26:56 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:100)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (100)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:27:16 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:100)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (100)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:27:43 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:100)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (100)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:29:05 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:100)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (100)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:34:17 [error] [php] unpack(): Type C: not enough input, need 1, have 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:100)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/controllers/Lab1Controller.php(13): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab1Controller->actionImg()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/img?img=4
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (100)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (40)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 10:35:15 [error] [php] Undefined offset: 6 (/media/sf_Sibsutis/PGI/protected/components/LabController.php:16)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab1Controller->runAction()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab1Controller->runActionWithFilters()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab1Controller->run()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab1/pre?img=6
+in /media/sf_Sibsutis/PGI/protected/components/LabController.php (16)
+in /media/sf_Sibsutis/PGI/protected/components/LabController.php (22)
+in /media/sf_Sibsutis/PGI/index.php (13)
+2016/01/09 10:38:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab5".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab5')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab5
+HTTP_REFERER=http://study.local/PGI/lab4/pre?img=2
+---
+2016/01/09 10:38:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab5".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab5')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab5
+HTTP_REFERER=http://study.local/PGI/lab4
+---
+2016/01/09 10:38:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lab5".' in /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('lab5')
+#1 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /media/sf_Sibsutis/PGI/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/PGI/lab5
+HTTP_REFERER=http://study.local/PGI/lab4
+---
+2016/01/09 10:49:33 [error] [php] Undefined variable: bmp (/media/sf_Sibsutis/PGI/protected/components/ImageWidget.php:19)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab5Controller->renderInternal()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab5Controller->renderFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab5Controller->renderPartial()
+#4 /media/sf_Sibsutis/PGI/protected/components/LabController.php(10): Lab5Controller->render()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab5Controller->actionIndex()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab5Controller->runAction()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab5Controller->runActionWithFilters()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab5Controller->run()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab5
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (19)
+in /media/sf_Sibsutis/PGI/protected/views/lab5/index.php (13)
+in /media/sf_Sibsutis/PGI/protected/components/LabController.php (10)
+2016/01/09 10:49:53 [error] [php] Undefined index: mapInfo (/media/sf_Sibsutis/PGI/protected/components/views/index.php:26)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CWidget.php(244): ImageWidget->renderFile()
+#1 /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php(22): ImageWidget->render()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(181): ImageWidget->run()
+#3 /media/sf_Sibsutis/PGI/protected/views/lab5/index.php(13): Lab5Controller->widget()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab5Controller->renderInternal()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab5Controller->renderFile()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab5Controller->renderPartial()
+#8 /media/sf_Sibsutis/PGI/protected/components/LabController.php(10): Lab5Controller->render()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab5Controller->actionIndex()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab5Controller->runAction()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab5Controller->runActionWithFilters()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab5Controller->run()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab5
+in /media/sf_Sibsutis/PGI/protected/components/views/index.php (26)
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (22)
+in /media/sf_Sibsutis/PGI/protected/views/lab5/index.php (13)
+2016/01/09 10:50:53 [error] [php] Undefined index: mapInfo (/media/sf_Sibsutis/PGI/protected/components/views/index.php:26)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CWidget.php(244): ImageWidget->renderFile()
+#1 /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php(22): ImageWidget->render()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(181): ImageWidget->run()
+#3 /media/sf_Sibsutis/PGI/protected/views/lab5/index.php(13): Lab5Controller->widget()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab5Controller->renderInternal()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab5Controller->renderFile()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab5Controller->renderPartial()
+#8 /media/sf_Sibsutis/PGI/protected/components/LabController.php(10): Lab5Controller->render()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab5Controller->actionIndex()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab5Controller->runAction()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab5Controller->runActionWithFilters()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab5Controller->run()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab5
+in /media/sf_Sibsutis/PGI/protected/components/views/index.php (26)
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (22)
+in /media/sf_Sibsutis/PGI/protected/views/lab5/index.php (13)
+2016/01/09 10:52:03 [error] [php] Undefined index: BitCount (/media/sf_Sibsutis/PGI/protected/components/views/index.php:27)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/widgets/CWidget.php(244): ImageWidget->renderFile()
+#1 /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php(22): ImageWidget->render()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(181): ImageWidget->run()
+#3 /media/sf_Sibsutis/PGI/protected/views/lab5/index.php(13): Lab5Controller->widget()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(126): require()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CBaseController.php(95): Lab5Controller->renderInternal()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(869): Lab5Controller->renderFile()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(782): Lab5Controller->renderPartial()
+#8 /media/sf_Sibsutis/PGI/protected/components/LabController.php(10): Lab5Controller->render()
+#9 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab5Controller->actionIndex()
+#10 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab5Controller->runAction()
+#12 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab5Controller->runActionWithFilters()
+#13 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab5Controller->run()
+#14 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab5
+in /media/sf_Sibsutis/PGI/protected/components/views/index.php (27)
+in /media/sf_Sibsutis/PGI/protected/components/ImageWidget.php (22)
+in /media/sf_Sibsutis/PGI/protected/views/lab5/index.php (13)
+2016/01/09 10:57:14 [error] [php] imagecreatetruecolor(): Invalid image dimensions (/media/sf_Sibsutis/PGI/protected/models/PCX.php:130)
+Stack trace:
+#0 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab5Controller->actionImg()
+#1 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab5Controller->runAction()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab5Controller->runActionWithFilters()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab5Controller->run()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#7 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab5/img?img=3
+in /media/sf_Sibsutis/PGI/protected/models/PCX.php (130)
+in /media/sf_Sibsutis/PGI/protected/controllers/Lab5Controller.php (16)
+in /media/sf_Sibsutis/PGI/index.php (13)
+2016/01/09 11:01:12 [error] [php] fread(): Length parameter must be greater than 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:68)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/components/LabController.php(24): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab5Controller->actionPre()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab5Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab5Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab5Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab5/pre?img=3
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (68)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (37)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 11:01:39 [error] [php] fread(): Length parameter must be greater than 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:68)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/components/LabController.php(24): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab5Controller->actionPre()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab5Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab5Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab5Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab5/pre?img=3
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (68)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (37)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
+2016/01/09 11:01:48 [error] [php] fread(): Length parameter must be greater than 0 (/media/sf_Sibsutis/PGI/protected/models/BMPReader.php:68)
+Stack trace:
+#0 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(19): BMPReader->load()
+#1 /media/sf_Sibsutis/PGI/protected/models/BMPReader.php(24): BMPReader->__construct()
+#2 /media/sf_Sibsutis/PGI/protected/components/LabController.php(24): loadFromFile()
+#3 /media/sf_Sibsutis/libs/yii/framework/web/actions/CInlineAction.php(49): Lab5Controller->actionPre()
+#4 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(286): Lab5Controller->runAction()
+#6 /media/sf_Sibsutis/libs/yii/framework/web/CController.php(265): Lab5Controller->runActionWithFilters()
+#7 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(282): Lab5Controller->run()
+#8 /media/sf_Sibsutis/libs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /media/sf_Sibsutis/libs/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /media/sf_Sibsutis/PGI/index.php(13): CWebApplication->run()
+REQUEST_URI=/PGI/lab5/pre?img=3
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (68)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (37)
+in /media/sf_Sibsutis/PGI/protected/models/BMPReader.php (19)
