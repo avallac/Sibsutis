@@ -75,42 +75,40 @@ void *movedObject(void *i) {
     int posY = 0;
     while(1) {
         count = read(pipefd[num][0], buf, 3);
-        if (!pthread_mutex_lock(&mutex_screen)) {
-            if (num < 2) {
-                XFillRectangle(d, w, gr_white, posX, (num + 1) * 50, 20, 20);
-            } else {
-                XFillArc(d, w, gr_white, (num - 1) * 50, posY, 20, 20, 0, 360*64);
-            }
-            if (count > 0) {
-                if (buf[0] == 'a') {
-                    posX = buf[1] * 256 + buf[2];
-                } else {
-                    posX = 0;
-                    posY = 0;
-                }
-            } else {
-                if (posX > W) posX = 0;
-                if (posY > H) posY = 0;
-                if (posX < 0) posX = W;
-                if (posY < 0) posY = H;
-                posX += speedX/10;
-                posY += speedY/10;
-                if (num >= 2) {
-                    if (posY == H/4) {
-                        genColor();
-                    }
-                }
-            }
-            if (num < 2) {
-                XFillRectangle(d, w, gr_block, posX, (num + 1) * 50, 20, 20);
-            } else {
-                XFillArc(d, w, gr_black, (num - 1) * 50, posY, 20, 20, 0, 360*64);
-            }
-            XFlush(d);
-            pthread_mutex_unlock(&mutex_screen);
+        pthread_mutex_lock(&mutex_screen);
+        if (num < 2) {
+            XFillRectangle(d, w, gr_white, posX, (num + 1) * 50, 20, 20);
+        } else {
+            XFillArc(d, w, gr_white, (num - 1) * 50, posY, 20, 20, 0, 360*64);
         }
+        if (count > 0) {
+            if (buf[0] == 'a') {
+                posX = buf[1] * 256 + buf[2];
+            } else {
+                posX = 0;
+                posY = 0;
+            }
+        } else {
+            if (posX > W) posX = 0;
+            if (posY > H) posY = 0;
+            if (posX < 0) posX = W;
+            if (posY < 0) posY = H;
+            posX += speedX/10;
+            posY += speedY/10;
+            if (num >= 2) {
+                if (posY == H/4) {
+                    genColor();
+                }
+            }
+        }
+        if (num < 2) {
+            XFillRectangle(d, w, gr_block, posX, (num + 1) * 50, 20, 20);
+        } else {
+            XFillArc(d, w, gr_black, (num - 1) * 50, posY, 20, 20, 0, 360*64);
+        }
+        XFlush(d);
+        pthread_mutex_unlock(&mutex_screen);
         usleep(100000);
-        
     }
 }
 
@@ -138,14 +136,19 @@ void init()
     genColor();
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
     int i;
     unsigned char tmp[3];
     init();
     int commandCode, commandParam1, commandParam2;
-    char *msg = "Hello, World!";
+    char msg[255];
     
+    if (argc < 2) {
+        printf("Нужен параметр\n");
+        return 0;
+    }
+    pthread_mutex_init(&mutex_screen, NULL);
     for (i = 0; i < 4; i ++) {
         int * arg = (int *)malloc(sizeof(arg));
         *arg = i;
@@ -157,8 +160,9 @@ int main(void)
         fcntl(pipefd[i][1], F_SETFL, O_NONBLOCK);
         pthread_create(&(tid[i]), NULL, movedObject, arg);
     }
-    pthread_mutex_init(&mutex_screen, NULL);
-    XInitThreads();
+    pthread_mutex_lock(&mutex_screen);
+    XDrawString(d, w, gr_black, 200, 10, argv[1], strlen(argv[1]));
+    pthread_mutex_unlock(&mutex_screen);
     while (1) {
         printf("Подсказка:\n");
         printf("1 - Изменить X координаты квадрата.\n");
