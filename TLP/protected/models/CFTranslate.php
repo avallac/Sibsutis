@@ -7,7 +7,7 @@ class CFTranslate extends CFGrammar
 
     public function setTrAbc($abc)
     {
-        $this->trAbc = array('#' => 1);
+        $this->trAbc = array($this->getEmpty() => 1);
         $lang = CFGrammar::parseInput($abc);
         foreach ($lang as $e) {
             if (strlen($e) > 1) {
@@ -64,7 +64,7 @@ class CFTranslate extends CFGrammar
             $change = 0;
             foreach ($this->rules as $rule) {
                 if (!isset($this->altRule[$rule['l']])) {
-                    if ($rule['r'] == '#') {
+                    if ($rule['r'] == $this->getEmpty()) {
                         $this->altRule[$rule['l']] = $rule['tr'];
                         $change = 1;
                         break;
@@ -126,10 +126,10 @@ class CFTranslate extends CFGrammar
 
             if ($this->checkNT($m[1])) {
                 foreach (explode('|', $m[2]) as $e) {
-                    if ($e === '#') {
+                    if ($e === $this->getEmpty()) {
                         $this->V[$m[1]]['empty'] = 1;
                     } else {
-                        $e = str_replace('#', '', $e);
+                        $e = str_replace($this->getEmpty(), '', $e);
                     }
                     foreach (str_split($e) as $eV) {
                         if (!$this->checkExists($eV)) {

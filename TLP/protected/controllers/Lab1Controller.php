@@ -9,7 +9,7 @@ class Lab1Controller extends LabController
 
     public function runLab($model)
     {
-        $g = new CFGrammar();
+        $g = new CFGrammar($model->empty);
         $g->add($model->terminal, CFGrammar::TYPE_T);
         $g->add($model->nonterminal, CFGrammar::TYPE_NT);
         $g->setTarget($model->target);

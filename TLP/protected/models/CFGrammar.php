@@ -12,14 +12,26 @@ class CFGrammar
     protected $error = '';
     protected $allowEqualLR = 1;
 
+    protected $empty = '#';
+
     public function getError()
     {
         return $this->error;
     }
-
-    public function __construct()
+    public function setEmpty($t)
     {
-        $this->add("#", self::TYPE_EMPTY, 1);
+        $this->empty = $t;
+    }
+
+    public function getEmpty()
+    {
+        return $this->empty;
+    }
+
+    public function __construct($t = '#')
+    {
+        $this->setEmpty($t);
+        $this->add($this->getEmpty(), self::TYPE_EMPTY, 1);
     }
 
     public static function parseInput($str)
@@ -143,10 +155,10 @@ class CFGrammar
             }
             if ($this->checkNT($m[1])) {
                 foreach (explode('|', $m[2]) as $e) {
-                    if ($e === '#') {
+                    if ($e === $this->getEmpty()) {
                         $this->V[$m[1]]['empty'] = 1;
                     } else {
-                        $e = str_replace('#', '', $e);
+                        $e = str_replace($this->getEmpty(), '', $e);
                     }
                     if ($this->validateRightPart($e, $m)) {
                         $this->rules [] = array('l' => $m[1], 'r' => $e);
@@ -204,14 +216,14 @@ class CFGrammar
         }
         $tmp = [];
         foreach ($this->rules as $rule) {
-            if ($rule['r'] !=='#') {
+            if ($rule['r'] !==$this->getEmpty()) {
                 $tmp[] = $rule;
             }
         }
         $this->rules = $tmp;
         if ($this->V[$this->target]['empty']) {
             $this->add("S`", self::TYPE_NT);
-            $this->rules [] = array('l' => 'S`', 'r' => '#');
+            $this->rules [] = array('l' => 'S`', 'r' => $this->getEmpty());
             $this->rules [] = array('l' => 'S`', 'r' => $this->target);
             $this->setTarget('S`');
         }
@@ -253,7 +265,7 @@ class CFGrammar
             return false;
         }
         $return = array();
-        $exists = array($this->target);
+        $exists = array($this->target => 1);
         $queue = array(array($this->target, array(-1)));
         for ($i = 0; isset($queue[$i]); $i++) {
             if ($queue[$i][0] === 'S`') {
@@ -269,9 +281,9 @@ class CFGrammar
                         if ($rule['l'] == $rep) {
                             $str[$j] = $rule['r'];
                             if (strlen(implode($str)) <= $len) {
-                                if (!in_array(implode($str), $exists)) {
+                                if (!isset($exists[implode($str)])) {
                                     $queue[] = array(implode($str), array($i), 1);
-                                    $exists[] = implode($str);
+                                    $exists[implode($str)] = 1;
                                 } else {
                                     foreach ($queue as $k => $v) {
                                         if ($v[0] === implode($str)) {

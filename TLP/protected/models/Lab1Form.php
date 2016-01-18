@@ -7,11 +7,12 @@ class Lab1Form extends CFormModel
     public $target;
     public $rule;
     public $length;
+    public $empty;
 
     public function rules()
     {
         return array(
-            array('terminal, nonterminal, target, rule, length', 'required'),
+            array('terminal, nonterminal, target, rule, length, empty', 'required'),
             array('length', 'numerical', 'integerOnly' => true, 'min' => 1),
             array('terminal', 'checkG', 0),
             array('nonterminal', 'checkG', 1),
@@ -28,6 +29,7 @@ class Lab1Form extends CFormModel
             'nonterminal'=>'Нетерминалы',
             'target' => 'Целевой символ',
             'rule' => 'Правила',
+            'empty' => 'Лямда'
         );
     }
 
@@ -65,6 +67,6 @@ class Lab1Form extends CFormModel
 
     protected function getGrammar()
     {
-        return new CFGrammar();
+        return new CFGrammar($this->empty);
     }
 }
