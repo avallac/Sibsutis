@@ -8,12 +8,11 @@
  */
 class SSTranslate extends DeterministicPushdownAutomaton
 {
-    protected $pattern = '/\(([^,]+),(.),(.)\)=\{\(([^,]+),(.)(.?),(.+)\)\}/';
+    protected $pattern = '/\(([^,]+),(.),(.)\)=\{\(([^,]+),(.+)(),(.+)\)\}/';
 
     public function checkRule($m)
     {
-        $str = str_split($m[7]);
-        foreach ($str as $e) {
+        foreach (str_split($m[7]) as $e) {
             if (!$this->checkAbc($e, 'abcTr')) {
                 return true;
             }

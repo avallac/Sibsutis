@@ -3,6 +3,37 @@
 class CFGrammarTest extends PHPUnit_Framework_TestCase
 {
 
+    public function testF()
+    {
+        $g = new CFGrammar();
+        $this->assertTrue($g->add("0", CFGrammar::TYPE_T));
+        $this->assertTrue($g->add("A", CFGrammar::TYPE_NT));
+        $this->assertTrue($g->add("B", CFGrammar::TYPE_NT));
+        $this->assertTrue($g->setTarget("A"));
+        $this->assertTrue($g->addRules("A->BBB \n B->BBB|0"));
+        $g->optimize();
+        $check = [
+            'strings' => [
+                [
+                    "A => BBB => 0BB => 00B => 000"
+                ],
+                [
+                    "A => BBB => 0BB => 00B => 00BBB => 000BB => 0000B => 00000",
+                    "A => BBB => 0BB => 0BBBB => 00BBB => 000BB => 0000B => 00000",
+                    "A => BBB => BBBBB => 0BBBB => 00BBB => 000BB => 0000B => 00000"
+                ]
+            ],
+            'rules' => [
+                'A=>BBB',
+                'B=>BBB|0'
+            ],
+            'term' => '0',
+            'nonterm' => 'A, B',
+            'target' => 'A'
+        ];
+        $this->assertEquals($check, $g->export(6));
+    }
+
     public function testInputTerm()
     {
         $g = new CFGrammar();

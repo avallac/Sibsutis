@@ -2,7 +2,7 @@
 
 class DeterministicPushdownAutomaton extends Automaton
 {
-    protected $pattern = '/\(([^,]+),(.),(.)\)=\{\(([^,]+),(.)(.?)\)\}()/';
+    protected $pattern = '/\(([^,]+),(.),(.)\)=\{\(([^,]+),(.+)()\)\}()/';
     public function setRules($rules)
     {
         $this->rule = array();
@@ -16,12 +16,21 @@ class DeterministicPushdownAutomaton extends Automaton
 
     public function checkRule($m)
     {
-        return !$this->checkState($m[1]) ||
+
+        if (!$this->checkState($m[1]) ||
         !$this->checkAbc($m[2]) ||
         !$this->checkAbc($m[3], 'abcStack') ||
-        !$this->checkState($m[4]) ||
-        !$this->checkAbc($m[5], 'abcStack') ||
-        ($m[6] !== '' && !$this->checkAbc($m[6], 'abcStack'));
+        !$this->checkState($m[4])) {
+            return true;
+        }
+
+        foreach (str_split($m[5]) as $e) {
+            if (!$this->checkAbc($e, 'abcStack')) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public function addRule($rule)
@@ -33,7 +42,7 @@ class DeterministicPushdownAutomaton extends Automaton
                 $this->error($this->getError() . " В правиле номер " . $count . " - " . $rule);
                 return false;
             }
-            $this->rule[$m[1]][$m[2]][$m[3]] = array($m[4], $m[5], $m[6], $m[7]);
+            $this->rule[$m[1]][$m[2]][$m[3]] = array($m[4], array_reverse(str_split($m[5])), 0, $m[7]);
         } else {
             $this->error("Правило '$rule' не опознано.");
             return false;
@@ -88,11 +97,10 @@ class DeterministicPushdownAutomaton extends Automaton
                     $states
                 );
             } else {
-                if ($this->rule[$cur][$a][$b][1] !== '#') {
-                    if ($this->rule[$cur][$a][$b][2] !== '') {
-                        array_unshift($this->stack, $this->rule[$cur][$a][$b][2]);
+                if ($this->rule[$cur][$a][$b][1][0] !== '#') {
+                    foreach ($this->rule[$cur][$a][$b][1] as $e) {
+                        array_unshift($this->stack, $e);
                     }
-                    array_unshift($this->stack, $this->rule[$cur][$a][$b][1]);
                 }
                 if ($this->rule[$cur][$a][$b][3] !== '#') {
                     $out .= $this->rule[$cur][$a][$b][3];
