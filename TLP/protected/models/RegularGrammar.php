@@ -6,8 +6,17 @@ class RegularGrammar extends CFGrammar
     protected $typeRegularGrammar = 0;
     protected $nextState = 0;
 
+    protected $ndt = [];
+
+
     const LL = 1;
     const PL = 2;
+
+    public function __construct($t = '#')
+    {
+        $this->setEmpty($t);
+        $this->add($this->getEmpty(), self::TYPE_EMPTY, 1);
+    }
 
 
     protected function checkShortRule($arr, $e)
@@ -95,8 +104,37 @@ class RegularGrammar extends CFGrammar
         return 'Q'.$this->nextState;
     }
 
+    private function genPair($i, $exist, $step)
+    {
+        $tmpArr = $this->ndt;
+        rsort($tmpArr);
+        if (sizeof($tmpArr) == $i) {
+            $ret = [];
+        } else {
+            $ret = [[]];
+        }
+        if ($i <= 0) {
+            return [[]];
+        }
+        for ($s = $step; isset($tmpArr[$s]); $s ++) {
+            $e = $tmpArr[$s];
+            $new = array_merge($exist, [$e]);
+            if (!in_array($e, $exist, true)) {
+                $tmp = $this->genPair($i - 1, $new, $s);
+                foreach ($tmp as $k => $v) {
+                    $tmp[$k][] = $e;
+                }
+                $ret = array_merge($tmp, $ret);
+            }
+        }
+        return $ret;
+    }
+
+
     public function convertToAutomation()
     {
+        $this->removeUnavailable();
+        $this->removeOrphan();
         $this->nextState = 0;
         $tmpRules = [];
         $cash = [];
@@ -139,11 +177,80 @@ class RegularGrammar extends CFGrammar
             $target = $this->target;
             $end = $endState;
         }
+        $out = [];
+        foreach ($tmpRules as $rule) {
+            $out[$rule[0]][$rule[2]][] = $rule[1];
+        }
+        foreach ($out as $name => $e) {
+            $this->ndt[] = $name;
+        }
+        if (!in_array($end, $this->ndt, 1)) {
+            $this->ndt[] = $end;
+        }
+        if (!in_array($target, $this->ndt, 1)) {
+            $this->ndt[] = $target;
+        }
+        $ret = $this->genPair(sizeof($this->ndt), [], 0);
+        foreach ($ret as $v) {
+            sort($v);
+            $name = implode($v, '|');
+            $dt[$name] = ['terms' => [], 'in' => $v];
+            foreach ($this->getTerm(1, 1) as $term) {
+                $eStates = [];
+                foreach ($v as $states) {
+                    if (isset($out[$states][$term])) {
+                        $eStates = array_unique(array_merge($eStates, $out[$states][$term]));
+                    }
+                }
+                sort($eStates);
+                $dt[$name]['terms'][$term] = $eStates;
+            }
+        }
+        $updated = 1;
+        $dt[$target]['good'] = 1;
+        while ($updated) {
+            $updated = 0;
+            foreach ($dt as $name => $e) {
+                if (isset($dt[$name]['good'])) {
+                    foreach ($e['terms'] as $t) {
+                        if (sizeof($t)) {
+                            if (!isset($dt[implode($t, '|')])) {
+                                //var_dump($dt);
+                                var_dump(implode($t, '|'));
+                                exit;
+                            }
+                            if (!isset($dt[implode($t, '|')]['good'])) {
+                                $dt[implode($t, '|')]['good'] = 1;
+                                $updated = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        $newEnd = [];
+        $tmpRules = [];
+        foreach ($dt as $name => $e) {
+            if (isset($dt[$name]['good'])) {
+                foreach ($e['terms'] as $term => $t) {
+                    if (sizeof($t)) {
+                        $tmpRules [] = [$name, implode($t, '|'), $term];
+                    }
+                }
+                if (in_array($end, $dt[$name]['in'])) {
+                    $newEnd[] = $name;
+                }
+            }
+        }
+
         return [
+            'ndt' => $out,
+            'dt' => $dt,
+            'term' => $this->getTerm(1, 1),
             'rules' => $tmpRules,
             'states' => $this->getNonTerm(1),
             'begin' => $target,
-            'end' => $end
+            'end' => implode($newEnd, ',')
         ];
     }
 }

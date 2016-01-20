@@ -5,6 +5,14 @@ class CFTranslate extends CFGrammar
     protected $trAbc = array();
     protected $altRule = array();
 
+    protected $empty = '#';
+
+    public function __construct($t = '#')
+    {
+        $this->setEmpty($t);
+        $this->add($this->getEmpty(), self::TYPE_EMPTY, 1);
+    }
+
     public function setTrAbc($abc)
     {
         $this->trAbc = array($this->getEmpty() => 1);
@@ -141,6 +149,7 @@ class CFTranslate extends CFGrammar
                         $this->error("Нетерминалы не совпадают '$e, $m[3]'.");
                         return false;
                     }
+                    $m[3] = str_replace($this->getEmpty(), '', $m[3]);
                     if ($m[1] !== $e) {
                         $this->rules [] = array('l' => $m[1], 'r' => $e, 'tr' => $m[3]);
                     }

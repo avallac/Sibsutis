@@ -7,7 +7,7 @@ class Lab1Form extends CFormModel
     public $target;
     public $rule;
     public $length;
-    public $empty;
+    public $empty = '#';
 
     public function rules()
     {

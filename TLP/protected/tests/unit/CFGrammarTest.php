@@ -2,6 +2,17 @@
 
 class CFGrammarTest extends PHPUnit_Framework_TestCase
 {
+    public function testWE()
+    {
+        $g = new CFGrammar();
+        $this->assertTrue($g->add("0", CFGrammar::TYPE_T));
+        $this->assertTrue($g->add("S", CFGrammar::TYPE_NT));
+        $this->assertTrue($g->add("B", CFGrammar::TYPE_NT));
+        $this->assertTrue($g->setTarget("S"));
+        $this->assertTrue($g->addRules("S->BBB \n B->BBB|0|#"));
+        $g->generate2(5);
+        exit;
+    }
 
     public function testF()
     {

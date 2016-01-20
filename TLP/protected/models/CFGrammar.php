@@ -223,8 +223,8 @@ class CFGrammar
         $this->rules = $tmp;
         if ($this->V[$this->target]['empty']) {
             $this->add("S`", self::TYPE_NT);
-            $this->rules [] = array('l' => 'S`', 'r' => $this->getEmpty());
-            $this->rules [] = array('l' => 'S`', 'r' => $this->target);
+            $this->rules [] = array('l' => 'S`', 'r' => $this->getEmpty(), 'tr'=> $this->getEmpty());
+            $this->rules [] = array('l' => 'S`', 'r' => $this->target, 'tr' =>$this->target);
             $this->setTarget('S`');
         }
     }
@@ -388,15 +388,19 @@ class CFGrammar
         $this->clean('head');
     }
 
-    public function getTerm()
+    public function getTerm($all = 0, $array = 0)
     {
         $ret = array();
         foreach ($this->V as $t => $v) {
-            if ($v['type'] == self::TYPE_T && $v['head'] == 1) {
+            if ($v['type'] == self::TYPE_T && ($v['head'] == 1 || $all)) {
                 $ret []= $t;
             }
         }
-        return implode(", ", $ret);
+        if ($array) {
+            return $ret;
+        } else {
+            return implode(", ", $ret);
+        }
     }
 
     public function getNonTerm($all = 0)
