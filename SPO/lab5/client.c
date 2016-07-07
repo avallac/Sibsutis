@@ -23,9 +23,11 @@ class Network
     protected:
     struct sockaddr_in addr;
     int sock;
+    int lost;
     public:
-    Network()
+    Network(int lost)
     {
+        this->lost = lost;
         struct timeval timeout={2,0};
         sock = socket(PF_INET, SOCK_DGRAM, 0);
         setsockopt(sock,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
@@ -36,20 +38,41 @@ class Network
         if ( connect(sock, (struct sockaddr*)&addr, sizeof(addr)) != 0 )
             perror("connect 1");
     }
+    void dumpMsg(char * buffer, int messageLen, int lost)
+    {
+        if (messageLen == -1) return;
+        printf("сообщение - код %i размер %i ", buffer[1], messageLen);
+        if (buffer[1] != 1 && buffer[1] != 2) {
+            printf("[блок %i]", buffer[3]);
+        } else {
+            printf("[файл %s]", buffer + 2);
+        }
+        if (lost) printf(" - специально потеряно");
+        printf("\n");
+    }
     void send(char * buffer, int messageLen)
     {
-        debug(buffer, messageLen);
-        printf("Отправлено сообщение - код %i размер %i ", buffer[1], messageLen);
-        if (buffer[1] != 1) {
-            printf("[блок %i]\n", buffer[3]);
-        } else {
-            printf("[файл %s]\n", buffer + 2);
-        }
+        printf("Отправлено ");
+        dumpMsg(buffer, messageLen, 0);
         ::send(sock, buffer, messageLen, 0);
     }
     int recv(char * buffer, int messageLen)
     {
-        return ::recv(sock, buffer, messageLen, 0);
+        int ret;
+        while(1) {
+            ret = ::recv(sock, buffer, messageLen, 0);
+            if (ret != -1 ) {
+                printf("Принято ");
+                if ((rand() % 100) < lost) {
+                    dumpMsg(buffer, ret, 1);
+                } else {
+                    dumpMsg(buffer, ret, 0);
+                    return ret;
+                }
+            } else {
+                return ret;
+            }
+        }
     }
     ~Network()
     {
@@ -63,7 +86,6 @@ class TFTP
     private:
         int attemp;
         Network * net;
-        char buffer[1024];
     public:
     TFTP(Network * net)
     {
@@ -72,7 +94,7 @@ class TFTP
     }
     int getAck(int wCode)
     {
-        printf("Ждем ответа на блок с кодом %i...", wCode);
+        char buffer[1024];
         attemp ++;
         if (attemp > 10) exit(1);
         int code, type;
@@ -81,26 +103,26 @@ class TFTP
             type = buffer[0] * 256 + buffer[1];
             code = buffer[2] * 256 + buffer[3];
             if (type != 4) {
-                printf(" получено сообщение другого типа\n");
+                printf("-> Ошибка: получено сообщение другого типа\n");
             }
             if (code == wCode) {
-                printf(" успешно\n");
                 attemp = 0;
                 return 1;
             } else {
-                printf(" но был получен код %i\n", code);
+                printf("-> Ошибка: был получен неверный код %i [ждем %i]\n", code, wCode);
                 return 0;
             }
         } else {
-            printf(" ошибка передачи!\n");
+            printf("-> Ошибка передачи!\n");
             return 0;
         }
     }
     
     void msgWRQ(char * filename)
     {
+        char buffer[1024];
         int size = 0;
-        int code = 1;
+        int code = 2;
         char sConst[] = "octet";
         buffer[size++] = code / 256;
         buffer[size++] = code % 256;
@@ -113,6 +135,7 @@ class TFTP
     }
     void msgData(int num, char * data, int len)
     {
+        char buffer[1024];
         int size = 0;
         int code = 3;
         buffer[size++] = code / 256;
@@ -146,7 +169,7 @@ int main()
 {
     int messageLen;
     int i;
-    Network * net = new Network();
+    Network * net = new Network(20);
     TFTP * client = new TFTP(net);
     client->sendFile("client.c");
     return 0;
