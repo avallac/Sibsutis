@@ -9,71 +9,8 @@
 #include <string.h>
 #include <arpa/inet.h>
 #include <time.h>
-
-class Network
-{
-protected:
-    struct sockaddr_in addr;
-    int sock;
-    int lost;
-public:
-    Network(int lost)
-    {
-        this->lost = lost;
-        struct timeval timeout={1,0};
-        sock = socket(PF_INET, SOCK_DGRAM, 0);
-        setsockopt(sock,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
-        if(sock < 0) { perror("socket"); exit(1); }
-        addr.sin_family = AF_INET;
-        addr.sin_port = htons(3425);
-        addr.sin_addr.s_addr = INADDR_ANY;
-        if(bind(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
-            perror("bind");
-            exit(2);
-        }
-    }
-    void send(char * buffer, int messageLen, sockaddr_in* client)
-    {
-        printf("Отправлено ");
-        dumpMsg(buffer, messageLen, 0);
-        ::sendto(sock, buffer, messageLen, 0, (struct sockaddr*)client, sizeof(sockaddr_in));
-    }
-    void dumpMsg(char * buffer, int messageLen, int lost)
-    {
-        if (messageLen == -1) return;
-        printf("сообщение - код %i размер %i ", buffer[1], messageLen);
-        if (buffer[1] != 1) {
-            printf("[блок %i]", buffer[3]);
-        } else {
-            printf("[файл %s]", buffer + 2);
-        }
-        if (lost) printf(" - специально потеряно");
-        printf("\n");
-    }
-    int recv(char * buffer, int messageLen, sockaddr_in* client)
-    {
-        int len = sizeof(client);
-        int ret;
-        while(1) {
-            ret = ::recvfrom(sock, buffer, messageLen, 0, (struct sockaddr *)client, (socklen_t *)&len);
-            if (ret != -1 ) {
-                printf("Принято ");
-                if ((rand() % 100) < lost) {
-                    dumpMsg(buffer, ret, 1);
-                } else {
-                    dumpMsg(buffer, ret, 0);
-                    return ret;
-                }
-            } else {
-                return ret;
-            }
-        }
-    }
-    ~Network()
-    {
-        close(sock);
-    }
-};
+#include "libNetwork.h"
+#include <pthread.h>
 
 class TFTP
 {
@@ -95,14 +32,10 @@ public:
     {
         return buffer[2] * 256 + buffer[3];
     }
-    void waitFile()
+    void waitFile(char * buffer)
     {
-        char buffer[1024];
         char path[128];
-        int bytes_read;
-        bytes_read = net->recv(buffer, 1024, &client);
-        if (bytes_read != -1 && getCode(buffer) == 2) {
-            printf("Входящее подключение от %s\n", inet_ntoa(client.sin_addr));
+        if (getCode(buffer) == 2) {
             memcpy(path, "upload/", 7);
             memcpy(path + 7, buffer + 2, strlen(buffer + 2) + 1);
             printf("Запись в файл: %s\n",path);
@@ -119,12 +52,14 @@ public:
         char buffer[1024];
         int bytes_read;
         int num = 1;
+        lastMess = time(NULL);
         do {
-            bytes_read = net->recv(buffer, 1024, &client);
+            bytes_read = net->recv(buffer, 1024);
             if (bytes_read != -1) {
                 if (getCode(buffer) == 3 && getNum(buffer) == num) {
                     lastMess = time(NULL);
                     fwrite(buffer + 4, bytes_read - 4, 1, output);
+                    sleep(1);
                     msgAck(num++);
                 } else if (getCode(buffer) == 3 && getNum(buffer) == num - 1) {
                     msgAck(num - 1);
@@ -150,15 +85,49 @@ public:
         buffer[size++] = code % 256;
         buffer[size++] = num / 256;
         buffer[size++] = num % 256;
-        net->send(buffer, size, &client);
+        net->send(buffer, size);
     }
 };
+
+void *getFile(void *sock)
+{
+    int messageLen = 1024;
+    char buffer[1024];
+    int len = sizeof(struct sockaddr);
+    struct sockaddr_in cli;
+    int s = (int)sock;
+    while(1) {
+        recvfrom(s, buffer, messageLen, 0, (struct sockaddr *)&cli, (socklen_t *)&len);
+        printf("Входящее подключение от %s\n", inet_ntoa(cli.sin_addr));
+        Network * net = new Network(0, &cli, 0);
+        TFTP * client = new TFTP(net);
+        client->waitFile((char *)buffer);
+    }
+    pthread_exit(NULL);
+}
+
+
 int main()
 {
-    Network * net = new Network(20);
-    TFTP * client = new TFTP(net);
+    
+    struct sockaddr_in addr;
+        int sock;
+    sock = socket(PF_INET, SOCK_DGRAM, 0);
+    if(sock < 0) { perror("socket"); exit(1); }
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(3425);
+    addr.sin_addr.s_addr = INADDR_ANY;
+    if(bind(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+        perror("bind");
+        exit(2);
+    }
+    pthread_t id;
+    int i;
+    for( i=0; i < 2; i++ ){
+        pthread_create(&id, NULL, getFile, (void *)sock);
+    }
     while(1) {
-        client->waitFile();
+        sleep(1);
     }
     return 0;
 }
