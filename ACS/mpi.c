@@ -3,7 +3,7 @@
 #include <mpi.h>
 #include <pthread.h>
 
-#define DEBUG 0
+#define DEBUG 1
 
 int treads;
 int  nextProc, prevProc;
@@ -123,7 +123,7 @@ int up(float v)
 
 void init()
 {
-    int tmp[0],S,i;
+    int tmp[1],S,i;
     gethostname(name, 32);
     if (name[2] == '9') {
         kProd = 6;
@@ -149,7 +149,7 @@ void init()
         virtualClusterSize = tmp[0];
     } else {
         MPI_Send(tmp, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
-        MPI_Recv(tmp, 1, MPI_INT, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        MPI_Recv(tmp, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         virtualClusterSize = tmp[0];
     }
     partA = up((float) hA / (float) clusterSize);
@@ -166,8 +166,8 @@ int main (int argc, char* argv[])
         printf("Set input.\n");
         return 0;
     }
-    int *provided;
-    MPI_Init_thread(&argc, &argv, MPI_THREAD_FUNNELED, provided);
+    int provided;
+    MPI_Init_thread(&argc, &argv, MPI_THREAD_FUNNELED, &provided);
     if (0!=pthread_attr_init(&attrs)) {
         perror("Cannot initialize attributes");
         abort();
