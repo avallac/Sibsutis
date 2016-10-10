@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
                     FD_SET (sock, &active_fd_set);
                 } else {
                     int bytes_read = recv(i, buf, 1, 0);
-                    if (bytes_read < 0) {
+                    if (bytes_read <= 0) {
                         close (i);
                         FD_CLR (i, &active_fd_set);
                     } else {
