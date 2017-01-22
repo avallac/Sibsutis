@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-0": {
+            "": "classes"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "^5.7"
+    }
+}
