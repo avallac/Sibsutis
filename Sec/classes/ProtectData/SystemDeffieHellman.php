@@ -2,12 +2,10 @@
 
 namespace ProtectData;
 
-class System
+class SystemDeffieHellman extends SystemBase
 {
-    protected $P;
     protected $G;
     protected $Q;
-    protected $bits;
 
     public function __construct($b = 8)
     {
@@ -30,18 +28,10 @@ class System
         print "G = ".gmp_strval($this->G)."\n";
     }
 
-    public function getP()
-    {
-        return $this->P;
-    }
+
 
     public function getG()
     {
         return $this->G;
-    }
-
-    public function getBits()
-    {
-        return $this->bits;
     }
 }

@@ -2,15 +2,15 @@
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use ProtectData\System;
-use ProtectData\Key;
+use ProtectData\SystemDeffieHellman;
+use ProtectData\KeyDeffieHellman;
 
 $b = 128;
 print "Length: ".$b."\n";
-$system = new System($b);
+$system = new SystemDeffieHellman($b);
 $system->dump();
-$key1 = new Key($system->getP(), $system->getG(), $system->getBits());
-$key2 = new Key($system->getP(), $system->getG(), $system->getBits());
+$key1 = new KeyDeffieHellman($system->getP(), $system->getG(), $system->getBits());
+$key2 = new KeyDeffieHellman($system->getP(), $system->getG(), $system->getBits());
 print "Private 1:".gmp_strval($key1->getPrivate())."\n";
 print "Public 1 :".gmp_strval($key1->getPublic())."\n";
 print "Private 2:".gmp_strval($key2->getPrivate())."\n";
